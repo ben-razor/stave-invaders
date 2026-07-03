@@ -2,8 +2,7 @@
 
 A browser-based grand staff sight-reading trainer. A whole note appears on either the treble or bass staff — name it before time runs out.
 
-**[Try it live →](https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/note-trainer.html)**
-*(replace with your actual GitHub Pages URL — see [Deploying](#deploying-to-github-pages) below)*
+**[Try it live →](https://ben-razor.github.io/stave-invaders/)**
 
 ## Features
 

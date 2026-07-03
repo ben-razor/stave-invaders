@@ -16,7 +16,7 @@ A browser-based grand staff sight-reading trainer. A whole note appears on eithe
 
 ## How to play
 
-1. Vistt `https://ben-razor.github.io/stave-invaders/` or `note-trainer.html` in any modern browser.
+1. Visit `https://ben-razor.github.io/stave-invaders/` or `note-trainer.html` in any modern browser.
 2. Choose a clef mode and duration, then hit **Start Practice**.
 3. A note appears on one of the two staves (the other dims slightly so it's clear which one is active).
 4. Name the note — click a key or press its keyboard shortcut — before time runs out.

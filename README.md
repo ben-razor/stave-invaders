@@ -1,4 +1,4 @@
-# Sight Reader
+# Stave Invaders 
 
 A browser-based grand staff sight-reading trainer. A whole note appears on either the treble or bass staff — name it before time runs out.
 

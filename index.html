@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sight Reader</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #16241c;
+    --bg-2: #1d3227;
+    --paper: #faf3e2;
+    --paper-line: #b9ac8a;
+    --ink: #23291f;
+    --gold: #c9a227;
+    --gold-dim: #8f7419;
+    --green: #4c9a6a;
+    --red: #c1503d;
+    --muted: #9fae9c;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, var(--bg-2), var(--bg) 70%);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .app { width: 100%; max-width: 600px; padding: 26px 20px 40px; }
+
+  .eyebrow {
+    text-align: center; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 11px; color: var(--gold); margin-bottom: 6px; font-weight: 600;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 32px;
+    text-align: center; margin: 0 0 22px; color: var(--paper);
+  }
+
+  .card {
+    background: var(--paper); border-radius: 14px; padding: 22px 22px 26px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.05);
+  }
+
+  .start-screen p.desc { color: #5b5645; font-size: 14px; line-height: 1.55; text-align: center; margin: 0 0 20px; }
+  .start-screen p.formula { color: #8a8468; font-size: 12px; text-align: center; margin: -8px 0 20px; font-family: 'IBM Plex Mono', monospace; }
+
+  .setting-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .setting-label { font-size: 12.5px; color: #6b6650; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; }
+  .pill-group { display: flex; gap: 6px; }
+  .pill {
+    border: 1.5px solid var(--paper-line); background: transparent; color: var(--ink);
+    padding: 6px 13px; border-radius: 999px; font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px; cursor: pointer; transition: all 0.15s ease;
+  }
+  .pill:hover { border-color: var(--gold-dim); }
+  .pill.active { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+  .start-btn {
+    width: 100%; margin-top: 16px; padding: 14px; border: none; border-radius: 10px;
+    background: var(--ink); color: var(--paper); font-family: 'Fraunces', serif;
+    font-weight: 600; font-size: 17px; letter-spacing: 0.02em; cursor: pointer;
+    transition: transform 0.12s ease, background 0.15s ease;
+  }
+  .start-btn:hover { background: #34412f; transform: translateY(-1px); }
+  .start-btn:active { transform: translateY(0); }
+
+  .stats { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 6px; padding: 0 2px; }
+  .stat { text-align: center; flex: 1; }
+  .stat .num { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 600; color: var(--ink); line-height: 1; }
+  .stat.score .num { font-size: 30px; color: var(--gold-dim); }
+  .stat.timer .num { color: var(--red); }
+  .stat .cap { font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8468; margin-top: 4px; }
+
+  .staff-wrap { margin: 12px 0 20px; border-radius: 10px; padding: 6px 0; position: relative; }
+  svg { display: block; margin: 0 auto; }
+
+  .staff-group { transition: opacity 0.18s ease; }
+  .staff-group.dim { opacity: 0.28; }
+
+  .clef-glyph { fill: var(--ink); font-family: serif; }
+  .staff-line { stroke: var(--ink); stroke-width: 1.6; }
+  .brace-bar { stroke: var(--ink); fill: var(--ink); }
+  .ledger-line { stroke: var(--ink); stroke-width: 1.6; }
+  .notehead { fill: var(--paper); stroke: var(--ink); stroke-width: 2.2; }
+
+  .clef-tag {
+    position: absolute; font-family: 'IBM Plex Mono', monospace; font-size: 9px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dim); font-weight: 600;
+  }
+  #trebleTag { top: 4px; left: 6px; }
+  #bassTag { bottom: 4px; left: 6px; }
+
+  .staff-wrap.flash-correct .notehead { stroke: var(--green); }
+  .staff-wrap.flash-wrong .notehead { stroke: var(--red); }
+
+  .keys { display: flex; gap: 6px; justify-content: center; }
+  .key-btn {
+    flex: 1; max-width: 62px; background: #fffdf7; border: 1.5px solid var(--paper-line);
+    border-radius: 8px; padding: 12px 0 8px; cursor: pointer;
+    transition: transform 0.08s ease, background 0.12s ease, border-color 0.12s ease;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .key-btn:hover { border-color: var(--gold-dim); }
+  .key-btn:active, .key-btn.pressed { transform: translateY(2px); background: #f1ead4; }
+  .key-btn .letter { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--ink); }
+  .key-btn .hint { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #9c9678; margin-top: 2px; text-transform: uppercase; }
+
+  .hint-line { text-align: center; font-size: 12px; color: #8a8468; margin-top: 14px; }
+
+  .end-screen { text-align: center; }
+  .end-screen .big-score { font-family: 'Fraunces', serif; font-weight: 700; font-size: 60px; color: var(--ink); line-height: 1; margin: 6px 0 2px; }
+  .end-screen .big-score-cap { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8a8468; }
+  .end-formula { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #a49c7c; margin-top: 4px; }
+  .end-detail { margin-top: 18px; display: flex; justify-content: center; gap: 30px; }
+  .end-detail .num { font-family: 'IBM Plex Mono', monospace; font-size: 19px; color: var(--ink); font-weight: 600; }
+  .end-detail .cap { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8468; margin-top: 3px; }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="eyebrow">Ear &amp; Eye Practice</div>
+  <h1>Sight Reader</h1>
+
+  <div class="card">
+
+    <div id="startScreen" class="start-screen">
+      <p class="desc">Read notes on a full grand staff — treble and bass together, with ledger lines extending up to three lines above and below each staff when needed. Click a key or type Q W E R T Y U.</p>
+      <p class="formula">score = notes correct &times; accuracy</p>
+
+      <div class="setting-row">
+        <span class="setting-label">Clef</span>
+        <div class="pill-group" id="clefGroup">
+          <button class="pill" data-val="treble">Treble</button>
+          <button class="pill" data-val="bass">Bass</button>
+          <button class="pill active" data-val="both">Both</button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <span class="setting-label">Duration</span>
+        <div class="pill-group" id="durationGroup">
+          <button class="pill" data-val="30">30s</button>
+          <button class="pill active" data-val="60">60s</button>
+          <button class="pill" data-val="120">120s</button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <span class="setting-label">Note value</span>
+        <div class="pill-group">
+          <button class="pill active" disabled>Whole notes</button>
+        </div>
+      </div>
+
+      <button class="start-btn" id="startBtn">Start Practice</button>
+    </div>
+
+    <div id="gameScreen" class="hidden">
+      <div class="stats">
+        <div class="stat score">
+          <div class="num" id="scoreNum">0.0</div>
+          <div class="cap">Score</div>
+        </div>
+        <div class="stat">
+          <div class="num" id="correctNum">0</div>
+          <div class="cap">Correct</div>
+        </div>
+        <div class="stat">
+          <div class="num" id="totalNum">0</div>
+          <div class="cap">Attempted</div>
+        </div>
+        <div class="stat timer">
+          <div class="num" id="timerNum">0:60</div>
+          <div class="cap">Time left</div>
+        </div>
+      </div>
+
+      <div class="staff-wrap" id="staffWrap">
+        <div class="clef-tag" id="trebleTag">Treble</div>
+        <div class="clef-tag" id="bassTag">Bass</div>
+        <svg id="staffSvg" viewBox="0 0 400 400" width="400" height="400">
+          <line class="brace-bar" x1="40" y1="102" x2="40" y2="320" stroke-width="4"/>
+          <line class="brace-bar" x1="360" y1="102" x2="360" y2="320" stroke-width="1.6"/>
+
+          <g class="staff-group" id="trebleGroup">
+            <line class="staff-line" x1="46" y1="102" x2="356" y2="102"/>
+            <line class="staff-line" x1="46" y1="114" x2="356" y2="114"/>
+            <line class="staff-line" x1="46" y1="126" x2="356" y2="126"/>
+            <line class="staff-line" x1="46" y1="138" x2="356" y2="138"/>
+            <line class="staff-line" x1="46" y1="150" x2="356" y2="150"/>
+            <text class="clef-glyph" x="46" y="158" font-size="64">&#119070;</text>
+          </g>
+
+          <g class="staff-group" id="bassGroup">
+            <line class="staff-line" x1="46" y1="272" x2="356" y2="272"/>
+            <line class="staff-line" x1="46" y1="284" x2="356" y2="284"/>
+            <line class="staff-line" x1="46" y1="296" x2="356" y2="296"/>
+            <line class="staff-line" x1="46" y1="308" x2="356" y2="308"/>
+            <line class="staff-line" x1="46" y1="320" x2="356" y2="320"/>
+            <text class="clef-glyph" x="46" y="302" font-size="46">&#119074;</text>
+          </g>
+
+          <g id="ledgerGroup"></g>
+          <ellipse class="notehead" id="notehead" cx="220" cy="150" rx="8" ry="5.8" transform="rotate(-18 220 150)"/>
+        </svg>
+      </div>
+
+      <div class="keys" id="keys">
+        <button class="key-btn" data-note="C"><span class="letter">C</span><span class="hint">Q</span></button>
+        <button class="key-btn" data-note="D"><span class="letter">D</span><span class="hint">W</span></button>
+        <button class="key-btn" data-note="E"><span class="letter">E</span><span class="hint">E</span></button>
+        <button class="key-btn" data-note="F"><span class="letter">F</span><span class="hint">R</span></button>
+        <button class="key-btn" data-note="G"><span class="letter">G</span><span class="hint">T</span></button>
+        <button class="key-btn" data-note="A"><span class="letter">A</span><span class="hint">Y</span></button>
+        <button class="key-btn" data-note="B"><span class="letter">B</span><span class="hint">U</span></button>
+      </div>
+      <div class="hint-line">Name the note on the highlighted staff.</div>
+    </div>
+
+    <div id="endScreen" class="end-screen hidden">
+      <div class="big-score-cap">Time's up</div>
+      <div class="big-score" id="finalScore">0.0</div>
+      <div class="end-formula">correct &times; accuracy</div>
+      <div class="end-detail">
+        <div><div class="num" id="finalCorrect">0</div><div class="cap">Correct</div></div>
+        <div><div class="num" id="finalTotal">0</div><div class="cap">Attempted</div></div>
+        <div><div class="num" id="finalAccuracy">0%</div><div class="cap">Accuracy</div></div>
+      </div>
+      <button class="start-btn" id="againBtn" style="margin-top:24px;">Play Again</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  var STEP = 6;
+  var T_MIN = -7, T_MAX = 15;
+  var TREBLE_BASE = 150; // y of bottom line (t=0)
+  var BASS_BASE = 320;   // y of bottom line (t=0)
+  var LETTERS = ['A','B','C','D','E','F','G'];
+
+  function buildNotes(anchorLetter, base){
+    var startIdx = LETTERS.indexOf(anchorLetter);
+    var arr = [];
+    for(var t = T_MIN; t <= T_MAX; t++){
+      var idx = ((startIdx + t) % 7 + 7) % 7;
+      var name = LETTERS[idx];
+      var y = base - t * STEP;
+      var below = t <= -2 ? Math.floor(Math.abs(t) / 2) : 0;
+      var above = t >= 10 ? Math.floor((t - 8) / 2) : 0;
+      arr.push({t: t, name: name, y: y, ledgerBelow: below, ledgerAbove: above});
+    }
+    return arr;
+  }
+
+  var TREBLE_NOTES = buildNotes('E', TREBLE_BASE); // bottom line of treble = E4
+  var BASS_NOTES = buildNotes('G', BASS_BASE);      // bottom line of bass = G2
+
+  var KEY_TO_NOTE = {Q:'C', W:'D', E:'E', R:'F', T:'G', Y:'A', U:'B'};
+
+  var duration = 60;
+  var timeLeft = duration;
+  var correct = 0;
+  var total = 0;
+  var current = null;
+  var timerId = null;
+  var running = false;
+  var clefMode = 'both';
+
+  var startScreen = document.getElementById('startScreen');
+  var gameScreen = document.getElementById('gameScreen');
+  var endScreen = document.getElementById('endScreen');
+  var scoreNum = document.getElementById('scoreNum');
+  var correctNum = document.getElementById('correctNum');
+  var totalNum = document.getElementById('totalNum');
+  var timerNum = document.getElementById('timerNum');
+  var notehead = document.getElementById('notehead');
+  var ledgerGroup = document.getElementById('ledgerGroup');
+  var staffWrap = document.getElementById('staffWrap');
+  var keys = document.getElementById('keys');
+  var trebleGroup = document.getElementById('trebleGroup');
+  var bassGroup = document.getElementById('bassGroup');
+  var trebleTag = document.getElementById('trebleTag');
+  var bassTag = document.getElementById('bassTag');
+
+  var SVGNS = 'http://www.w3.org/2000/svg';
+
+  document.getElementById('clefGroup').addEventListener('click', function(e){
+    var btn = e.target.closest('.pill');
+    if(!btn) return;
+    document.querySelectorAll('#clefGroup .pill').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    clefMode = btn.dataset.val;
+  });
+
+  document.getElementById('durationGroup').addEventListener('click', function(e){
+    var btn = e.target.closest('.pill');
+    if(!btn) return;
+    document.querySelectorAll('#durationGroup .pill').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    duration = parseInt(btn.dataset.val, 10);
+  });
+
+  document.getElementById('startBtn').addEventListener('click', startGame);
+  document.getElementById('againBtn').addEventListener('click', function(){
+    endScreen.classList.add('hidden');
+    startScreen.classList.remove('hidden');
+  });
+
+  function startGame(){
+    correct = 0; total = 0; timeLeft = duration; running = true;
+    updateScoreLabels();
+    updateTimerLabel();
+    startScreen.classList.add('hidden');
+    endScreen.classList.add('hidden');
+    gameScreen.classList.remove('hidden');
+    nextNote();
+    clearInterval(timerId);
+    timerId = setInterval(tick, 1000);
+  }
+
+  function tick(){
+    timeLeft--;
+    updateTimerLabel();
+    if(timeLeft <= 0) endGame();
+  }
+
+  function updateTimerLabel(){
+    var m = Math.floor(Math.max(timeLeft,0) / 60);
+    var s = Math.max(timeLeft,0) % 60;
+    timerNum.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function currentScore(){
+    if(total === 0) return 0;
+    return correct * (correct / total);
+  }
+
+  function updateScoreLabels(){
+    correctNum.textContent = correct;
+    totalNum.textContent = total;
+    scoreNum.textContent = currentScore().toFixed(1);
+  }
+
+  function pickClef(){
+    if(clefMode === 'both') return Math.random() < 0.5 ? 'treble' : 'bass';
+    return clefMode;
+  }
+
+  function clearLedgers(){
+    while(ledgerGroup.firstChild) ledgerGroup.removeChild(ledgerGroup.firstChild);
+  }
+
+  function addLedgerLine(y){
+    var line = document.createElementNS(SVGNS, 'line');
+    line.setAttribute('class', 'ledger-line');
+    line.setAttribute('x1', 205);
+    line.setAttribute('x2', 235);
+    line.setAttribute('y1', y);
+    line.setAttribute('y2', y);
+    ledgerGroup.appendChild(line);
+  }
+
+  function nextNote(){
+    var clef = pickClef();
+    var pool = clef === 'treble' ? TREBLE_NOTES : BASS_NOTES;
+    var base = clef === 'treble' ? TREBLE_BASE : BASS_BASE;
+    var idx;
+    do { idx = Math.floor(Math.random() * pool.length); }
+    while(current && pool[idx].t === current.t && clef === current.clef && pool.length > 1);
+    var note = pool[idx];
+    current = {name: note.name, t: note.t, y: note.y, ledgerBelow: note.ledgerBelow, ledgerAbove: note.ledgerAbove, clef: clef};
+
+    if(clef === 'treble'){
+      trebleGroup.classList.remove('dim');
+      bassGroup.classList.add('dim');
+      trebleTag.style.opacity = 1;
+      bassTag.style.opacity = 0.35;
+    } else {
+      bassGroup.classList.remove('dim');
+      trebleGroup.classList.add('dim');
+      bassTag.style.opacity = 1;
+      trebleTag.style.opacity = 0.35;
+    }
+
+    notehead.setAttribute('cy', current.y);
+    notehead.setAttribute('transform', 'rotate(-18 220 ' + current.y + ')');
+
+    clearLedgers();
+    for(var i = 1; i <= current.ledgerBelow; i++){
+      var tb = -2 * i;
+      addLedgerLine(base - tb * STEP);
+    }
+    for(var j = 1; j <= current.ledgerAbove; j++){
+      var ta = 8 + 2 * j;
+      addLedgerLine(base - ta * STEP);
+    }
+  }
+
+  function submitAnswer(letter, btnEl){
+    if(!running) return;
+    total++;
+    var isCorrect = letter === current.name;
+    if(isCorrect){
+      correct++;
+      flash('correct');
+    } else {
+      flash('wrong');
+    }
+    updateScoreLabels();
+    if(btnEl){
+      btnEl.classList.add('pressed');
+      setTimeout(function(){ btnEl.classList.remove('pressed'); }, 120);
+    }
+    nextNote();
+  }
+
+  function flash(kind){
+    var cls = kind === 'correct' ? 'flash-correct' : 'flash-wrong';
+    staffWrap.classList.add(cls);
+    setTimeout(function(){ staffWrap.classList.remove(cls); }, 180);
+  }
+
+  keys.addEventListener('click', function(e){
+    var btn = e.target.closest('.key-btn');
+    if(!btn) return;
+    submitAnswer(btn.dataset.note, btn);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(!running) return;
+    var key = e.key.toUpperCase();
+    var letter = KEY_TO_NOTE[key];
+    if(!letter) return;
+    var btn = keys.querySelector('[data-note="' + letter + '"]');
+    submitAnswer(letter, btn);
+  });
+
+  function endGame(){
+    running = false;
+    clearInterval(timerId);
+    gameScreen.classList.add('hidden');
+    endScreen.classList.remove('hidden');
+    document.getElementById('finalCorrect').textContent = correct;
+    document.getElementById('finalTotal').textContent = total;
+    var acc = total > 0 ? Math.round((correct / total) * 100) : 0;
+    document.getElementById('finalAccuracy').textContent = acc + '%';
+    document.getElementById('finalScore').textContent = currentScore().toFixed(1);
+  }
+})();
+</script>
+
+</body>
+</html>

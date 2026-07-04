@@ -488,11 +488,64 @@
     }
   }
 
+  var audioCtx = null;
+  var NOTE_FREQ = {C: 261.63, D: 293.66, E: 329.63, F: 349.23, G: 392.00, A: 440.00, B: 493.88};
+
+  function getAudioCtx(){
+    if(!audioCtx){
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if(!AC) return null;
+      audioCtx = new AC();
+    }
+    if(audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
+  function playNote(letter){
+    try {
+      var ctx = getAudioCtx();
+      if(!ctx) return;
+      var freq = NOTE_FREQ[letter];
+      var now = ctx.currentTime;
+      var dur = 1.1;
+
+      var master = ctx.createGain();
+      master.gain.setValueAtTime(0.0001, now);
+      master.gain.exponentialRampToValueAtTime(0.5, now + 0.005);
+      master.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+
+      var filter = ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(5200, now);
+      filter.frequency.exponentialRampToValueAtTime(900, now + dur);
+
+      master.connect(filter);
+      filter.connect(ctx.destination);
+
+      // additive harmonic series, all sharing the same envelope, for a single unified tone
+      var harmonics = [[1, 0.55], [2, 0.22], [3, 0.12], [4, 0.06], [5, 0.03]];
+      harmonics.forEach(function(h){
+        var osc = ctx.createOscillator();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq * h[0], now);
+        var partialGain = ctx.createGain();
+        partialGain.gain.value = h[1];
+        osc.connect(partialGain);
+        partialGain.connect(master);
+        osc.start(now);
+        osc.stop(now + dur + 0.05);
+      });
+    } catch(e){
+      // Web Audio unavailable — fail silently
+    }
+  }
+
   function submitAnswer(letter, btnEl){
     if(!running) return;
     total++;
     var isCorrect = letter === current.name;
     if(isCorrect) correct++;
+    playNote(letter);
     updateScoreLabels();
     if(btnEl){
       btnEl.classList.add('pressed');

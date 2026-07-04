@@ -137,6 +137,30 @@
     .key-btn .hint { font-size: 8px; margin-top: 0; }
     .hint-line { margin-top: 6px; font-size: 11px; }
   }
+
+  .link-btn {
+    background: none; border: none; color: var(--gold-dim); font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px; text-decoration: underline; cursor: pointer; display: block;
+    margin: 12px auto 0; padding: 4px;
+  }
+  .btn-row { display: flex; gap: 10px; margin-top: 24px; }
+  .btn-row .start-btn { margin-top: 0; }
+  .secondary-btn { background: transparent; border: 1.5px solid var(--paper-line); color: var(--ink); }
+  .secondary-btn:hover { background: rgba(0,0,0,0.04); }
+
+  .stats-screen h2 {
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; text-align: center;
+    margin: 0 0 16px; color: var(--ink);
+  }
+  .stats-summary { display: flex; justify-content: center; gap: 22px; margin: 14px 0 4px; flex-wrap: wrap; }
+  .stats-summary .num { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 19px; color: var(--ink); text-align: center; }
+  .stats-summary .cap { font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.1em; color: #8a8468; margin-top: 2px; text-align: center; }
+  .stats-empty { text-align: center; color: #8a8468; font-size: 13px; padding: 34px 10px; }
+  #statsBody svg { width: 100%; max-width: 400px; display: block; margin: 10px auto 0; }
+  .chart-line { fill: none; stroke: var(--gold-dim); stroke-width: 2; }
+  .chart-dot { fill: var(--gold); }
+  .chart-axis { stroke: var(--paper-line); stroke-width: 1; }
+  .chart-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; fill: #9c9678; }
 </style>
 </head>
 <body>
@@ -177,6 +201,7 @@
       </div>
 
       <button class="start-btn" id="startBtn">Start Practice</button>
+      <button class="link-btn" id="statsLinkBtn">View progress stats</button>
     </div>
 
     <div id="gameScreen" class="hidden">
@@ -247,7 +272,36 @@
         <div><div class="num" id="finalTotal">0</div><div class="cap">Attempted</div></div>
         <div><div class="num" id="finalAccuracy">0%</div><div class="cap">Accuracy</div></div>
       </div>
-      <button class="start-btn" id="againBtn" style="margin-top:24px;">Play Again</button>
+      <div class="btn-row">
+        <button class="start-btn" id="againBtn">Play Again</button>
+        <button class="start-btn secondary-btn" id="statsLinkBtn2">View Stats</button>
+      </div>
+    </div>
+
+    <div id="statsScreen" class="stats-screen hidden">
+      <h2>Progress</h2>
+
+      <div class="setting-row">
+        <span class="setting-label">Clef</span>
+        <div class="pill-group" id="statsClefGroup">
+          <button class="pill" data-val="treble">Treble</button>
+          <button class="pill" data-val="bass">Bass</button>
+          <button class="pill active" data-val="both">Both</button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <span class="setting-label">Duration</span>
+        <div class="pill-group" id="statsDurationGroup">
+          <button class="pill" data-val="30">30s</button>
+          <button class="pill active" data-val="60">60s</button>
+          <button class="pill" data-val="120">120s</button>
+        </div>
+      </div>
+
+      <div id="statsBody"></div>
+
+      <button class="start-btn" id="statsBackBtn" style="margin-top:18px;">Back</button>
     </div>
 
   </div>
@@ -303,6 +357,30 @@
   var trebleGroup = document.getElementById('trebleGroup');
   var bassGroup = document.getElementById('bassGroup');
   var SVGNS = 'http://www.w3.org/2000/svg';
+  var statsScreen = document.getElementById('statsScreen');
+  var statsBody = document.getElementById('statsBody');
+  var STORAGE_KEY = 'staveInvaders_sessions_v1';
+  var statsClefMode = 'both';
+  var statsDuration = 60;
+
+  function loadSessions(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch(e){
+      return [];
+    }
+  }
+
+  function saveSessionRecord(rec){
+    try {
+      var all = loadSessions();
+      all.push(rec);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
+    } catch(e){
+      // localStorage unavailable (e.g. sandboxed preview) — session just won't persist
+    }
+  }
 
   function clearLedgers(){
     while(ledgerGroup.firstChild) ledgerGroup.removeChild(ledgerGroup.firstChild);
@@ -447,8 +525,114 @@
     document.getElementById('finalTotal').textContent = total;
     var acc = total > 0 ? Math.round((correct / total) * 100) : 0;
     document.getElementById('finalAccuracy').textContent = acc + '%';
-    document.getElementById('finalScore').textContent = currentScore().toFixed(1);
+    var finalScore = currentScore();
+    document.getElementById('finalScore').textContent = finalScore.toFixed(1);
+
+    saveSessionRecord({
+      ts: Date.now(),
+      clef: clefMode,
+      duration: duration,
+      correct: correct,
+      total: total,
+      accuracy: total > 0 ? correct / total : 0,
+      score: finalScore
+    });
   }
+
+  function syncPillGroup(id, val){
+    document.querySelectorAll('#' + id + ' .pill').forEach(function(p){
+      p.classList.toggle('active', p.dataset.val === val);
+    });
+  }
+
+  function openStats(){
+    statsClefMode = clefMode;
+    statsDuration = duration;
+    syncPillGroup('statsClefGroup', statsClefMode);
+    syncPillGroup('statsDurationGroup', String(statsDuration));
+    startScreen.classList.add('hidden');
+    endScreen.classList.add('hidden');
+    statsScreen.classList.remove('hidden');
+    renderStats();
+  }
+
+  function niceCeiling(max){
+    if(max <= 0) return 5;
+    if(max < 10) return Math.ceil(max / 2) * 2;
+    return Math.ceil(max / 10) * 10;
+  }
+
+  function renderStats(){
+    var sessions = loadSessions()
+      .filter(function(s){ return s.clef === statsClefMode && String(s.duration) === String(statsDuration); })
+      .sort(function(a, b){ return a.ts - b.ts; });
+
+    if(sessions.length === 0){
+      statsBody.innerHTML = '<div class="stats-empty">No sessions yet for this configuration — play a round to start tracking progress.</div>';
+      return;
+    }
+
+    var scores = sessions.map(function(s){ return s.score; });
+    var best = Math.max.apply(null, scores);
+    var avg = scores.reduce(function(a, b){ return a + b; }, 0) / scores.length;
+    var latest = scores[scores.length - 1];
+
+    var w = 400, h = 150, padL = 22, padR = 8, padT = 12, padB = 16;
+    var yMax = niceCeiling(best);
+    var n = scores.length;
+    var points = scores.map(function(v, i){
+      var x = n === 1 ? (padL + (w - padL - padR) / 2) : padL + i * (w - padL - padR) / (n - 1);
+      var y = padT + (1 - v / yMax) * (h - padT - padB);
+      return [x, y];
+    });
+    var pathD = points.map(function(p, i){
+      return (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ' ' + p[1].toFixed(1);
+    }).join(' ');
+    var dots = points.map(function(p){
+      return '<circle class="chart-dot" cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3"/>';
+    }).join('');
+
+    var svg = '<svg viewBox="0 0 ' + w + ' ' + h + '">'
+      + '<line class="chart-axis" x1="' + padL + '" y1="' + padT + '" x2="' + (w - padR) + '" y2="' + padT + '" stroke-dasharray="2 2"/>'
+      + '<line class="chart-axis" x1="' + padL + '" y1="' + (h - padB) + '" x2="' + (w - padR) + '" y2="' + (h - padB) + '"/>'
+      + '<text class="chart-label" x="0" y="' + (padT + 3) + '">' + yMax + '</text>'
+      + '<text class="chart-label" x="6" y="' + (h - padB + 3) + '">0</text>'
+      + '<path class="chart-line" d="' + pathD + '"/>'
+      + dots
+      + '</svg>';
+
+    statsBody.innerHTML =
+      '<div class="stats-summary">'
+      + '<div><div class="num">' + n + '</div><div class="cap">Sessions</div></div>'
+      + '<div><div class="num">' + latest.toFixed(1) + '</div><div class="cap">Latest</div></div>'
+      + '<div><div class="num">' + best.toFixed(1) + '</div><div class="cap">Best</div></div>'
+      + '<div><div class="num">' + avg.toFixed(1) + '</div><div class="cap">Average</div></div>'
+      + '</div>' + svg;
+  }
+
+  document.getElementById('statsLinkBtn').addEventListener('click', openStats);
+  document.getElementById('statsLinkBtn2').addEventListener('click', openStats);
+
+  document.getElementById('statsBackBtn').addEventListener('click', function(){
+    statsScreen.classList.add('hidden');
+    startScreen.classList.remove('hidden');
+  });
+
+  document.getElementById('statsClefGroup').addEventListener('click', function(e){
+    var btn = e.target.closest('.pill');
+    if(!btn) return;
+    syncPillGroup('statsClefGroup', btn.dataset.val);
+    statsClefMode = btn.dataset.val;
+    renderStats();
+  });
+
+  document.getElementById('statsDurationGroup').addEventListener('click', function(e){
+    var btn = e.target.closest('.pill');
+    if(!btn) return;
+    syncPillGroup('statsDurationGroup', btn.dataset.val);
+    statsDuration = parseInt(btn.dataset.val, 10);
+    renderStats();
+  });
 })();
 </script>
 

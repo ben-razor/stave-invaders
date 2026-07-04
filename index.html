@@ -93,15 +93,16 @@
   .ledger-line { stroke: var(--ink); stroke-width: 1.6; }
   .notehead { fill: var(--paper); stroke: var(--ink); stroke-width: 2.2; }
 
-  .keys { display: flex; gap: 6px; justify-content: center; }
+  .keys { display: flex; gap: 0; justify-content: center; }
   .key-btn {
     flex: 1; min-width: 0; max-width: 62px; background: #fffdf7; border: 1.5px solid var(--paper-line);
-    border-radius: 8px; padding: 12px 0 8px; cursor: pointer;
+    border-radius: 0 0 8px 8px; padding: 14px 0 10px; cursor: pointer;
     transition: transform 0.08s ease, background 0.12s ease, border-color 0.12s ease;
     display: flex; flex-direction: column; align-items: center;
   }
-  .key-btn:hover { border-color: var(--gold-dim); }
-  .key-btn:active, .key-btn.pressed { transform: translateY(2px); background: #f1ead4; }
+  .key-btn:not(:first-child) { margin-left: -1.5px; }
+  .key-btn:hover { border-color: var(--gold-dim); position: relative; z-index: 1; }
+  .key-btn:active, .key-btn.pressed { transform: translateY(2px); background: #f1ead4; position: relative; z-index: 1; }
   .key-btn .letter { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--ink); }
   .key-btn .hint { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #9c9678; margin-top: 2px; text-transform: uppercase; }
 
@@ -130,8 +131,8 @@
     .stat.score .num { font-size: 24px; }
     .stat .cap { font-size: 8px; margin-top: 1px; }
     .staff-wrap { margin: 0 0 4px; padding: 0; }
-    .keys { gap: 4px; }
-    .key-btn { padding: 8px 0 5px; }
+    .keys { gap: 0; }
+    .key-btn { padding: 10px 0 7px; }
     .key-btn .letter { font-size: 16px; }
     .key-btn .hint { font-size: 8px; margin-top: 0; }
     .hint-line { margin-top: 6px; font-size: 11px; }

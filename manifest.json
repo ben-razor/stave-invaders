@@ -2,7 +2,7 @@
   "name": "Stave Invaders",
   "short_name": "Stave Invaders",
   "description": "A grand staff sight-reading trainer for treble and bass clef.",
-  "start_url": "./note-trainer.html",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",

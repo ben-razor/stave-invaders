@@ -104,16 +104,16 @@
 
   .keys { display: flex; gap: 0; justify-content: center; }
   .key-btn {
-    flex: 1; min-width: 0; max-width: 62px; background: #fffdf7; border: 1.5px solid var(--paper-line);
-    border-radius: 0 0 8px 8px; padding: 14px 0 10px; cursor: pointer;
+    flex: 1; min-width: 0; max-width: 72px; background: #fffdf7; border: 1.5px solid var(--paper-line);
+    border-radius: 0 0 8px 8px; padding: 20px 0 14px; cursor: pointer;
     transition: transform 0.08s ease, background 0.12s ease, border-color 0.12s ease;
     display: flex; flex-direction: column; align-items: center;
   }
   .key-btn:not(:first-child) { margin-left: -1.5px; }
   .key-btn:hover { border-color: var(--gold-dim); position: relative; z-index: 1; }
   .key-btn:active, .key-btn.pressed { transform: translateY(2px); background: #f1ead4; position: relative; z-index: 1; }
-  .key-btn .letter { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--ink); }
-  .key-btn .hint { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #9c9678; margin-top: 2px; text-transform: uppercase; }
+  .key-btn .letter { font-family: 'Fraunces', serif; font-weight: 700; font-size: 23px; color: var(--ink); }
+  .key-btn .hint { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #9c9678; margin-top: 2px; text-transform: uppercase; }
 
   .hint-line { text-align: center; font-size: 12px; color: #8a8468; margin-top: 14px; }
 
@@ -129,10 +129,10 @@
 
   @media (max-width: 480px) {
     html, body { align-items: center; justify-content: center; display: flex; min-height: 100vh; }
-    .app { max-width: 100%; width: 99vw; }
+    .app { max-width: 100%; width: 98vw; }
     .card { border-radius: 8px; box-shadow: none; }
     .app { padding: 4px 4px 10px; }
-    .card { padding: 6px 5px 10px; }
+    .card { padding: 6px 10px 10px; }
     .eyebrow { display: none; }
     h1 { font-size: 19px; margin: 0 0 6px; }
     .stats { margin-bottom: 2px; }
@@ -141,9 +141,9 @@
     .stat .cap { font-size: 8px; margin-top: 1px; }
     .staff-wrap { margin: 0 0 4px; padding: 0; }
     .keys { gap: 0; }
-    .key-btn { padding: 10px 0 7px; }
-    .key-btn .letter { font-size: 16px; }
-    .key-btn .hint { font-size: 8px; margin-top: 0; }
+    .key-btn { padding: 15px 0 11px; }
+    .key-btn .letter { font-size: 19px; }
+    .key-btn .hint { font-size: 9px; margin-top: 0; }
     .hint-line { margin-top: 6px; font-size: 11px; }
   }
 
@@ -234,30 +234,30 @@
       </div>
 
       <div class="staff-wrap" id="staffWrap">
-        <svg id="staffSvg" viewBox="0 0 400 240" width="400" height="240">
-          <line class="brace-bar" x1="40" y1="48" x2="40" y2="192" stroke-width="4"/>
-          <line class="brace-bar" x1="360" y1="48" x2="360" y2="192" stroke-width="1.6"/>
+        <svg id="staffSvg" viewBox="0 0 400 280" width="400" height="280">
+          <line class="brace-bar" x1="15" y1="68" x2="15" y2="212" stroke-width="4"/>
+          <line class="brace-bar" x1="385" y1="68" x2="385" y2="212" stroke-width="1.6"/>
 
           <g class="staff-group" id="trebleGroup">
-            <line class="staff-line" x1="40" y1="49" x2="360" y2="49"/>
-            <line class="staff-line" x1="40" y1="61" x2="360" y2="61"/>
-            <line class="staff-line" x1="40" y1="73" x2="360" y2="73"/>
-            <line class="staff-line" x1="40" y1="85" x2="360" y2="85"/>
-            <line class="staff-line" x1="40" y1="97" x2="360" y2="97"/>
-            <text class="clef-glyph" x="46" y="105" font-size="64">&#119070;</text>
+            <line class="staff-line" x1="15" y1="69" x2="385" y2="69"/>
+            <line class="staff-line" x1="15" y1="81" x2="385" y2="81"/>
+            <line class="staff-line" x1="15" y1="93" x2="385" y2="93"/>
+            <line class="staff-line" x1="15" y1="105" x2="385" y2="105"/>
+            <line class="staff-line" x1="15" y1="117" x2="385" y2="117"/>
+            <text class="clef-glyph" x="21" y="112" font-size="60">&#119070;</text>
           </g>
 
           <g class="staff-group" id="bassGroup">
-            <line class="staff-line" x1="40" y1="144" x2="360" y2="144"/>
-            <line class="staff-line" x1="40" y1="156" x2="360" y2="156"/>
-            <line class="staff-line" x1="40" y1="168" x2="360" y2="168"/>
-            <line class="staff-line" x1="40" y1="180" x2="360" y2="180"/>
-            <line class="staff-line" x1="40" y1="192" x2="360" y2="192"/>
-            <text class="clef-glyph" x="46" y="174" font-size="46">&#119074;</text>
+            <line class="staff-line" x1="15" y1="164" x2="385" y2="164"/>
+            <line class="staff-line" x1="15" y1="176" x2="385" y2="176"/>
+            <line class="staff-line" x1="15" y1="188" x2="385" y2="188"/>
+            <line class="staff-line" x1="15" y1="200" x2="385" y2="200"/>
+            <line class="staff-line" x1="15" y1="212" x2="385" y2="212"/>
+            <text class="clef-glyph" x="21" y="209" font-size="60">&#119074;</text>
           </g>
 
           <g id="ledgerGroup"></g>
-          <ellipse class="notehead" id="notehead" cx="220" cy="97" rx="8" ry="5.8" transform="rotate(-18 220 97)"/>
+          <ellipse class="notehead" id="notehead" cx="220" cy="117" rx="8" ry="5.8" transform="rotate(-18 220 117)"/>
         </svg>
       </div>
 
@@ -320,8 +320,8 @@
 (function(){
   var STEP = 6;
   var T_MIN = -5, T_MAX = 13;
-  var TREBLE_BASE = 97; // y of bottom line (t=0)
-  var BASS_BASE = 192;   // y of bottom line (t=0)
+  var TREBLE_BASE = 117; // y of bottom line (t=0)
+  var BASS_BASE = 212;   // y of bottom line (t=0)
   var LETTERS = ['A','B','C','D','E','F','G'];
 
   function buildNotes(anchorLetter, base){

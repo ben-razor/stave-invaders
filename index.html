@@ -80,7 +80,7 @@
   .stat.timer .num { color: var(--red); }
   .stat .cap { font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8468; margin-top: 4px; }
 
-  .staff-wrap { margin: 12px 0 20px; border-radius: 10px; padding: 6px 0; position: relative; }
+  .staff-wrap { margin: 8px 0 14px; border-radius: 10px; padding: 0; position: relative; }
   svg { display: block; margin: 0 auto; width: 100%; max-width: 400px; height: auto; }
 
   .staff-group { transition: opacity 0.18s ease; }
@@ -91,9 +91,6 @@
   .brace-bar { stroke: var(--ink); fill: var(--ink); }
   .ledger-line { stroke: var(--ink); stroke-width: 1.6; }
   .notehead { fill: var(--paper); stroke: var(--ink); stroke-width: 2.2; }
-
-  .staff-wrap.flash-correct .notehead { stroke: var(--green); }
-  .staff-wrap.flash-wrong .notehead { stroke: var(--red); }
 
   .keys { display: flex; gap: 6px; justify-content: center; }
   .key-btn {
@@ -120,15 +117,18 @@
   .hidden { display: none !important; }
 
   @media (max-width: 480px) {
-    .app { padding: 8px 6px 16px; }
-    .card { padding: 10px 8px 14px; }
+    html, body { align-items: flex-start; justify-content: flex-start; display: block; }
+    .app { max-width: 100%; }
+    .card { border-radius: 0; box-shadow: none; }
+    .app { padding: 4px 3px 10px; }
+    .card { padding: 6px 5px 10px; }
     .eyebrow { display: none; }
-    h1 { font-size: 20px; margin: 0 0 8px; }
+    h1 { font-size: 19px; margin: 0 0 6px; }
     .stats { margin-bottom: 2px; }
     .stat .num { font-size: 18px; }
     .stat.score .num { font-size: 24px; }
     .stat .cap { font-size: 8px; margin-top: 1px; }
-    .staff-wrap { margin: 2px 0 6px; padding: 2px 0; }
+    .staff-wrap { margin: 0 0 4px; padding: 0; }
     .keys { gap: 4px; }
     .key-btn { padding: 8px 0 5px; }
     .key-btn .letter { font-size: 16px; }
@@ -146,6 +146,7 @@
   <div class="card">
 
     <div id="startScreen" class="start-screen">
+      <p class="desc">Read notes on a full grand staff — treble and bass together, with ledger lines extending up to two lines above and below each staff when needed. Click a key or type Q W E R T Y U.</p>
       <p class="formula">score = notes correct &times; accuracy</p>
 
       <div class="setting-row">
@@ -197,30 +198,30 @@
       </div>
 
       <div class="staff-wrap" id="staffWrap">
-        <svg id="staffSvg" viewBox="0 0 400 280" width="400" height="280">
-          <line class="brace-bar" x1="40" y1="82" x2="40" y2="220" stroke-width="4"/>
-          <line class="brace-bar" x1="360" y1="82" x2="360" y2="220" stroke-width="1.6"/>
+        <svg id="staffSvg" viewBox="0 0 400 240" width="400" height="240">
+          <line class="brace-bar" x1="40" y1="48" x2="40" y2="192" stroke-width="4"/>
+          <line class="brace-bar" x1="360" y1="48" x2="360" y2="192" stroke-width="1.6"/>
 
           <g class="staff-group" id="trebleGroup">
-            <line class="staff-line" x1="46" y1="82" x2="356" y2="82"/>
-            <line class="staff-line" x1="46" y1="94" x2="356" y2="94"/>
-            <line class="staff-line" x1="46" y1="106" x2="356" y2="106"/>
-            <line class="staff-line" x1="46" y1="118" x2="356" y2="118"/>
-            <line class="staff-line" x1="46" y1="130" x2="356" y2="130"/>
-            <text class="clef-glyph" x="46" y="138" font-size="64">&#119070;</text>
+            <line class="staff-line" x1="40" y1="49" x2="360" y2="49"/>
+            <line class="staff-line" x1="40" y1="61" x2="360" y2="61"/>
+            <line class="staff-line" x1="40" y1="73" x2="360" y2="73"/>
+            <line class="staff-line" x1="40" y1="85" x2="360" y2="85"/>
+            <line class="staff-line" x1="40" y1="97" x2="360" y2="97"/>
+            <text class="clef-glyph" x="46" y="105" font-size="64">&#119070;</text>
           </g>
 
           <g class="staff-group" id="bassGroup">
-            <line class="staff-line" x1="46" y1="172" x2="356" y2="172"/>
-            <line class="staff-line" x1="46" y1="184" x2="356" y2="184"/>
-            <line class="staff-line" x1="46" y1="196" x2="356" y2="196"/>
-            <line class="staff-line" x1="46" y1="208" x2="356" y2="208"/>
-            <line class="staff-line" x1="46" y1="220" x2="356" y2="220"/>
-            <text class="clef-glyph" x="46" y="202" font-size="46">&#119074;</text>
+            <line class="staff-line" x1="40" y1="144" x2="360" y2="144"/>
+            <line class="staff-line" x1="40" y1="156" x2="360" y2="156"/>
+            <line class="staff-line" x1="40" y1="168" x2="360" y2="168"/>
+            <line class="staff-line" x1="40" y1="180" x2="360" y2="180"/>
+            <line class="staff-line" x1="40" y1="192" x2="360" y2="192"/>
+            <text class="clef-glyph" x="46" y="174" font-size="46">&#119074;</text>
           </g>
 
           <g id="ledgerGroup"></g>
-          <ellipse class="notehead" id="notehead" cx="220" cy="130" rx="8" ry="5.8" transform="rotate(-18 220 130)"/>
+          <ellipse class="notehead" id="notehead" cx="220" cy="97" rx="8" ry="5.8" transform="rotate(-18 220 97)"/>
         </svg>
       </div>
 
@@ -255,8 +256,8 @@
 (function(){
   var STEP = 6;
   var T_MIN = -5, T_MAX = 13;
-  var TREBLE_BASE = 130; // y of bottom line (t=0)
-  var BASS_BASE = 220;   // y of bottom line (t=0)
+  var TREBLE_BASE = 97; // y of bottom line (t=0)
+  var BASS_BASE = 192;   // y of bottom line (t=0)
   var LETTERS = ['A','B','C','D','E','F','G'];
 
   function buildNotes(anchorLetter, base){
@@ -294,14 +295,27 @@
   var correctNum = document.getElementById('correctNum');
   var totalNum = document.getElementById('totalNum');
   var timerNum = document.getElementById('timerNum');
-  var notehead = document.getElementById('notehead');
-  var ledgerGroup = document.getElementById('ledgerGroup');
   var staffWrap = document.getElementById('staffWrap');
   var keys = document.getElementById('keys');
+  var notehead = document.getElementById('notehead');
+  var ledgerGroup = document.getElementById('ledgerGroup');
   var trebleGroup = document.getElementById('trebleGroup');
   var bassGroup = document.getElementById('bassGroup');
-
   var SVGNS = 'http://www.w3.org/2000/svg';
+
+  function clearLedgers(){
+    while(ledgerGroup.firstChild) ledgerGroup.removeChild(ledgerGroup.firstChild);
+  }
+
+  function addLedgerLine(y){
+    var line = document.createElementNS(SVGNS, 'line');
+    line.setAttribute('class', 'ledger-line');
+    line.setAttribute('x1', 205);
+    line.setAttribute('x2', 235);
+    line.setAttribute('y1', y);
+    line.setAttribute('y2', y);
+    ledgerGroup.appendChild(line);
+  }
 
   document.getElementById('clefGroup').addEventListener('click', function(e){
     var btn = e.target.closest('.pill');
@@ -365,20 +379,6 @@
     return clefMode;
   }
 
-  function clearLedgers(){
-    while(ledgerGroup.firstChild) ledgerGroup.removeChild(ledgerGroup.firstChild);
-  }
-
-  function addLedgerLine(y){
-    var line = document.createElementNS(SVGNS, 'line');
-    line.setAttribute('class', 'ledger-line');
-    line.setAttribute('x1', 205);
-    line.setAttribute('x2', 235);
-    line.setAttribute('y1', y);
-    line.setAttribute('y2', y);
-    ledgerGroup.appendChild(line);
-  }
-
   function nextNote(){
     var clef = pickClef();
     var pool = clef === 'treble' ? TREBLE_NOTES : BASS_NOTES;
@@ -402,12 +402,10 @@
 
     clearLedgers();
     for(var i = 1; i <= current.ledgerBelow; i++){
-      var tb = -2 * i;
-      addLedgerLine(base - tb * STEP);
+      addLedgerLine(base - (-2 * i) * STEP);
     }
     for(var j = 1; j <= current.ledgerAbove; j++){
-      var ta = 8 + 2 * j;
-      addLedgerLine(base - ta * STEP);
+      addLedgerLine(base - (8 + 2 * j) * STEP);
     }
   }
 
@@ -415,24 +413,13 @@
     if(!running) return;
     total++;
     var isCorrect = letter === current.name;
-    if(isCorrect){
-      correct++;
-      flash('correct');
-    } else {
-      flash('wrong');
-    }
+    if(isCorrect) correct++;
     updateScoreLabels();
     if(btnEl){
       btnEl.classList.add('pressed');
       setTimeout(function(){ btnEl.classList.remove('pressed'); }, 120);
     }
     nextNote();
-  }
-
-  function flash(kind){
-    var cls = kind === 'correct' ? 'flash-correct' : 'flash-wrong';
-    staffWrap.classList.add(cls);
-    setTimeout(function(){ staffWrap.classList.remove(cls); }, 180);
   }
 
   keys.addEventListener('click', function(e){

@@ -12,7 +12,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Stave Invaders">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Noto+Music&display=swap');
 
   :root{
     --bg: #16241c;
@@ -96,11 +96,11 @@
   .staff-group { transition: opacity 0.18s ease; }
   .staff-group.dim { opacity: 0.28; }
 
-  .clef-glyph { fill: var(--ink); font-family: serif; }
-  .staff-line { stroke: var(--ink); stroke-width: 1.6; }
+  .clef-glyph { fill: var(--ink); font-family: 'Noto Music', serif; }
+  .staff-line { stroke: var(--ink); stroke-width: 2; }
   .brace-bar { stroke: var(--ink); fill: var(--ink); }
-  .ledger-line { stroke: var(--ink); stroke-width: 1.6; }
-  .notehead { fill: var(--paper); stroke: var(--ink); stroke-width: 2.2; }
+  .ledger-line { stroke: var(--ink); stroke-width: 2; }
+  .notehead { fill: var(--paper); stroke: var(--ink); stroke-width: 2.4; }
 
   .keys { display: flex; gap: 0; justify-content: center; }
   .key-btn {
@@ -234,30 +234,30 @@
       </div>
 
       <div class="staff-wrap" id="staffWrap">
-        <svg id="staffSvg" viewBox="0 0 400 280" width="400" height="280">
-          <line class="brace-bar" x1="15" y1="68" x2="15" y2="212" stroke-width="4"/>
-          <line class="brace-bar" x1="385" y1="68" x2="385" y2="212" stroke-width="1.6"/>
+        <svg id="staffSvg" viewBox="0 0 400 310" width="400" height="310">
+          <line class="brace-bar" x1="15" y1="68" x2="15" y2="252" stroke-width="4"/>
+          <line class="brace-bar" x1="385" y1="68" x2="385" y2="252" stroke-width="1.6"/>
 
           <g class="staff-group" id="trebleGroup">
             <line class="staff-line" x1="15" y1="69" x2="385" y2="69"/>
-            <line class="staff-line" x1="15" y1="81" x2="385" y2="81"/>
-            <line class="staff-line" x1="15" y1="93" x2="385" y2="93"/>
-            <line class="staff-line" x1="15" y1="105" x2="385" y2="105"/>
+            <line class="staff-line" x1="15" y1="85" x2="385" y2="85"/>
+            <line class="staff-line" x1="15" y1="101" x2="385" y2="101"/>
             <line class="staff-line" x1="15" y1="117" x2="385" y2="117"/>
-            <text class="clef-glyph" x="21" y="112" font-size="60">&#119070;</text>
+            <line class="staff-line" x1="15" y1="133" x2="385" y2="133"/>
+            <text class="clef-glyph" x="21" y="130" font-size="58">&#119070;</text>
           </g>
 
           <g class="staff-group" id="bassGroup">
-            <line class="staff-line" x1="15" y1="164" x2="385" y2="164"/>
-            <line class="staff-line" x1="15" y1="176" x2="385" y2="176"/>
             <line class="staff-line" x1="15" y1="188" x2="385" y2="188"/>
-            <line class="staff-line" x1="15" y1="200" x2="385" y2="200"/>
-            <line class="staff-line" x1="15" y1="212" x2="385" y2="212"/>
-            <text class="clef-glyph" x="21" y="209" font-size="60">&#119074;</text>
+            <line class="staff-line" x1="15" y1="204" x2="385" y2="204"/>
+            <line class="staff-line" x1="15" y1="220" x2="385" y2="220"/>
+            <line class="staff-line" x1="15" y1="236" x2="385" y2="236"/>
+            <line class="staff-line" x1="15" y1="252" x2="385" y2="252"/>
+            <text class="clef-glyph" x="21" y="241" font-size="58">&#119074;</text>
           </g>
 
           <g id="ledgerGroup"></g>
-          <ellipse class="notehead" id="notehead" cx="220" cy="117" rx="8" ry="5.8" transform="rotate(-18 220 117)"/>
+          <ellipse class="notehead" id="notehead" cx="220" cy="133" rx="9" ry="6.5" transform="rotate(-18 220 133)"/>
         </svg>
       </div>
 
@@ -318,10 +318,10 @@
 
 <script>
 (function(){
-  var STEP = 6;
+  var STEP = 8;
   var T_MIN = -5, T_MAX = 13;
-  var TREBLE_BASE = 117; // y of bottom line (t=0)
-  var BASS_BASE = 212;   // y of bottom line (t=0)
+  var TREBLE_BASE = 133; // y of bottom line (t=0)
+  var BASS_BASE = 252;   // y of bottom line (t=0)
   var LETTERS = ['A','B','C','D','E','F','G'];
 
   function buildNotes(anchorLetter, base){
@@ -398,8 +398,8 @@
   function addLedgerLine(y){
     var line = document.createElementNS(SVGNS, 'line');
     line.setAttribute('class', 'ledger-line');
-    line.setAttribute('x1', 205);
-    line.setAttribute('x2', 235);
+    line.setAttribute('x1', 203);
+    line.setAttribute('x2', 237);
     line.setAttribute('y1', y);
     line.setAttribute('y2', y);
     ledgerGroup.appendChild(line);

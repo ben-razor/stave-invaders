@@ -180,12 +180,14 @@
   .ledger-line { stroke: var(--ink); stroke-width: 2; }
   .notehead { fill: var(--paper); stroke: var(--ink); stroke-width: 2.4; }
 
-  .keys { display: flex; gap: 0; justify-content: center; touch-action: manipulation; }
+  .keys { display: flex; gap: 0; justify-content: center; }
   .key-btn {
     flex: 1; min-width: 0; max-width: 72px; background: #fffdf7; border: 1.5px solid var(--paper-line);
     border-radius: 0 0 8px 8px; padding: 45px 0 36px; cursor: pointer;
     transition: transform 0.08s ease, background 0.12s ease, border-color 0.12s ease;
     display: flex; flex-direction: column; align-items: center;
+    touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+    user-select: none; -webkit-user-select: none;
   }
   .key-btn:not(:first-child) { margin-left: -1.5px; }
   .key-btn:hover { border-color: var(--gold-dim); position: relative; z-index: 1; }
@@ -750,9 +752,10 @@
     nextNote();
   }
 
-  keys.addEventListener('click', function(e){
+  keys.addEventListener('pointerdown', function(e){
     var btn = e.target.closest('.key-btn');
     if(!btn) return;
+    e.preventDefault();
     submitAnswer(btn.dataset.note, btn);
   });
 

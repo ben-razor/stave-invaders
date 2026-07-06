@@ -136,7 +136,7 @@
     box-shadow: 0 20px 50px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.05);
   }
 
-  .start-screen, #gameScreen, .end-screen, .stats-screen { width: 100%; box-sizing: border-box; }
+  .start-screen, #gameScreen, .end-screen, .stats-screen, .mistakes-screen { width: 100%; box-sizing: border-box; }
 
   .start-screen p.desc { color: #5b5645; font-size: 14px; line-height: 1.55; text-align: center; margin: 0 0 20px; }
   .start-screen p.formula { color: #8a8468; font-size: 12px; text-align: center; margin: -8px 0 20px; font-family: 'IBM Plex Mono', monospace; }
@@ -235,6 +235,8 @@
   .btn-row { display: flex; gap: 10px; margin-top: 24px; }
   .btn-row .start-btn { margin-top: 0; }
   .secondary-btn { background: transparent; border: 1.5px solid var(--paper-line); color: var(--ink); }
+  .secondary-btn:disabled { opacity: 0.4; cursor: default; }
+  .secondary-btn:disabled:hover { background: transparent; }
   .secondary-btn:hover { background: rgba(0,0,0,0.04); }
 
   .stats-screen h2 {
@@ -250,6 +252,22 @@
   .chart-dot { fill: var(--gold); }
   .chart-axis { stroke: var(--paper-line); stroke-width: 1; }
   .chart-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; fill: #9c9678; }
+
+  .mistakes-title {
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; text-align: center;
+    margin: 0 0 16px; color: var(--ink);
+  }
+  .mistakes-empty { text-align: center; color: #8a8468; font-size: 13px; padding: 10px; }
+  .mistake-info { display: flex; justify-content: center; gap: 30px; margin: 10px 0 14px; }
+  .mistake-row { display: flex; flex-direction: column; align-items: center; }
+  .mistake-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.1em; color: #8a8468; margin-bottom: 3px; }
+  .mistake-value { font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px; }
+  .mistake-wrong { color: var(--orange); }
+  .mistake-correct { color: var(--green); }
+  .mistake-nav { display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .nav-btn { padding: 8px 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; border-radius: 8px; }
+  .nav-btn:disabled { opacity: 0.35; cursor: default; }
+  .mistake-counter { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8a8468; min-width: 42px; text-align: center; }
 </style>
 </head>
 <body>
@@ -365,6 +383,62 @@
         <button class="start-btn" id="againBtn">Play Again</button>
         <button class="start-btn secondary-btn" id="statsLinkBtn2">View Stats</button>
       </div>
+      <button class="start-btn secondary-btn" id="reviewMistakesBtn" style="margin-top:10px;">Review Mistakes</button>
+    </div>
+
+    <div id="mistakesScreen" class="mistakes-screen hidden">
+      <h2 class="mistakes-title" id="mistakesTitle">Review Mistakes</h2>
+
+      <div id="mistakesEmpty" class="mistakes-empty hidden">No mistakes this round — nice reading!</div>
+
+      <div id="mistakesBrowser" class="hidden">
+        <div class="staff-wrap">
+          <svg id="reviewSvg" viewBox="0 0 400 310" width="400" height="310">
+            <line class="brace-bar" x1="15" y1="68" x2="15" y2="252" stroke-width="4"/>
+            <line class="brace-bar" x1="385" y1="68" x2="385" y2="252" stroke-width="1.6"/>
+
+            <g class="staff-group" id="reviewTrebleGroup">
+              <line class="staff-line" x1="15" y1="69" x2="385" y2="69"/>
+              <line class="staff-line" x1="15" y1="85" x2="385" y2="85"/>
+              <line class="staff-line" x1="15" y1="101" x2="385" y2="101"/>
+              <line class="staff-line" x1="15" y1="117" x2="385" y2="117"/>
+              <line class="staff-line" x1="15" y1="133" x2="385" y2="133"/>
+              <text class="clef-glyph" x="21" y="130" font-size="58">&#119070;</text>
+            </g>
+
+            <g class="staff-group" id="reviewBassGroup">
+              <line class="staff-line" x1="15" y1="188" x2="385" y2="188"/>
+              <line class="staff-line" x1="15" y1="204" x2="385" y2="204"/>
+              <line class="staff-line" x1="15" y1="220" x2="385" y2="220"/>
+              <line class="staff-line" x1="15" y1="236" x2="385" y2="236"/>
+              <line class="staff-line" x1="15" y1="252" x2="385" y2="252"/>
+              <text class="clef-glyph" x="21" y="241" font-size="58">&#119074;</text>
+            </g>
+
+            <g id="reviewLedgerGroup"></g>
+            <ellipse class="notehead" id="reviewNotehead" cx="220" cy="133" rx="9" ry="6.5" transform="rotate(-18 220 133)"/>
+          </svg>
+        </div>
+
+        <div class="mistake-info">
+          <div class="mistake-row">
+            <span class="mistake-label">You pressed</span>
+            <span class="mistake-value mistake-wrong" id="mistakePressed">C</span>
+          </div>
+          <div class="mistake-row">
+            <span class="mistake-label">Correct note</span>
+            <span class="mistake-value mistake-correct" id="mistakeCorrect">D</span>
+          </div>
+        </div>
+
+        <div class="mistake-nav">
+          <button class="secondary-btn nav-btn" id="mistakePrevBtn">&larr; Prev</button>
+          <span class="mistake-counter" id="mistakeCounter">1 / 3</span>
+          <button class="secondary-btn nav-btn" id="mistakeNextBtn">Next &rarr;</button>
+        </div>
+      </div>
+
+      <button class="start-btn" id="mistakesBackBtn" style="margin-top:20px;">Back</button>
     </div>
 
     <div id="statsScreen" class="stats-screen hidden">
@@ -431,6 +505,8 @@
   var timerId = null;
   var running = false;
   var clefMode = 'both';
+  var mistakes = [];
+  var mistakeIndex = 0;
 
   var startScreen = document.getElementById('startScreen');
   var gameScreen = document.getElementById('gameScreen');
@@ -445,6 +521,21 @@
   var ledgerGroup = document.getElementById('ledgerGroup');
   var trebleGroup = document.getElementById('trebleGroup');
   var bassGroup = document.getElementById('bassGroup');
+  var mistakesScreen = document.getElementById('mistakesScreen');
+  var reviewMistakesBtn = document.getElementById('reviewMistakesBtn');
+  var mistakesBackBtn = document.getElementById('mistakesBackBtn');
+  var mistakesEmpty = document.getElementById('mistakesEmpty');
+  var mistakesBrowser = document.getElementById('mistakesBrowser');
+  var mistakesTitle = document.getElementById('mistakesTitle');
+  var reviewTrebleGroup = document.getElementById('reviewTrebleGroup');
+  var reviewBassGroup = document.getElementById('reviewBassGroup');
+  var reviewLedgerGroup = document.getElementById('reviewLedgerGroup');
+  var reviewNotehead = document.getElementById('reviewNotehead');
+  var mistakePressed = document.getElementById('mistakePressed');
+  var mistakeCorrect = document.getElementById('mistakeCorrect');
+  var mistakeCounter = document.getElementById('mistakeCounter');
+  var mistakePrevBtn = document.getElementById('mistakePrevBtn');
+  var mistakeNextBtn = document.getElementById('mistakeNextBtn');
   var SVGNS = 'http://www.w3.org/2000/svg';
   var statsScreen = document.getElementById('statsScreen');
   var statsBody = document.getElementById('statsBody');
@@ -509,6 +600,7 @@
 
   function startGame(){
     correct = 0; total = 0; timeLeft = duration; running = true;
+    mistakes = [];
     updateScoreLabels();
     updateTimerLabel();
     startScreen.classList.add('hidden');
@@ -633,7 +725,18 @@
     if(!running) return;
     total++;
     var isCorrect = letter === current.name;
-    if(isCorrect) correct++;
+    if(isCorrect){
+      correct++;
+    } else {
+      mistakes.push({
+        clef: current.clef,
+        y: current.y,
+        ledgerBelow: current.ledgerBelow,
+        ledgerAbove: current.ledgerAbove,
+        correctName: current.name,
+        pressedName: letter
+      });
+    }
     playNote(letter);
     updateScoreLabels();
     if(btnEl){
@@ -683,7 +786,93 @@
       accuracy: total > 0 ? correct / total : 0,
       score: finalScore
     });
+
+    reviewMistakesBtn.textContent = mistakes.length === 0 ? 'No Mistakes' : 'Review Mistakes (' + mistakes.length + ')';
+    reviewMistakesBtn.disabled = mistakes.length === 0;
   }
+
+  function openMistakes(){
+    endScreen.classList.add('hidden');
+    mistakesScreen.classList.remove('hidden');
+
+    if(mistakes.length === 0){
+      mistakesTitle.textContent = 'Review Mistakes';
+      mistakesEmpty.classList.remove('hidden');
+      mistakesBrowser.classList.add('hidden');
+    } else {
+      mistakesTitle.textContent = 'Review Mistakes (' + mistakes.length + ')';
+      mistakesEmpty.classList.add('hidden');
+      mistakesBrowser.classList.remove('hidden');
+      mistakeIndex = 0;
+      renderMistake();
+    }
+  }
+
+  reviewMistakesBtn.addEventListener('click', openMistakes);
+
+  mistakesBackBtn.addEventListener('click', function(){
+    mistakesScreen.classList.add('hidden');
+    endScreen.classList.remove('hidden');
+  });
+
+  function renderMistake(){
+    var m = mistakes[mistakeIndex];
+    if(!m) return;
+
+    if(m.clef === 'treble'){
+      reviewTrebleGroup.classList.remove('dim');
+      reviewBassGroup.classList.add('dim');
+    } else {
+      reviewBassGroup.classList.remove('dim');
+      reviewTrebleGroup.classList.add('dim');
+    }
+
+    reviewNotehead.setAttribute('cy', m.y);
+    reviewNotehead.setAttribute('transform', 'rotate(-18 220 ' + m.y + ')');
+
+    while(reviewLedgerGroup.firstChild) reviewLedgerGroup.removeChild(reviewLedgerGroup.firstChild);
+    var base = m.clef === 'treble' ? TREBLE_BASE : BASS_BASE;
+    for(var i = 1; i <= m.ledgerBelow; i++){
+      var lineBelow = document.createElementNS(SVGNS, 'line');
+      lineBelow.setAttribute('class', 'ledger-line');
+      lineBelow.setAttribute('x1', 203);
+      lineBelow.setAttribute('x2', 237);
+      var yBelow = base - (-2 * i) * STEP;
+      lineBelow.setAttribute('y1', yBelow);
+      lineBelow.setAttribute('y2', yBelow);
+      reviewLedgerGroup.appendChild(lineBelow);
+    }
+    for(var j = 1; j <= m.ledgerAbove; j++){
+      var lineAbove = document.createElementNS(SVGNS, 'line');
+      lineAbove.setAttribute('class', 'ledger-line');
+      lineAbove.setAttribute('x1', 203);
+      lineAbove.setAttribute('x2', 237);
+      var yAbove = base - (8 + 2 * j) * STEP;
+      lineAbove.setAttribute('y1', yAbove);
+      lineAbove.setAttribute('y2', yAbove);
+      reviewLedgerGroup.appendChild(lineAbove);
+    }
+
+    mistakePressed.textContent = m.pressedName;
+    mistakeCorrect.textContent = m.correctName;
+    mistakeCounter.textContent = (mistakeIndex + 1) + ' / ' + mistakes.length;
+    mistakePrevBtn.disabled = mistakeIndex === 0;
+    mistakeNextBtn.disabled = mistakeIndex === mistakes.length - 1;
+  }
+
+  mistakePrevBtn.addEventListener('click', function(){
+    if(mistakeIndex > 0){
+      mistakeIndex--;
+      renderMistake();
+    }
+  });
+
+  mistakeNextBtn.addEventListener('click', function(){
+    if(mistakeIndex < mistakes.length - 1){
+      mistakeIndex++;
+      renderMistake();
+    }
+  });
 
   function syncPillGroup(id, val){
     document.querySelectorAll('#' + id + ' .pill').forEach(function(p){

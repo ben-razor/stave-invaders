@@ -314,6 +314,8 @@
     </div>
 
     <div id="gameScreen" class="hidden">
+      <input id="focusTrap" type="text" readonly inputmode="none" aria-hidden="true" tabindex="-1"
+        style="position:absolute; opacity:0; pointer-events:none; width:1px; height:1px; left:-9999px;">
       <div class="stats">
         <div class="stat score">
           <div class="num" id="scoreNum">0.0</div>
@@ -512,6 +514,7 @@
 
   var startScreen = document.getElementById('startScreen');
   var gameScreen = document.getElementById('gameScreen');
+  var focusTrap = document.getElementById('focusTrap');
   var endScreen = document.getElementById('endScreen');
   var scoreNum = document.getElementById('scoreNum');
   var correctNum = document.getElementById('correctNum');
@@ -611,6 +614,7 @@
     nextNote();
     clearInterval(timerId);
     timerId = setInterval(tick, 1000);
+    focusTrap.focus();
   }
 
   function tick(){
@@ -757,6 +761,10 @@
     if(!btn) return;
     e.preventDefault();
     submitAnswer(btn.dataset.note, btn);
+  });
+
+  focusTrap.addEventListener('blur', function(){
+    if(running) setTimeout(function(){ focusTrap.focus(); }, 0);
   });
 
   document.addEventListener('keydown', function(e){

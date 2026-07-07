@@ -911,6 +911,12 @@
     return Math.ceil(max / 10) * 10;
   }
 
+  function niceFloor(min){
+    if(min <= 0) return 0;
+    if(min < 10) return Math.floor(min / 2) * 2;
+    return Math.floor(min / 10) * 10;
+  }
+
   function renderStats(){
     var sessions = loadSessions()
       .filter(function(s){ return s.clef === statsClefMode && String(s.duration) === String(statsDuration); })
@@ -923,15 +929,19 @@
 
     var scores = sessions.map(function(s){ return s.score; });
     var best = Math.max.apply(null, scores);
+    var worst = Math.min.apply(null, scores);
     var avg = scores.reduce(function(a, b){ return a + b; }, 0) / scores.length;
     var latest = scores[scores.length - 1];
 
     var w = 400, h = 150, padL = 22, padR = 8, padT = 12, padB = 16;
     var yMax = niceCeiling(best);
+    var yMin = niceFloor(worst);
+    if(yMax <= yMin) yMax = yMin + (yMin < 10 ? 2 : 10);
+    var yRange = yMax - yMin;
     var n = scores.length;
     var points = scores.map(function(v, i){
       var x = n === 1 ? (padL + (w - padL - padR) / 2) : padL + i * (w - padL - padR) / (n - 1);
-      var y = padT + (1 - v / yMax) * (h - padT - padB);
+      var y = padT + (1 - (v - yMin) / yRange) * (h - padT - padB);
       return [x, y];
     });
     var pathD = points.map(function(p, i){
@@ -945,7 +955,7 @@
       + '<line class="chart-axis" x1="' + padL + '" y1="' + padT + '" x2="' + (w - padR) + '" y2="' + padT + '" stroke-dasharray="2 2"/>'
       + '<line class="chart-axis" x1="' + padL + '" y1="' + (h - padB) + '" x2="' + (w - padR) + '" y2="' + (h - padB) + '"/>'
       + '<text class="chart-label" x="0" y="' + (padT + 3) + '">' + yMax + '</text>'
-      + '<text class="chart-label" x="6" y="' + (h - padB + 3) + '">0</text>'
+      + '<text class="chart-label" x="0" y="' + (h - padB + 3) + '">' + yMin + '</text>'
       + '<path class="chart-line" d="' + pathD + '"/>'
       + dots
       + '</svg>';

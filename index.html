@@ -883,7 +883,10 @@
     });
   }
 
-  function openStats(){
+  var statsOrigin = 'start';
+
+  function openStats(origin){
+    statsOrigin = origin;
     statsClefMode = clefMode;
     statsDuration = duration;
     syncPillGroup('statsClefGroup', statsClefMode);
@@ -948,12 +951,16 @@
       + '</div>' + svg;
   }
 
-  document.getElementById('statsLinkBtn').addEventListener('click', openStats);
-  document.getElementById('statsLinkBtn2').addEventListener('click', openStats);
+  document.getElementById('statsLinkBtn').addEventListener('click', function(){ openStats('start'); });
+  document.getElementById('statsLinkBtn2').addEventListener('click', function(){ openStats('end'); });
 
   document.getElementById('statsBackBtn').addEventListener('click', function(){
     statsScreen.classList.add('hidden');
-    startScreen.classList.remove('hidden');
+    if(statsOrigin === 'end'){
+      endScreen.classList.remove('hidden');
+    } else {
+      startScreen.classList.remove('hidden');
+    }
   });
 
   document.getElementById('statsClefGroup').addEventListener('click', function(e){

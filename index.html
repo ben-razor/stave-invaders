@@ -611,6 +611,16 @@
     startScreen.classList.add('hidden');
     endScreen.classList.add('hidden');
     gameScreen.classList.remove('hidden');
+    var ctx=getAudioCtx();
+    if(ctx){
+      var osc=ctx.createOscillator();
+      var gain=ctx.createGain();
+      gain.gain.value=0.00001;
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime+0.02);
+    }
     nextNote();
     clearInterval(timerId);
     timerId = setInterval(tick, 1000);
@@ -655,6 +665,8 @@
     var note = pool[idx];
     current = {name: note.name, t: note.t, y: note.y, ledgerBelow: note.ledgerBelow, ledgerAbove: note.ledgerAbove, clef: clef};
 
+    playNote(current.name);
+
     if(clef === 'treble'){
       trebleGroup.classList.remove('dim');
       bassGroup.classList.add('dim');
@@ -676,6 +688,8 @@
   }
 
   var audioCtx = null;
+  var masterGain = null;
+  var masterFilter = null;
   var NOTE_FREQ = {C: 261.63, D: 293.66, E: 329.63, F: 349.23, G: 392.00, A: 440.00, B: 493.88};
 
   function getAudioCtx(){
@@ -683,48 +697,63 @@
       var AC = window.AudioContext || window.webkitAudioContext;
       if(!AC) return null;
       audioCtx = new AC();
+
+      masterGain = audioCtx.createGain();
+      masterGain.gain.value = 0.45;
+
+      masterFilter = audioCtx.createBiquadFilter();
+      masterFilter.type = 'lowpass';
+      masterFilter.frequency.value = 5200;
+
+      masterGain.connect(masterFilter);
+      masterFilter.connect(audioCtx.destination);
+
+      var warm = audioCtx.createOscillator();
+      var g = audioCtx.createGain();
+      g.gain.value = 0.000001;
+      warm.connect(g);
+      g.connect(masterGain);
+      noteOsc=audioCtx.createOscillator();
+      noteOsc.type='sine';
+      noteGain=audioCtx.createGain();
+      noteGain.gain.value=0.00001;
+      noteOsc.connect(noteGain);
+      noteGain.connect(masterGain);
+      noteOsc.start();
+
+      warm.start();
+      warm.stop(audioCtx.currentTime + 0.02);
     }
+
     if(audioCtx.state === 'suspended') audioCtx.resume();
     return audioCtx;
   }
 
+  var noteOsc=null;
+  var noteGain=null;
+
   function playNote(letter){
-    try {
-      var ctx = getAudioCtx();
-      if(!ctx) return;
-      var freq = NOTE_FREQ[letter];
-      var now = ctx.currentTime;
-      var dur = 1.1;
+    var ctx=getAudioCtx();
+    if(!ctx) return;
 
-      var master = ctx.createGain();
-      master.gain.setValueAtTime(0.0001, now);
-      master.gain.exponentialRampToValueAtTime(0.5, now + 0.005);
-      master.gain.exponentialRampToValueAtTime(0.0001, now + dur);
-
-      var filter = ctx.createBiquadFilter();
-      filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(5200, now);
-      filter.frequency.exponentialRampToValueAtTime(900, now + dur);
-
-      master.connect(filter);
-      filter.connect(ctx.destination);
-
-      // additive harmonic series, all sharing the same envelope, for a single unified tone
-      var harmonics = [[1, 0.55], [2, 0.22], [3, 0.12], [4, 0.06], [5, 0.03]];
-      harmonics.forEach(function(h){
-        var osc = ctx.createOscillator();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq * h[0], now);
-        var partialGain = ctx.createGain();
-        partialGain.gain.value = h[1];
-        osc.connect(partialGain);
-        partialGain.connect(master);
-        osc.start(now);
-        osc.stop(now + dur + 0.05);
-      });
-    } catch(e){
-      // Web Audio unavailable — fail silently
+    if(!noteOsc){
+      noteOsc=ctx.createOscillator();
+      noteOsc.type='sine';
+      noteGain=ctx.createGain();
+      noteGain.gain.value=0.00001;
+      noteOsc.connect(noteGain);
+      noteGain.connect(masterGain);
+      noteOsc.start();
     }
+
+    var now=ctx.currentTime;
+    noteOsc.frequency.cancelScheduledValues(now);
+    noteOsc.frequency.setValueAtTime(NOTE_FREQ[letter],now);
+
+    noteGain.gain.cancelScheduledValues(now);
+    noteGain.gain.setValueAtTime(0.00001,now);
+    noteGain.gain.linearRampToValueAtTime(1.0,now+0.0005);
+    noteGain.gain.exponentialRampToValueAtTime(0.00001,now+0.35);
   }
 
   function submitAnswer(letter, btnEl){
@@ -743,7 +772,6 @@
         pressedName: letter
       });
     }
-    playNote(letter);
     updateScoreLabels();
     if(btnEl){
       btnEl.classList.add('pressed');

@@ -752,6 +752,18 @@ function getLowPassFreq(noteFreq) {
   return cutoff;
 }
 
+function getNoteDuration(freq) {
+  var lowG = noteFrequency('G', 2);  // ~98 Hz
+  var subFloor = 24;                 // deep low end
+  var baseDur = 0.5;
+  var maxDur = 1.5;                
+
+  if (freq >= lowG) return baseDur;
+
+  var normalized = Math.min(1, (lowG - freq) / (lowG - subFloor));
+  return baseDur + normalized * (maxDur - baseDur);
+}
+
 function equalLoudnessCompensation(freq) {
   var lowG = noteFrequency('G', 2);   // ~98 Hz, bottom line of the bass clef
   var maxFreq = 1000;                 // D6-ish, upper attenuation target
@@ -774,7 +786,7 @@ function playNote(letter, octave){
     if(ctx.state === 'suspended') ctx.resume();
 
     var freq = noteFrequency(letter, octave);
-    var dur = 1.1;
+    var dur = getNoteDuration(freq);
     var now = ctx.currentTime + 0.03;
 
     var compensation = equalLoudnessCompensation(freq);

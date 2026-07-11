@@ -481,23 +481,26 @@
   var TREBLE_BASE = 133; // y of bottom line (t=0)
   var BASS_BASE = 252;   // y of bottom line (t=0)
   var LETTERS = ['A','B','C','D','E','F','G'];
+  var C_ORDER = ['C','D','E','F','G','A','B'];
 
-  function buildNotes(anchorLetter, base){
+  function buildNotes(anchorLetter, anchorOctave, base){
     var startIdx = LETTERS.indexOf(anchorLetter);
+    var anchorAbsolute = anchorOctave * 7 + C_ORDER.indexOf(anchorLetter);
     var arr = [];
     for(var t = T_MIN; t <= T_MAX; t++){
       var idx = ((startIdx + t) % 7 + 7) % 7;
       var name = LETTERS[idx];
+      var octave = Math.floor((anchorAbsolute + t) / 7);
       var y = base - t * STEP;
       var below = t <= -2 ? Math.floor(Math.abs(t) / 2) : 0;
       var above = t >= 10 ? Math.floor((t - 8) / 2) : 0;
-      arr.push({t: t, name: name, y: y, ledgerBelow: below, ledgerAbove: above});
+      arr.push({t: t, name: name, octave: octave, y: y, ledgerBelow: below, ledgerAbove: above});
     }
     return arr;
   }
 
-  var TREBLE_NOTES = buildNotes('E', TREBLE_BASE); // bottom line of treble = E4
-  var BASS_NOTES = buildNotes('G', BASS_BASE);      // bottom line of bass = G2
+  var TREBLE_NOTES = buildNotes('E', 4, TREBLE_BASE); // bottom line of treble = E4
+  var BASS_NOTES = buildNotes('G', 2, BASS_BASE);      // bottom line of bass = G2
 
   var KEY_TO_NOTE = {Z:'C', X:'D', C:'E', V:'F', B:'G', N:'A', M:'B'};
 
@@ -654,7 +657,7 @@
     do { idx = Math.floor(Math.random() * pool.length); }
     while(current && pool[idx].t === current.t && clef === current.clef && pool.length > 1);
     var note = pool[idx];
-    current = {name: note.name, t: note.t, y: note.y, ledgerBelow: note.ledgerBelow, ledgerAbove: note.ledgerAbove, clef: clef};
+    current = {name: note.name, t: note.t, octave: note.octave, y: note.y, ledgerBelow: note.ledgerBelow, ledgerAbove: note.ledgerAbove, clef: clef};
 
     if(clef === 'treble'){
       trebleGroup.classList.remove('dim');
@@ -675,7 +678,7 @@
       addLedgerLine(base - (8 + 2 * j) * STEP);
     }
 
-    playNote(current.name);
+    playNote(current.name, current.octave);
   }
 
   var audioCtx = null;
@@ -684,7 +687,12 @@
   var audioHarmonics = [[1, 0.55], [2, 0.22], [3, 0.12], [4, 0.06], [5, 0.03]];
   var audioPartialGains = [];
   var activeOscillators = [];
-  var NOTE_FREQ = {C: 261.63, D: 293.66, E: 329.63, F: 349.23, G: 392.00, A: 440.00, B: 493.88};
+  var SEMITONE_FROM_C = {C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11};
+
+  function noteFrequency(letter, octave){
+    var midi = (octave + 1) * 12 + SEMITONE_FROM_C[letter];
+    return 440 * Math.pow(2, (midi - 69) / 12);
+  }
 
   function initAudio(){
     if(audioCtx) return audioCtx;
@@ -713,13 +721,13 @@
     return audioCtx;
   }
 
-  function playNote(letter){
+  function playNote(letter, octave){
     try {
       var ctx = initAudio();
       if(!ctx) return;
       if(ctx.state === 'suspended') ctx.resume();
 
-      var freq = NOTE_FREQ[letter];
+      var freq = noteFrequency(letter, octave);
       // small lookahead avoids the very first note getting clipped by AudioContext
       // startup latency when scheduled at exactly currentTime right after creation
       var now = ctx.currentTime + 0.03;

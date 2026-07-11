@@ -718,7 +718,7 @@ function initAudio(){
 function getLowPassFreq(noteFreq) {
   // More aggressive HF reduction as notes get higher
   var minFreq = noteFrequency('C', 2);
-  var maxFreq = noteFrequency('A', 4);
+  var maxFreq = noteFrequency('A', 3);
 
   if (noteFreq <= minFreq) return 12000; // Low notes: completely open
   if (noteFreq >= maxFreq) return 800;   // High notes: heavily filtered

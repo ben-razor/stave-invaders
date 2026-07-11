@@ -682,11 +682,8 @@
   }
 
   var audioCtx = null;
-  var audioMaster = null;
   var audioFilter = null;
   var audioHarmonics = [[1, 0.55], [2, 0.22], [3, 0.12], [4, 0.06], [5, 0.03]];
-  var audioPartialGains = [];
-  var activeOscillators = [];
   var SEMITONE_FROM_C = {C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11};
 
   function noteFrequency(letter, octave){
@@ -700,23 +697,15 @@
     if(!AC) return null;
     audioCtx = new AC();
 
-    // persistent graph: partial gains (fixed harmonic levels) -> master (envelope) -> filter (tone sweep) -> out
-    audioMaster = audioCtx.createGain();
-    audioMaster.gain.value = 0.0001;
-
+    // The only persistent/shared node is a static (non-automated) tone filter.
+    // A fixed filter is safe to share across overlapping notes since it isn't
+    // being retriggered per-note — each note still gets its own full envelope
+    // below, so simultaneous notes can genuinely overlap instead of one
+    // cutting the other off.
     audioFilter = audioCtx.createBiquadFilter();
     audioFilter.type = 'lowpass';
-    audioFilter.frequency.value = 900;
-
-    audioMaster.connect(audioFilter);
+    audioFilter.frequency.value = 3200;
     audioFilter.connect(audioCtx.destination);
-
-    audioPartialGains = audioHarmonics.map(function(h){
-      var g = audioCtx.createGain();
-      g.gain.value = h[1];
-      g.connect(audioMaster);
-      return g;
-    });
 
     return audioCtx;
   }
@@ -728,39 +717,35 @@
       if(ctx.state === 'suspended') ctx.resume();
 
       var freq = noteFrequency(letter, octave);
+      var dur = 1.1;
       // small lookahead avoids the very first note getting clipped by AudioContext
       // startup latency when scheduled at exactly currentTime right after creation
       var now = ctx.currentTime + 0.03;
-      var dur = 1.1;
 
-      // cut off any still-ringing oscillators from the previous note so they can't bleed
-      // into this one — otherwise a quick double-press briefly sounds both pitches at once
-      activeOscillators.forEach(function(osc){
-        try { osc.stop(now); } catch(e){}
-      });
-      activeOscillators = [];
+      // each note gets its own envelope, so rapid or overlapping notes blend
+      // together naturally instead of interrupting each other
+      var envelope = ctx.createGain();
+      envelope.gain.setValueAtTime(0.0001, now);
+      envelope.gain.exponentialRampToValueAtTime(0.5, now + 0.005);
+      envelope.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+      envelope.connect(audioFilter);
 
-      // retrigger the shared envelope for this note
-      audioMaster.gain.cancelScheduledValues(now);
-      audioMaster.gain.setValueAtTime(0.0001, now);
-      audioMaster.gain.exponentialRampToValueAtTime(0.5, now + 0.005);
-      audioMaster.gain.exponentialRampToValueAtTime(0.0001, now + dur);
-
-      audioFilter.frequency.cancelScheduledValues(now);
-      audioFilter.frequency.setValueAtTime(5200, now);
-      audioFilter.frequency.exponentialRampToValueAtTime(900, now + dur);
-
-      // only the oscillators need to be fresh each time — they're single-use by design
-      audioHarmonics.forEach(function(h, i){
+      audioHarmonics.forEach(function(h){
         var osc = ctx.createOscillator();
         osc.type = 'sine';
         osc.frequency.setValueAtTime(freq * h[0], now);
-        osc.connect(audioPartialGains[i]);
+        var partial = ctx.createGain();
+        partial.gain.value = h[1];
+        osc.connect(partial);
+        partial.connect(envelope);
         osc.start(now);
         osc.stop(now + dur + 0.05);
-        osc.onended = function(){ osc.disconnect(); };
-        activeOscillators.push(osc);
+        osc.onended = function(){ osc.disconnect(); partial.disconnect(); };
       });
+
+      setTimeout(function(){
+        try { envelope.disconnect(); } catch(e){}
+      }, (dur + 0.15) * 1000);
     } catch(e){
       // Web Audio unavailable — fail silently
     }

@@ -755,19 +755,15 @@ function getLowPassFreq(noteFreq) {
 function equalLoudnessCompensation(freq) {
   var lowG = noteFrequency('G', 2);   // ~98 Hz, bottom line of the bass clef
   var maxFreq = 1000;                 // D6-ish, upper attenuation target
+  var topGain = 0.6;                  // lowered from 1.0 to leave headroom / avoid distortion
+  var bottomGain = 0.1;
 
-  // At/below low G: full volume, uncompensated. Never boost above 1.0 —
-  // that would push baseGain over headroom and clip/distort.
-  if (freq <= lowG) return 1.0;
+  if (freq <= lowG) return topGain;
+  if (freq >= maxFreq) return bottomGain;
 
-  if (freq >= maxFreq) return 0.1;
-
-  // Steeper curve than before so notes above low G fall off faster,
-  // which shifts perceived balance toward the bass without ever
-  // exceeding unity gain.
   var normalized = (freq - lowG) / (maxFreq - lowG);
-  var attenuation = Math.pow(normalized, 1.8); // was 2.5 — steeper/earlier now
-  return 1.0 - attenuation * 0.9;
+  var attenuation = Math.pow(normalized, 1.8);
+  return topGain - attenuation * (topGain - bottomGain);
 }
 
 // FM playNote — uses pre-initialized voices from the pool

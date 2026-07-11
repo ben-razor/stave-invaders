@@ -718,7 +718,7 @@ function initAudio(){
 function getLowPassFreq(noteFreq) {
   // More aggressive HF reduction as notes get higher
   var minFreq = 50;    // B1 ~ 61.74 Hz
-  var maxFreq = 1500;  // D6 ~ 1174.66 Hz
+  var maxFreq = 1000;  // D6 ~ 1174.66 Hz
   
   if (noteFreq <= minFreq) return 12000; // Low notes: completely open
   if (noteFreq >= maxFreq) return 800;   // High notes: heavily filtered
@@ -727,6 +727,21 @@ function getLowPassFreq(noteFreq) {
   var normalized = (noteFreq - minFreq) / (maxFreq - minFreq);
   var cutoff = 12000 - (12000 - 800) * Math.pow(normalized, 3.0);
   return cutoff;
+}
+
+// Replace the equalLoudnessCompensation function
+function equalLoudnessCompensation(freq) {
+  // Exponential roll-off from ~50 Hz (full volume) to ~1500 Hz (attenuated)
+  var minFreq = 50;    // B1 ~ 61.74 Hz
+  var maxFreq = 1500;  // D6 ~ 1174.66 Hz
+  
+  if (freq <= minFreq) return 1.0;
+  if (freq >= maxFreq) return 0.4;
+  
+  // Exponential curve: starts gently, rolls off more steeply as frequency increases
+  var normalized = (freq - minFreq) / (maxFreq - minFreq);
+  var attenuation = Math.pow(normalized, 2.5); // Power curve for steeper HF roll-off
+  return 1.0 - attenuation * 0.6;
 }
 
 // Modified playNote function
@@ -740,6 +755,9 @@ function playNote(letter, octave){
     var dur = 1.1;
     var now = ctx.currentTime + 0.03;
 
+    var compensation = equalLoudnessCompensation(freq);
+    var baseGain = 0.9 * compensation;
+
     // Set the low-pass filter cutoff based on note frequency
     if(audioFilterLow){
       var cutoffFreq = getLowPassFreq(freq);
@@ -748,7 +766,7 @@ function playNote(letter, octave){
 
     var envelope = ctx.createGain();
     envelope.gain.setValueAtTime(0.0001, now);
-    envelope.gain.exponentialRampToValueAtTime(0.5, now + 0.005);
+    envelope.gain.exponentialRampToValueAtTime(baseGain, now + 0.005);
     envelope.gain.exponentialRampToValueAtTime(0.0001, now + dur);
     envelope.connect(audioFilterLow || audioFilter); // Connect to dynamic filter if available
 

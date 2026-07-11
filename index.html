@@ -754,23 +754,19 @@ function getLowPassFreq(noteFreq) {
 
 function equalLoudnessCompensation(freq) {
   var lowG = noteFrequency('G', 2);   // ~98 Hz, bottom line of the bass clef
-  var subFloor = 24;                  // ~lowest note we'd realistically hit
-  var maxFreq = 1200;                 // D6-ish, upper attenuation target
+  var maxFreq = 1000;                 // D6-ish, upper attenuation target
 
-  // Below low G: boost heavily, more so the lower it gets.
-  // Mobile speakers have poor bass response, so quiet low notes
-  // can vanish entirely without this.
-  if (freq <= lowG) {
-    var boostNormalized = Math.min(1, (lowG - freq) / (lowG - subFloor));
-    var maxBoost = 2.6; // low notes can end up ~2.6x louder than baseline
-    return 1.0 + boostNormalized * (maxBoost - 1.0);
-  }
+  // At/below low G: full volume, uncompensated. Never boost above 1.0 —
+  // that would push baseGain over headroom and clip/distort.
+  if (freq <= lowG) return 1.0;
 
-  // At/above low G: existing gentle-to-steep roll-off toward the top
   if (freq >= maxFreq) return 0.1;
 
+  // Steeper curve than before so notes above low G fall off faster,
+  // which shifts perceived balance toward the bass without ever
+  // exceeding unity gain.
   var normalized = (freq - lowG) / (maxFreq - lowG);
-  var attenuation = Math.pow(normalized, 2.5);
+  var attenuation = Math.pow(normalized, 1.8); // was 2.5 — steeper/earlier now
   return 1.0 - attenuation * 0.9;
 }
 

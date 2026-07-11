@@ -710,6 +710,21 @@
     return audioCtx;
   }
 
+  // Replace the equalLoudnessCompensation function
+  function equalLoudnessCompensation(freq) {
+    // Linear roll-off from ~50 Hz (full volume) to ~1500 Hz (most attenuated)
+    // Clamp to the range
+    var minFreq = 50;    // B1 ~ 61.74 Hz
+    var maxFreq = 1500;  // D6 ~ 1174.66 Hz, with some headroom
+    
+    if (freq <= minFreq) return 1.0;
+    if (freq >= maxFreq) return 0.1;
+    
+    // Linear interpolation: 1.0 at minFreq → 0.45 at maxFreq
+    var t = (freq - minFreq) / (maxFreq - minFreq);
+    return 1.0 - t * 0.9;
+  }
+
   function playNote(letter, octave){
     try {
       var ctx = initAudio();
@@ -717,16 +732,15 @@
       if(ctx.state === 'suspended') ctx.resume();
 
       var freq = noteFrequency(letter, octave);
+      var compensation = equalLoudnessCompensation(freq);
+      var baseGain = 0.9 * compensation;
+      
       var dur = 1.1;
-      // small lookahead avoids the very first note getting clipped by AudioContext
-      // startup latency when scheduled at exactly currentTime right after creation
       var now = ctx.currentTime + 0.03;
 
-      // each note gets its own envelope, so rapid or overlapping notes blend
-      // together naturally instead of interrupting each other
       var envelope = ctx.createGain();
       envelope.gain.setValueAtTime(0.0001, now);
-      envelope.gain.exponentialRampToValueAtTime(0.5, now + 0.005);
+      envelope.gain.exponentialRampToValueAtTime(baseGain, now + 0.005);
       envelope.gain.exponentialRampToValueAtTime(0.0001, now + dur);
       envelope.connect(audioFilter);
 

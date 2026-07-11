@@ -681,18 +681,20 @@
     playNote(current.name, current.octave);
   }
 
-  var audioCtx = null;
-  var audioFilter = null;
-  var audioHarmonics = [[1, 0.55], [2, 0.22], [3, 0.12], [4, 0.06], [5, 0.03]];
-  var SEMITONE_FROM_C = {C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11};
+var audioCtx = null;
+var audioFilter = null;
+var audioFilterLow = null;
+var SEMITONE_FROM_C = {C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11};
 
-  function noteFrequency(letter, octave){
-    var midi = (octave + 1) * 12 + SEMITONE_FROM_C[letter];
-    return 440 * Math.pow(2, (midi - 69) / 12);
-  }
+// Pre-initialized FM voice pool
+var VOICE_COUNT = 8;
+var voices = [];
+var voiceIndex = 0;
 
-// Add a variable low-pass filter alongside the existing fixed one
-var audioFilterLow = null; // Will be dynamically adjusted per note
+function noteFrequency(letter, octave){
+  var midi = (octave + 1) * 12 + SEMITONE_FROM_C[letter];
+  return 440 * Math.pow(2, (midi - 69) / 12);
+}
 
 function initAudio(){
   if(audioCtx) return audioCtx;
@@ -712,39 +714,58 @@ function initAudio(){
   audioFilterLow.Q.value = 0.5; // Gentle roll-off
   audioFilterLow.connect(audioFilter);
 
+  // Pre-build a pool of FM voices. Each voice's gain-stage graph
+  // (envelope + modulation-index gain, wired to the filter chain)
+  // is created ONCE here and reused for every note-on. Only the
+  // oscillators are (re)created per note, since an OscillatorNode
+  // can only ever be started once.
+  for(var i = 0; i < VOICE_COUNT; i++){
+    var envelope = audioCtx.createGain();
+    envelope.gain.value = 0.0001;
+    envelope.connect(audioFilterLow);
+
+    var modIndex = audioCtx.createGain(); // FM modulation depth, in Hz
+    modIndex.gain.value = 0;
+
+    voices.push({
+      envelope: envelope,
+      modIndex: modIndex,
+      carrier: null,
+      modulator: null
+    });
+  }
+
   return audioCtx;
 }
 
 function getLowPassFreq(noteFreq) {
   // More aggressive HF reduction as notes get higher
   var minFreq = noteFrequency('C', 2);
-  var maxFreq = noteFrequency('A', 3);
+  var maxFreq = noteFrequency('C', 4);
 
   if (noteFreq <= minFreq) return 12000; // Low notes: completely open
   if (noteFreq >= maxFreq) return 800;   // High notes: heavily filtered
-  
+
   // Steeper exponential curve - filter closes much faster
   var normalized = (noteFreq - minFreq) / (maxFreq - minFreq);
   var cutoff = 12000 - (12000 - 800) * Math.pow(normalized, 3.0);
   return cutoff;
 }
 
-// Replace the equalLoudnessCompensation function
 function equalLoudnessCompensation(freq) {
-  // Exponential roll-off from ~50 Hz (full volume) to ~1500 Hz (attenuated)
-  var minFreq = 50;    // B1 ~ 61.74 Hz
-  var maxFreq = 1000;  // D6 ~ 1174.66 Hz
-  
+  // Exponential roll-off from ~50 Hz (full volume) to ~1000 Hz (attenuated)
+  var minFreq = 50;
+  var maxFreq = 1000;
+
   if (freq <= minFreq) return 1.0;
-  if (freq >= maxFreq) return 0.1;
-  
-  // Exponential curve: starts gently, rolls off more steeply as frequency increases
+  if (freq >= maxFreq) return 0.2;
+
   var normalized = (freq - minFreq) / (maxFreq - minFreq);
-  var attenuation = Math.pow(normalized, 2.5); // Power curve for steeper HF roll-off
-  return 1.0 - attenuation * 0.9;
+  var attenuation = Math.pow(normalized, 2.5);
+  return 1.0 - attenuation * 0.8;
 }
 
-// Modified playNote function
+// FM playNote — uses pre-initialized voices from the pool
 function playNote(letter, octave){
   try {
     var ctx = initAudio();
@@ -758,38 +779,70 @@ function playNote(letter, octave){
     var compensation = equalLoudnessCompensation(freq);
     var baseGain = 0.9 * compensation;
 
-    // Set the low-pass filter cutoff based on note frequency
     if(audioFilterLow){
       var cutoffFreq = getLowPassFreq(freq);
       audioFilterLow.frequency.setValueAtTime(cutoffFreq, now);
     }
 
-    var envelope = ctx.createGain();
-    envelope.gain.setValueAtTime(0.0001, now);
-    envelope.gain.exponentialRampToValueAtTime(baseGain, now + 0.005);
-    envelope.gain.exponentialRampToValueAtTime(0.0001, now + dur);
-    envelope.connect(audioFilterLow || audioFilter); // Connect to dynamic filter if available
+    // Grab the next pre-initialized voice, round robin
+    var voice = voices[voiceIndex];
+    voiceIndex = (voiceIndex + 1) % voices.length;
 
-    audioHarmonics.forEach(function(h){
-      var osc = ctx.createOscillator();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq * h[0], now);
-      var partial = ctx.createGain();
-      partial.gain.value = h[1];
-      osc.connect(partial);
-      partial.connect(envelope);
-      osc.start(now);
-      osc.stop(now + dur + 0.05);
-      osc.onended = function(){ osc.disconnect(); partial.disconnect(); };
-    });
+    // Tear down any leftover oscillators from this voice's previous note
+    if(voice.carrier){
+      try { voice.carrier.disconnect(); } catch(e){}
+      try { voice.modulator.disconnect(); } catch(e){}
+    }
 
-    setTimeout(function(){
-      try { envelope.disconnect(); } catch(e){}
-    }, (dur + 0.15) * 1000);
+    // 2-operator FM: modulator at 1x carrier frequency gives a bright,
+    // bell/hammer-like attack that settles into a rounder tone — much
+    // closer to a piano strike than stacked sine harmonics.
+    var modRatio = 1;
+    var modFreq = freq * modRatio;
+    var peakModDepth = freq * 3.5;    // strong FM depth at the strike
+    var sustainModDepth = freq * 0.3; // settles down quickly
+
+    var carrier = ctx.createOscillator();
+    carrier.type = 'sine';
+    carrier.frequency.setValueAtTime(freq, now);
+
+    var modulator = ctx.createOscillator();
+    modulator.type = 'sine';
+    modulator.frequency.setValueAtTime(modFreq, now);
+
+    modulator.connect(voice.modIndex);
+    voice.modIndex.connect(carrier.frequency);
+    carrier.connect(voice.envelope);
+
+    // Modulation-depth envelope: fast decay = the metallic hammer transient
+    voice.modIndex.gain.cancelScheduledValues(now);
+    voice.modIndex.gain.setValueAtTime(peakModDepth, now);
+    voice.modIndex.gain.exponentialRampToValueAtTime(Math.max(sustainModDepth, 0.001), now + 0.25);
+    voice.modIndex.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+    // Amplitude envelope: quick attack, percussive exponential decay
+    voice.envelope.gain.cancelScheduledValues(now);
+    voice.envelope.gain.setValueAtTime(0.0001, now);
+    voice.envelope.gain.exponentialRampToValueAtTime(baseGain, now + 0.005);
+    voice.envelope.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+
+    carrier.start(now);
+    modulator.start(now);
+    carrier.stop(now + dur + 0.05);
+    modulator.stop(now + dur + 0.05);
+
+    voice.carrier = carrier;
+    voice.modulator = modulator;
+
+    carrier.onended = function(){
+      try { carrier.disconnect(); } catch(e){}
+      try { modulator.disconnect(); } catch(e){}
+    };
   } catch(e){
     // Web Audio unavailable — fail silently
   }
 }
+
   function submitAnswer(letter, btnEl){
     if(!running) return;
     total++;

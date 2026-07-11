@@ -753,16 +753,25 @@ function getLowPassFreq(noteFreq) {
 }
 
 function equalLoudnessCompensation(freq) {
-  // Exponential roll-off from ~50 Hz (full volume) to ~1000 Hz (attenuated)
-  var minFreq = 50;
-  var maxFreq = 1000;
+  var lowG = noteFrequency('G', 2);   // ~98 Hz, bottom line of the bass clef
+  var subFloor = 24;                  // ~lowest note we'd realistically hit
+  var maxFreq = 1200;                 // D6-ish, upper attenuation target
 
-  if (freq <= minFreq) return 1.0;
-  if (freq >= maxFreq) return 0.2;
+  // Below low G: boost heavily, more so the lower it gets.
+  // Mobile speakers have poor bass response, so quiet low notes
+  // can vanish entirely without this.
+  if (freq <= lowG) {
+    var boostNormalized = Math.min(1, (lowG - freq) / (lowG - subFloor));
+    var maxBoost = 2.6; // low notes can end up ~2.6x louder than baseline
+    return 1.0 + boostNormalized * (maxBoost - 1.0);
+  }
 
-  var normalized = (freq - minFreq) / (maxFreq - minFreq);
+  // At/above low G: existing gentle-to-steep roll-off toward the top
+  if (freq >= maxFreq) return 0.1;
+
+  var normalized = (freq - lowG) / (maxFreq - lowG);
   var attenuation = Math.pow(normalized, 2.5);
-  return 1.0 - attenuation * 0.8;
+  return 1.0 - attenuation * 0.9;
 }
 
 // FM playNote — uses pre-initialized voices from the pool

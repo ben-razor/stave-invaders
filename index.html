@@ -611,16 +611,7 @@
     startScreen.classList.add('hidden');
     endScreen.classList.add('hidden');
     gameScreen.classList.remove('hidden');
-    var ctx=getAudioCtx();
-    if(ctx){
-      var osc=ctx.createOscillator();
-      var gain=ctx.createGain();
-      gain.gain.value=0.00001;
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      osc.stop(ctx.currentTime+0.02);
-    }
+    initAudio();
     nextNote();
     clearInterval(timerId);
     timerId = setInterval(tick, 1000);
@@ -665,8 +656,6 @@
     var note = pool[idx];
     current = {name: note.name, t: note.t, y: note.y, ledgerBelow: note.ledgerBelow, ledgerAbove: note.ledgerAbove, clef: clef};
 
-    playNote(current.name);
-
     if(clef === 'treble'){
       trebleGroup.classList.remove('dim');
       bassGroup.classList.add('dim');
@@ -685,75 +674,88 @@
     for(var j = 1; j <= current.ledgerAbove; j++){
       addLedgerLine(base - (8 + 2 * j) * STEP);
     }
+
+    playNote(current.name);
   }
 
   var audioCtx = null;
-  var masterGain = null;
-  var masterFilter = null;
+  var audioMaster = null;
+  var audioFilter = null;
+  var audioHarmonics = [[1, 0.55], [2, 0.22], [3, 0.12], [4, 0.06], [5, 0.03]];
+  var audioPartialGains = [];
+  var activeOscillators = [];
   var NOTE_FREQ = {C: 261.63, D: 293.66, E: 329.63, F: 349.23, G: 392.00, A: 440.00, B: 493.88};
 
-  function getAudioCtx(){
-    if(!audioCtx){
-      var AC = window.AudioContext || window.webkitAudioContext;
-      if(!AC) return null;
-      audioCtx = new AC();
+  function initAudio(){
+    if(audioCtx) return audioCtx;
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if(!AC) return null;
+    audioCtx = new AC();
 
-      masterGain = audioCtx.createGain();
-      masterGain.gain.value = 0.45;
+    // persistent graph: partial gains (fixed harmonic levels) -> master (envelope) -> filter (tone sweep) -> out
+    audioMaster = audioCtx.createGain();
+    audioMaster.gain.value = 0.0001;
 
-      masterFilter = audioCtx.createBiquadFilter();
-      masterFilter.type = 'lowpass';
-      masterFilter.frequency.value = 5200;
+    audioFilter = audioCtx.createBiquadFilter();
+    audioFilter.type = 'lowpass';
+    audioFilter.frequency.value = 900;
 
-      masterGain.connect(masterFilter);
-      masterFilter.connect(audioCtx.destination);
+    audioMaster.connect(audioFilter);
+    audioFilter.connect(audioCtx.destination);
 
-      var warm = audioCtx.createOscillator();
+    audioPartialGains = audioHarmonics.map(function(h){
       var g = audioCtx.createGain();
-      g.gain.value = 0.000001;
-      warm.connect(g);
-      g.connect(masterGain);
-      noteOsc=audioCtx.createOscillator();
-      noteOsc.type='sine';
-      noteGain=audioCtx.createGain();
-      noteGain.gain.value=0.00001;
-      noteOsc.connect(noteGain);
-      noteGain.connect(masterGain);
-      noteOsc.start();
+      g.gain.value = h[1];
+      g.connect(audioMaster);
+      return g;
+    });
 
-      warm.start();
-      warm.stop(audioCtx.currentTime + 0.02);
-    }
-
-    if(audioCtx.state === 'suspended') audioCtx.resume();
     return audioCtx;
   }
 
-  var noteOsc=null;
-  var noteGain=null;
-
   function playNote(letter){
-    var ctx=getAudioCtx();
-    if(!ctx) return;
+    try {
+      var ctx = initAudio();
+      if(!ctx) return;
+      if(ctx.state === 'suspended') ctx.resume();
 
-    if(!noteOsc){
-      noteOsc=ctx.createOscillator();
-      noteOsc.type='sine';
-      noteGain=ctx.createGain();
-      noteGain.gain.value=0.00001;
-      noteOsc.connect(noteGain);
-      noteGain.connect(masterGain);
-      noteOsc.start();
+      var freq = NOTE_FREQ[letter];
+      // small lookahead avoids the very first note getting clipped by AudioContext
+      // startup latency when scheduled at exactly currentTime right after creation
+      var now = ctx.currentTime + 0.03;
+      var dur = 1.1;
+
+      // cut off any still-ringing oscillators from the previous note so they can't bleed
+      // into this one — otherwise a quick double-press briefly sounds both pitches at once
+      activeOscillators.forEach(function(osc){
+        try { osc.stop(now); } catch(e){}
+      });
+      activeOscillators = [];
+
+      // retrigger the shared envelope for this note
+      audioMaster.gain.cancelScheduledValues(now);
+      audioMaster.gain.setValueAtTime(0.0001, now);
+      audioMaster.gain.exponentialRampToValueAtTime(0.5, now + 0.005);
+      audioMaster.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+
+      audioFilter.frequency.cancelScheduledValues(now);
+      audioFilter.frequency.setValueAtTime(5200, now);
+      audioFilter.frequency.exponentialRampToValueAtTime(900, now + dur);
+
+      // only the oscillators need to be fresh each time — they're single-use by design
+      audioHarmonics.forEach(function(h, i){
+        var osc = ctx.createOscillator();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq * h[0], now);
+        osc.connect(audioPartialGains[i]);
+        osc.start(now);
+        osc.stop(now + dur + 0.05);
+        osc.onended = function(){ osc.disconnect(); };
+        activeOscillators.push(osc);
+      });
+    } catch(e){
+      // Web Audio unavailable — fail silently
     }
-
-    var now=ctx.currentTime;
-    noteOsc.frequency.cancelScheduledValues(now);
-    noteOsc.frequency.setValueAtTime(NOTE_FREQ[letter],now);
-
-    noteGain.gain.cancelScheduledValues(now);
-    noteGain.gain.setValueAtTime(0.00001,now);
-    noteGain.gain.linearRampToValueAtTime(1.0,now+0.0005);
-    noteGain.gain.exponentialRampToValueAtTime(0.00001,now+0.35);
   }
 
   function submitAnswer(letter, btnEl){

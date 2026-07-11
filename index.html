@@ -691,80 +691,87 @@
     return 440 * Math.pow(2, (midi - 69) / 12);
   }
 
-  function initAudio(){
-    if(audioCtx) return audioCtx;
-    var AC = window.AudioContext || window.webkitAudioContext;
-    if(!AC) return null;
-    audioCtx = new AC();
+// Add a variable low-pass filter alongside the existing fixed one
+var audioFilterLow = null; // Will be dynamically adjusted per note
 
-    // The only persistent/shared node is a static (non-automated) tone filter.
-    // A fixed filter is safe to share across overlapping notes since it isn't
-    // being retriggered per-note — each note still gets its own full envelope
-    // below, so simultaneous notes can genuinely overlap instead of one
-    // cutting the other off.
-    audioFilter = audioCtx.createBiquadFilter();
-    audioFilter.type = 'lowpass';
-    audioFilter.frequency.value = 3200;
-    audioFilter.connect(audioCtx.destination);
+function initAudio(){
+  if(audioCtx) return audioCtx;
+  var AC = window.AudioContext || window.webkitAudioContext;
+  if(!AC) return null;
+  audioCtx = new AC();
 
-    return audioCtx;
-  }
+  // Fixed filter for general tone shaping
+  audioFilter = audioCtx.createBiquadFilter();
+  audioFilter.type = 'lowpass';
+  audioFilter.frequency.value = 3200;
+  audioFilter.connect(audioCtx.destination);
 
-  // Replace the equalLoudnessCompensation function
-  function equalLoudnessCompensation(freq) {
-    // Linear roll-off from ~50 Hz (full volume) to ~1500 Hz (most attenuated)
-    // Clamp to the range
-    var minFreq = 50;    // B1 ~ 61.74 Hz
-    var maxFreq = 1500;  // D6 ~ 1174.66 Hz, with some headroom
-    
-    if (freq <= minFreq) return 1.0;
-    if (freq >= maxFreq) return 0.1;
-    
-    // Linear interpolation: 1.0 at minFreq → 0.45 at maxFreq
-    var t = (freq - minFreq) / (maxFreq - minFreq);
-    return 1.0 - t * 0.9;
-  }
+  // Dynamic filter that will be adjusted per note
+  audioFilterLow = audioCtx.createBiquadFilter();
+  audioFilterLow.type = 'lowpass';
+  audioFilterLow.Q.value = 0.5; // Gentle roll-off
+  audioFilterLow.connect(audioFilter);
 
-  function playNote(letter, octave){
-    try {
-      var ctx = initAudio();
-      if(!ctx) return;
-      if(ctx.state === 'suspended') ctx.resume();
+  return audioCtx;
+}
 
-      var freq = noteFrequency(letter, octave);
-      var compensation = equalLoudnessCompensation(freq);
-      var baseGain = 0.9 * compensation;
-      
-      var dur = 1.1;
-      var now = ctx.currentTime + 0.03;
+function getLowPassFreq(noteFreq) {
+  // More aggressive HF reduction as notes get higher
+  var minFreq = 50;    // B1 ~ 61.74 Hz
+  var maxFreq = 1500;  // D6 ~ 1174.66 Hz
+  
+  if (noteFreq <= minFreq) return 12000; // Low notes: completely open
+  if (noteFreq >= maxFreq) return 800;   // High notes: heavily filtered
+  
+  // Steeper exponential curve - filter closes much faster
+  var normalized = (noteFreq - minFreq) / (maxFreq - minFreq);
+  var cutoff = 12000 - (12000 - 800) * Math.pow(normalized, 3.0);
+  return cutoff;
+}
 
-      var envelope = ctx.createGain();
-      envelope.gain.setValueAtTime(0.0001, now);
-      envelope.gain.exponentialRampToValueAtTime(baseGain, now + 0.005);
-      envelope.gain.exponentialRampToValueAtTime(0.0001, now + dur);
-      envelope.connect(audioFilter);
+// Modified playNote function
+function playNote(letter, octave){
+  try {
+    var ctx = initAudio();
+    if(!ctx) return;
+    if(ctx.state === 'suspended') ctx.resume();
 
-      audioHarmonics.forEach(function(h){
-        var osc = ctx.createOscillator();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq * h[0], now);
-        var partial = ctx.createGain();
-        partial.gain.value = h[1];
-        osc.connect(partial);
-        partial.connect(envelope);
-        osc.start(now);
-        osc.stop(now + dur + 0.05);
-        osc.onended = function(){ osc.disconnect(); partial.disconnect(); };
-      });
+    var freq = noteFrequency(letter, octave);
+    var dur = 1.1;
+    var now = ctx.currentTime + 0.03;
 
-      setTimeout(function(){
-        try { envelope.disconnect(); } catch(e){}
-      }, (dur + 0.15) * 1000);
-    } catch(e){
-      // Web Audio unavailable — fail silently
+    // Set the low-pass filter cutoff based on note frequency
+    if(audioFilterLow){
+      var cutoffFreq = getLowPassFreq(freq);
+      audioFilterLow.frequency.setValueAtTime(cutoffFreq, now);
     }
-  }
 
+    var envelope = ctx.createGain();
+    envelope.gain.setValueAtTime(0.0001, now);
+    envelope.gain.exponentialRampToValueAtTime(0.5, now + 0.005);
+    envelope.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+    envelope.connect(audioFilterLow || audioFilter); // Connect to dynamic filter if available
+
+    audioHarmonics.forEach(function(h){
+      var osc = ctx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq * h[0], now);
+      var partial = ctx.createGain();
+      partial.gain.value = h[1];
+      osc.connect(partial);
+      partial.connect(envelope);
+      osc.start(now);
+      osc.stop(now + dur + 0.05);
+      osc.onended = function(){ osc.disconnect(); partial.disconnect(); };
+    });
+
+    setTimeout(function(){
+      try { envelope.disconnect(); } catch(e){}
+    }, (dur + 0.15) * 1000);
+  } catch(e){
+    // Web Audio unavailable — fail silently
+  }
+}
   function submitAnswer(letter, btnEl){
     if(!running) return;
     total++;

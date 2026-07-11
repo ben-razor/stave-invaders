@@ -736,12 +736,12 @@ function equalLoudnessCompensation(freq) {
   var maxFreq = 1500;  // D6 ~ 1174.66 Hz
   
   if (freq <= minFreq) return 1.0;
-  if (freq >= maxFreq) return 0.4;
+  if (freq >= maxFreq) return 0.1;
   
   // Exponential curve: starts gently, rolls off more steeply as frequency increases
   var normalized = (freq - minFreq) / (maxFreq - minFreq);
   var attenuation = Math.pow(normalized, 2.5); // Power curve for steeper HF roll-off
-  return 1.0 - attenuation * 0.6;
+  return 1.0 - attenuation * 0.9;
 }
 
 // Modified playNote function

@@ -733,7 +733,7 @@ function getLowPassFreq(noteFreq) {
 function equalLoudnessCompensation(freq) {
   // Exponential roll-off from ~50 Hz (full volume) to ~1500 Hz (attenuated)
   var minFreq = 50;    // B1 ~ 61.74 Hz
-  var maxFreq = 1500;  // D6 ~ 1174.66 Hz
+  var maxFreq = 1000;  // D6 ~ 1174.66 Hz
   
   if (freq <= minFreq) return 1.0;
   if (freq >= maxFreq) return 0.1;

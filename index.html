@@ -719,11 +719,24 @@
   var LOUDNESS_PEAK_MIN = 0.95; // gain at the lowest note
   var LOUDNESS_PEAK_MAX = 0.20; // gain at the highest note
 
+  var LOUDNESS_HIGH_ANCHOR = 523.25; // C5 — extra rolloff kicks in above this
+  var LOUDNESS_HIGH_EXTRA = 0.5;     // additional reduction (0-1) applied by the top note
+
   function loudnessPeak(freq){
     var logMin = Math.log(LOUDNESS_FREQ_MIN), logMax = Math.log(LOUDNESS_FREQ_MAX);
     var t = (Math.log(freq) - logMin) / (logMax - logMin);
     t = Math.max(0, Math.min(1, t));
-    return LOUDNESS_PEAK_MIN + (LOUDNESS_PEAK_MAX - LOUDNESS_PEAK_MIN) * t;
+    var peak = LOUDNESS_PEAK_MIN + (LOUDNESS_PEAK_MAX - LOUDNESS_PEAK_MIN) * t;
+
+    // extra rolloff for notes above C5, on top of the base linear curve —
+    // the upper treble staff was still coming through too loud
+    if(freq > LOUDNESS_HIGH_ANCHOR){
+      var t2 = (Math.log(freq) - Math.log(LOUDNESS_HIGH_ANCHOR)) / (logMax - Math.log(LOUDNESS_HIGH_ANCHOR));
+      t2 = Math.max(0, Math.min(1, t2));
+      peak *= (1 - LOUDNESS_HIGH_EXTRA * t2);
+    }
+
+    return peak;
   }
 
   function harmonicProfile(freq){

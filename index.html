@@ -710,13 +710,20 @@
     return audioCtx;
   }
 
-  function loudnessGainScale(freq){
-    // ear is far less sensitive to low frequencies than mid/high ones (equal-loudness
-    // contours) — boost bass notes and pull treble down more so they sound level.
-    // Exponent 0.327 is chosen so that at our lowest possible note (B1, 61.7Hz) the
-    // resulting peak gain lands at exactly 0.95 — safely under 1 by construction,
-    // for the actual note range this app generates, no clamp needed.
-    return Math.pow(440 / freq, 0.327);
+  // ear is far less sensitive to low frequencies than mid/high ones — boost bass notes
+  // and pull treble down so they sound level. Straight linear rolloff (per octave,
+  // since pitch perception is logarithmic) from loudest at our lowest possible note
+  // to quietest at our highest, no curve/exponent involved.
+  var LOUDNESS_FREQ_MIN = 61.7354126570155;  // B1 — lowest note this app generates
+  var LOUDNESS_FREQ_MAX = 1174.6590716696303; // D6 — highest note this app generates
+  var LOUDNESS_PEAK_MIN = 0.95; // gain at the lowest note
+  var LOUDNESS_PEAK_MAX = 0.20; // gain at the highest note
+
+  function loudnessPeak(freq){
+    var logMin = Math.log(LOUDNESS_FREQ_MIN), logMax = Math.log(LOUDNESS_FREQ_MAX);
+    var t = (Math.log(freq) - logMin) / (logMax - logMin);
+    t = Math.max(0, Math.min(1, t));
+    return LOUDNESS_PEAK_MIN + (LOUDNESS_PEAK_MAX - LOUDNESS_PEAK_MIN) * t;
   }
 
   function harmonicProfile(freq){
@@ -747,7 +754,7 @@
       // small lookahead avoids the very first note getting clipped by AudioContext
       // startup latency when scheduled at exactly currentTime right after creation
       var now = ctx.currentTime + 0.03;
-      var peak = 0.5 * loudnessGainScale(freq);
+      var peak = loudnessPeak(freq);
       var harmonics = harmonicProfile(freq);
 
       // each note gets its own envelope, so rapid or overlapping notes blend

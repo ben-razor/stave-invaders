@@ -719,8 +719,8 @@
   var LOUDNESS_PEAK_MIN = 0.95; // gain at the lowest note
   var LOUDNESS_PEAK_MAX = 0.20; // gain at the highest note
 
-  var LOUDNESS_HIGH_ANCHOR = 523.25; // C5 — extra rolloff kicks in above this
-  var LOUDNESS_HIGH_EXTRA = 0.5;     // additional reduction (0-1) applied by the top note
+  var LOUDNESS_HIGH_ANCHOR = 440; // A4 — extra rolloff kicks in above this
+  var LOUDNESS_HIGH_EXTRA = 0.8;  // additional reduction (0-1) applied by the top note
 
   function loudnessPeak(freq){
     var logMin = Math.log(LOUDNESS_FREQ_MIN), logMax = Math.log(LOUDNESS_FREQ_MAX);

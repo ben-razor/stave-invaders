@@ -704,6 +704,7 @@
     audioFilter = audioCtx.createBiquadFilter();
     audioFilter.type = 'lowpass';
     audioFilter.frequency.value = 3200;
+
     audioFilter.connect(audioCtx.destination);
 
     return audioCtx;
@@ -711,9 +712,11 @@
 
   function loudnessGainScale(freq){
     // ear is far less sensitive to low frequencies than mid/high ones (equal-loudness
-    // contours) — boost bass notes and ease off treble slightly so they sound level
-    var scale = Math.pow(440 / freq, 0.3);
-    return Math.max(0.55, Math.min(2.2, scale));
+    // contours) — boost bass notes and pull treble down more so they sound level.
+    // Exponent 0.327 is chosen so that at our lowest possible note (B1, 61.7Hz) the
+    // resulting peak gain lands at exactly 0.95 — safely under 1 by construction,
+    // for the actual note range this app generates, no clamp needed.
+    return Math.pow(440 / freq, 0.327);
   }
 
   function harmonicProfile(freq){

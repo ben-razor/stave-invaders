@@ -281,7 +281,7 @@
   <div class="card">
 
     <div id="startScreen" class="start-screen">
-      <p class="desc">Read notes on a full grand staff — treble and bass together, with ledger lines extending up to two lines above and below each staff when needed. Click a key or type Z X C V B N M.</p>
+      <p class="desc">Read notes on a full grand staff — treble and bass together, with ledger lines extending up to two lines above and below each staff when needed. Click a key or type Z X C V B N M. Press V to start, and to move on between screens.</p>
       <p class="formula">score = notes correct &times; accuracy</p>
 
       <div class="setting-row">
@@ -839,7 +839,20 @@
   });
 
   document.addEventListener('keydown', function(e){
-    if(!running) return;
+    if(!running){
+      if(e.key.toUpperCase() === 'V'){
+        var progressBtn = null;
+        if(!startScreen.classList.contains('hidden')) progressBtn = document.getElementById('startBtn');
+        else if(!endScreen.classList.contains('hidden')) progressBtn = document.getElementById('againBtn');
+        else if(!statsScreen.classList.contains('hidden')) progressBtn = document.getElementById('statsBackBtn');
+        else if(!mistakesScreen.classList.contains('hidden')) progressBtn = document.getElementById('mistakesBackBtn');
+        if(progressBtn){
+          e.preventDefault();
+          progressBtn.click();
+        }
+      }
+      return;
+    }
     var key = e.key.toUpperCase();
     var letter = KEY_TO_NOTE[key];
     if(!letter) return;

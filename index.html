@@ -1014,7 +1014,7 @@
     // exclude outlier sessions scoring under half the raw average, so a single
     // bad round doesn't skew the chart's scale or overwhelm the trend
     var rawAvg = allSessions.reduce(function(a, s){ return a + s.score; }, 0) / allSessions.length;
-    var threshold = rawAvg * 0.5;
+    var threshold = rawAvg * 0.6;
     var sessions = allSessions.filter(function(s){ return s.score >= threshold; });
     if(sessions.length === 0) sessions = allSessions;
 

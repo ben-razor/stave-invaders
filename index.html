@@ -1002,14 +1002,21 @@
   }
 
   function renderStats(){
-    var sessions = loadSessions()
+    var allSessions = loadSessions()
       .filter(function(s){ return s.clef === statsClefMode && String(s.duration) === String(statsDuration); })
       .sort(function(a, b){ return a.ts - b.ts; });
 
-    if(sessions.length === 0){
+    if(allSessions.length === 0){
       statsBody.innerHTML = '<div class="stats-empty">No sessions yet for this configuration — play a round to start tracking progress.</div>';
       return;
     }
+
+    // exclude outlier sessions scoring under half the raw average, so a single
+    // bad round doesn't skew the chart's scale or overwhelm the trend
+    var rawAvg = allSessions.reduce(function(a, s){ return a + s.score; }, 0) / allSessions.length;
+    var threshold = rawAvg * 0.5;
+    var sessions = allSessions.filter(function(s){ return s.score >= threshold; });
+    if(sessions.length === 0) sessions = allSessions;
 
     var scores = sessions.map(function(s){ return s.score; });
     var best = Math.max.apply(null, scores);

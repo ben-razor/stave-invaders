@@ -136,7 +136,7 @@
     box-shadow: 0 20px 50px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.05);
   }
 
-  .start-screen, #gameScreen, .end-screen, .stats-screen, .mistakes-screen { width: 100%; box-sizing: border-box; }
+  .start-screen, #gameScreen, .end-screen, .stats-screen, .mistakes-screen, .flawless-screen { width: 100%; box-sizing: border-box; }
 
   .start-screen p.desc { color: #5b5645; font-size: 14px; line-height: 1.55; text-align: center; margin: 0 0 20px; }
   .start-screen p.formula { color: #8a8468; font-size: 12px; text-align: center; margin: -8px 0 20px; font-family: 'IBM Plex Mono', monospace; }
@@ -255,6 +255,12 @@
   .chart-axis { stroke: var(--paper-line); stroke-width: 1; }
   .chart-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; fill: #9c9678; }
 
+  .flawless-screen { text-align: center; padding: 18px 0 6px; }
+  .flawless-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; color: var(--ink); margin-bottom: 12px; }
+  .flawless-detail { font-size: 15px; line-height: 1.55; color: #5b5645; }
+  .flawless-detail b { color: var(--ink); }
+  .flawless-streak { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8a8468; margin-top: 12px; }
+
   .mistakes-title {
     font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; text-align: center;
     margin: 0 0 16px; color: var(--ink);
@@ -300,6 +306,14 @@
           <button class="pill" data-val="30">30s</button>
           <button class="pill active" data-val="60">60s</button>
           <button class="pill" data-val="120">120s</button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <span class="setting-label">Mode</span>
+        <div class="pill-group" id="modeGroup">
+          <button class="pill active" data-val="standard">Standard</button>
+          <button class="pill" data-val="flawless">Flawless</button>
         </div>
       </div>
 
@@ -446,6 +460,13 @@
       <button class="start-btn" id="mistakesBackBtn" style="margin-top:20px;">Back</button>
     </div>
 
+    <div id="flawlessScreen" class="flawless-screen hidden">
+      <div class="flawless-title">Not quite this time</div>
+      <div class="flawless-detail" id="flawlessDetail"></div>
+      <div class="flawless-streak" id="flawlessStreak"></div>
+      <button class="start-btn" id="flawlessBackBtn" style="margin-top:22px;">Try again</button>
+    </div>
+
     <div id="statsScreen" class="stats-screen hidden">
       <h2>Progress</h2>
 
@@ -514,6 +535,8 @@
   var timerId = null;
   var running = false;
   var clefMode = 'both';
+  var gameMode = 'standard';
+  var flawlessTimeoutId = null;
   var mistakes = [];
   var mistakeIndex = 0;
 
@@ -521,6 +544,7 @@
   var gameScreen = document.getElementById('gameScreen');
   var focusTrap = document.getElementById('focusTrap');
   var endScreen = document.getElementById('endScreen');
+  var flawlessScreen = document.getElementById('flawlessScreen');
   var scoreNum = document.getElementById('scoreNum');
   var correctNum = document.getElementById('correctNum');
   var totalNum = document.getElementById('totalNum');
@@ -592,6 +616,14 @@
     document.querySelectorAll('#clefGroup .pill').forEach(function(p){ p.classList.remove('active'); });
     btn.classList.add('active');
     clefMode = btn.dataset.val;
+  });
+
+  document.getElementById('modeGroup').addEventListener('click', function(e){
+    var btn = e.target.closest('.pill');
+    if(!btn) return;
+    document.querySelectorAll('#modeGroup .pill').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    gameMode = btn.dataset.val;
   });
 
   document.getElementById('durationGroup').addEventListener('click', function(e){
@@ -836,8 +868,33 @@
         setTimeout(function(){ btnEl.classList.remove('wrong'); }, 250);
       }
     }
+    if(!isCorrect && gameMode === 'flawless'){
+      endFlawless(letter, current.name);
+      return;
+    }
     nextNote();
   }
+
+  function endFlawless(pressed, expected){
+    running = false;
+    clearInterval(timerId);
+    gameScreen.classList.add('hidden');
+    document.getElementById('flawlessDetail').innerHTML =
+      'That note was <b>' + expected + '</b> &mdash; you played <b>' + pressed + '</b>.';
+    document.getElementById('flawlessStreak').textContent =
+      correct === 1 ? '1 note in a row' : correct + ' notes in a row';
+    flawlessScreen.classList.remove('hidden');
+    clearTimeout(flawlessTimeoutId);
+    flawlessTimeoutId = setTimeout(leaveFlawless, 3500);
+  }
+
+  function leaveFlawless(){
+    clearTimeout(flawlessTimeoutId);
+    flawlessScreen.classList.add('hidden');
+    startScreen.classList.remove('hidden');
+  }
+
+  document.getElementById('flawlessBackBtn').addEventListener('click', leaveFlawless);
 
   keys.addEventListener('pointerdown', function(e){
     var btn = e.target.closest('.key-btn');
@@ -857,6 +914,8 @@
     endScreen.classList.add('hidden');
     statsScreen.classList.add('hidden');
     mistakesScreen.classList.add('hidden');
+    clearTimeout(flawlessTimeoutId);
+    flawlessScreen.classList.add('hidden');
     startScreen.classList.remove('hidden');
   }
 
@@ -873,6 +932,7 @@
         else if(!endScreen.classList.contains('hidden')) progressBtn = document.getElementById('againBtn');
         else if(!statsScreen.classList.contains('hidden')) progressBtn = document.getElementById('statsBackBtn');
         else if(!mistakesScreen.classList.contains('hidden')) progressBtn = document.getElementById('mistakesBackBtn');
+        else if(!flawlessScreen.classList.contains('hidden')) progressBtn = document.getElementById('flawlessBackBtn');
         if(progressBtn){
           e.preventDefault();
           progressBtn.click();
@@ -899,15 +959,17 @@
     var finalScore = currentScore();
     document.getElementById('finalScore').textContent = finalScore.toFixed(1);
 
-    saveSessionRecord({
-      ts: Date.now(),
-      clef: clefMode,
-      duration: duration,
-      correct: correct,
-      total: total,
-      accuracy: total > 0 ? correct / total : 0,
-      score: finalScore
-    });
+    if(gameMode === 'standard'){
+      saveSessionRecord({
+        ts: Date.now(),
+        clef: clefMode,
+        duration: duration,
+        correct: correct,
+        total: total,
+        accuracy: total > 0 ? correct / total : 0,
+        score: finalScore
+      });
+    }
 
     reviewMistakesBtn.textContent = mistakes.length === 0 ? 'No Mistakes' : 'Review Mistakes (' + mistakes.length + ')';
     reviewMistakesBtn.disabled = mistakes.length === 0;

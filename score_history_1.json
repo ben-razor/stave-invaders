@@ -1,0 +1,6950 @@
+[
+  {
+    "ts": 1783165094937,
+    "clef": "both",
+    "duration": 60,
+    "correct": 0,
+    "total": 0,
+    "accuracy": 0,
+    "score": 0
+  },
+  {
+    "ts": 1783165965082,
+    "clef": "both",
+    "duration": 60,
+    "correct": 0,
+    "total": 0,
+    "accuracy": 0,
+    "score": 0
+  },
+  {
+    "ts": 1783411093117,
+    "clef": "both",
+    "duration": 60,
+    "correct": 4,
+    "total": 17,
+    "accuracy": 0.23529411764705882,
+    "score": 0.9411764705882353
+  },
+  {
+    "ts": 1783411231594,
+    "clef": "both",
+    "duration": 60,
+    "correct": 2,
+    "total": 16,
+    "accuracy": 0.125,
+    "score": 0.25
+  },
+  {
+    "ts": 1783421436387,
+    "clef": "both",
+    "duration": 60,
+    "correct": 36,
+    "total": 37,
+    "accuracy": 0.972972972972973,
+    "score": 35.02702702702703
+  },
+  {
+    "ts": 1783421514057,
+    "clef": "both",
+    "duration": 60,
+    "correct": 31,
+    "total": 34,
+    "accuracy": 0.9117647058823529,
+    "score": 28.264705882352942
+  },
+  {
+    "ts": 1783421586242,
+    "clef": "both",
+    "duration": 60,
+    "correct": 37,
+    "total": 42,
+    "accuracy": 0.8809523809523809,
+    "score": 32.595238095238095
+  },
+  {
+    "ts": 1783421654553,
+    "clef": "both",
+    "duration": 60,
+    "correct": 36,
+    "total": 36,
+    "accuracy": 1,
+    "score": 36
+  },
+  {
+    "ts": 1783422505715,
+    "clef": "both",
+    "duration": 60,
+    "correct": 28,
+    "total": 28,
+    "accuracy": 1,
+    "score": 28
+  },
+  {
+    "ts": 1784697340987,
+    "clef": "both",
+    "duration": 60,
+    "correct": 25,
+    "total": 27,
+    "accuracy": 0.9259259259259259,
+    "score": 23.14814814814815
+  },
+  {
+    "ts": 1784697409459,
+    "clef": "both",
+    "duration": 60,
+    "correct": 34,
+    "total": 34,
+    "accuracy": 1,
+    "score": 34
+  },
+  {
+    "ts": 1784697483083,
+    "clef": "both",
+    "duration": 60,
+    "correct": 44,
+    "total": 47,
+    "accuracy": 0.9361702127659575,
+    "score": 41.191489361702125
+  },
+  {
+    "ts": 1784697549115,
+    "clef": "both",
+    "duration": 60,
+    "correct": 43,
+    "total": 44,
+    "accuracy": 0.9772727272727273,
+    "score": 42.02272727272727
+  },
+  {
+    "ts": 1784697618451,
+    "clef": "both",
+    "duration": 60,
+    "correct": 46,
+    "total": 46,
+    "accuracy": 1,
+    "score": 46
+  },
+  {
+    "ts": 1784714397176,
+    "clef": "both",
+    "duration": 60,
+    "correct": 45,
+    "total": 45,
+    "accuracy": 1,
+    "score": 45
+  },
+  {
+    "ts": 1784714539928,
+    "clef": "both",
+    "duration": 60,
+    "correct": 46,
+    "total": 46,
+    "accuracy": 1,
+    "score": 46
+  },
+  {
+    "ts": 1784715832077,
+    "clef": "both",
+    "duration": 60,
+    "correct": 47,
+    "total": 47,
+    "accuracy": 1,
+    "score": 47
+  },
+  {
+    "ts": 1784715908884,
+    "clef": "both",
+    "duration": 60,
+    "correct": 51,
+    "total": 51,
+    "accuracy": 1,
+    "score": 51
+  },
+  {
+    "ts": 1784786767676,
+    "clef": "both",
+    "duration": 60,
+    "correct": 43,
+    "total": 45,
+    "accuracy": 0.9555555555555556,
+    "score": 41.08888888888889
+  },
+  {
+    "ts": 1784786871046,
+    "clef": "both",
+    "duration": 60,
+    "correct": 43,
+    "total": 44,
+    "accuracy": 0.9772727272727273,
+    "score": 42.02272727272727
+  },
+  {
+    "ts": 1784786934617,
+    "clef": "both",
+    "duration": 60,
+    "correct": 46,
+    "total": 46,
+    "accuracy": 1,
+    "score": 46
+  },
+  {
+    "ts": 1784803623065,
+    "clef": "both",
+    "duration": 60,
+    "correct": 48,
+    "total": 48,
+    "accuracy": 1,
+    "score": 48
+  },
+  {
+    "ts": 1784804267985,
+    "clef": "both",
+    "duration": 60,
+    "correct": 46,
+    "total": 46,
+    "accuracy": 1,
+    "score": 46
+  },
+  {
+    "ts": 1784804385543,
+    "clef": "both",
+    "duration": 60,
+    "correct": 45,
+    "total": 45,
+    "accuracy": 1,
+    "score": 45
+  },
+  {
+    "ts": 1784804451659,
+    "clef": "both",
+    "duration": 60,
+    "correct": 51,
+    "total": 51,
+    "accuracy": 1,
+    "score": 51
+  },
+  {
+    "ts": 1784828709434,
+    "clef": "both",
+    "duration": 60,
+    "correct": 45,
+    "total": 46,
+    "accuracy": 0.9782608695652174,
+    "score": 44.02173913043478
+  },
+  {
+    "ts": 1784828783139,
+    "clef": "both",
+    "duration": 60,
+    "correct": 48,
+    "total": 51,
+    "accuracy": 0.9411764705882353,
+    "score": 45.17647058823529
+  },
+  {
+    "ts": 1784828850701,
+    "clef": "both",
+    "duration": 60,
+    "correct": 49,
+    "total": 53,
+    "accuracy": 0.9245283018867925,
+    "score": 45.301886792452834
+  },
+  {
+    "ts": 1784828917712,
+    "clef": "both",
+    "duration": 60,
+    "correct": 49,
+    "total": 51,
+    "accuracy": 0.9607843137254902,
+    "score": 47.07843137254902
+  },
+  {
+    "ts": 1784828985394,
+    "clef": "both",
+    "duration": 60,
+    "correct": 49,
+    "total": 52,
+    "accuracy": 0.9423076923076923,
+    "score": 46.17307692307692
+  },
+  {
+    "ts": 1784878256933,
+    "clef": "both",
+    "duration": 60,
+    "correct": 51,
+    "total": 51,
+    "accuracy": 1,
+    "score": 51
+  },
+  {
+    "ts": 1784878338981,
+    "clef": "both",
+    "duration": 60,
+    "correct": 52,
+    "total": 52,
+    "accuracy": 1,
+    "score": 52
+  },
+  {
+    "ts": 1784878410176,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 58,
+    "accuracy": 0.9655172413793104,
+    "score": 54.06896551724138
+  },
+  {
+    "ts": 1784878501224,
+    "clef": "both",
+    "duration": 60,
+    "correct": 54,
+    "total": 54,
+    "accuracy": 1,
+    "score": 54
+  },
+  {
+    "ts": 1784887606473,
+    "clef": "both",
+    "duration": 60,
+    "correct": 53,
+    "total": 54,
+    "accuracy": 0.9814814814814815,
+    "score": 52.01851851851852
+  },
+  {
+    "ts": 1784887680784,
+    "clef": "both",
+    "duration": 60,
+    "correct": 54,
+    "total": 58,
+    "accuracy": 0.9310344827586207,
+    "score": 50.275862068965516
+  },
+  {
+    "ts": 1784887747898,
+    "clef": "both",
+    "duration": 60,
+    "correct": 57,
+    "total": 57,
+    "accuracy": 1,
+    "score": 57
+  },
+  {
+    "ts": 1784976194097,
+    "clef": "both",
+    "duration": 60,
+    "correct": 50,
+    "total": 50,
+    "accuracy": 1,
+    "score": 50
+  },
+  {
+    "ts": 1784976333655,
+    "clef": "both",
+    "duration": 60,
+    "correct": 49,
+    "total": 50,
+    "accuracy": 0.98,
+    "score": 48.019999999999996
+  },
+  {
+    "ts": 1784976453518,
+    "clef": "both",
+    "duration": 60,
+    "correct": 53,
+    "total": 55,
+    "accuracy": 0.9636363636363636,
+    "score": 51.07272727272727
+  },
+  {
+    "ts": 1785083384110,
+    "clef": "both",
+    "duration": 60,
+    "correct": 48,
+    "total": 48,
+    "accuracy": 1,
+    "score": 48
+  },
+  {
+    "ts": 1785144785554,
+    "clef": "both",
+    "duration": 60,
+    "correct": 51,
+    "total": 51,
+    "accuracy": 1,
+    "score": 51
+  },
+  {
+    "ts": 1785153897290,
+    "clef": "both",
+    "duration": 60,
+    "correct": 51,
+    "total": 51,
+    "accuracy": 1,
+    "score": 51
+  },
+  {
+    "ts": 1785153970170,
+    "clef": "both",
+    "duration": 60,
+    "correct": 51,
+    "total": 54,
+    "accuracy": 0.9444444444444444,
+    "score": 48.166666666666664
+  },
+  {
+    "ts": 1785154142186,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 56,
+    "accuracy": 1,
+    "score": 56
+  },
+  {
+    "ts": 1785154253788,
+    "clef": "both",
+    "duration": 60,
+    "correct": 50,
+    "total": 50,
+    "accuracy": 1,
+    "score": 50
+  },
+  {
+    "ts": 1785154319398,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 58,
+    "accuracy": 1,
+    "score": 58
+  },
+  {
+    "ts": 1785155138766,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 59,
+    "accuracy": 0.9830508474576272,
+    "score": 57.016949152542374
+  },
+  {
+    "ts": 1785155227407,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 62,
+    "accuracy": 0.9354838709677419,
+    "score": 54.25806451612903
+  },
+  {
+    "ts": 1785174857075,
+    "clef": "both",
+    "duration": 60,
+    "correct": 49,
+    "total": 50,
+    "accuracy": 0.98,
+    "score": 48.019999999999996
+  },
+  {
+    "ts": 1785174932620,
+    "clef": "both",
+    "duration": 60,
+    "correct": 54,
+    "total": 55,
+    "accuracy": 0.9818181818181818,
+    "score": 53.018181818181816
+  },
+  {
+    "ts": 1785175050842,
+    "clef": "both",
+    "duration": 60,
+    "correct": 57,
+    "total": 59,
+    "accuracy": 0.9661016949152542,
+    "score": 55.06779661016949
+  },
+  {
+    "ts": 1785175120249,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 60,
+    "accuracy": 0.9333333333333333,
+    "score": 52.266666666666666
+  },
+  {
+    "ts": 1785175193514,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 60,
+    "accuracy": 0.9666666666666667,
+    "score": 56.06666666666667
+  },
+  {
+    "ts": 1785175280975,
+    "clef": "both",
+    "duration": 60,
+    "correct": 55,
+    "total": 56,
+    "accuracy": 0.9821428571428571,
+    "score": 54.01785714285714
+  },
+  {
+    "ts": 1785223996716,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 56,
+    "accuracy": 1,
+    "score": 56
+  },
+  {
+    "ts": 1785224198726,
+    "clef": "both",
+    "duration": 60,
+    "correct": 53,
+    "total": 55,
+    "accuracy": 0.9636363636363636,
+    "score": 51.07272727272727
+  },
+  {
+    "ts": 1785224310334,
+    "clef": "both",
+    "duration": 60,
+    "correct": 57,
+    "total": 57,
+    "accuracy": 1,
+    "score": 57
+  },
+  {
+    "ts": 1785255395547,
+    "clef": "both",
+    "duration": 60,
+    "correct": 54,
+    "total": 54,
+    "accuracy": 1,
+    "score": 54
+  },
+  {
+    "ts": 1785255489748,
+    "clef": "both",
+    "duration": 60,
+    "correct": 54,
+    "total": 56,
+    "accuracy": 0.9642857142857143,
+    "score": 52.07142857142857
+  },
+  {
+    "ts": 1785255636905,
+    "clef": "both",
+    "duration": 60,
+    "correct": 55,
+    "total": 61,
+    "accuracy": 0.9016393442622951,
+    "score": 49.59016393442623
+  },
+  {
+    "ts": 1785255705518,
+    "clef": "both",
+    "duration": 60,
+    "correct": 54,
+    "total": 55,
+    "accuracy": 0.9818181818181818,
+    "score": 53.018181818181816
+  },
+  {
+    "ts": 1785255778450,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 58,
+    "accuracy": 1,
+    "score": 58
+  },
+  {
+    "ts": 1785261484842,
+    "clef": "both",
+    "duration": 60,
+    "correct": 53,
+    "total": 53,
+    "accuracy": 1,
+    "score": 53
+  },
+  {
+    "ts": 1785261617799,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 60,
+    "accuracy": 1,
+    "score": 60
+  },
+  {
+    "ts": 1785261815319,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 56,
+    "accuracy": 1,
+    "score": 56
+  },
+  {
+    "ts": 1785261999647,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 61,
+    "accuracy": 0.9836065573770492,
+    "score": 59.01639344262295
+  },
+  {
+    "ts": 1785262085077,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 59,
+    "accuracy": 0.9830508474576272,
+    "score": 57.016949152542374
+  },
+  {
+    "ts": 1785321205476,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 58,
+    "accuracy": 1,
+    "score": 58
+  },
+  {
+    "ts": 1785321346314,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 60,
+    "accuracy": 0.9666666666666667,
+    "score": 56.06666666666667
+  },
+  {
+    "ts": 1785321556857,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1785321781197,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1785389118224,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 56,
+    "accuracy": 1,
+    "score": 56
+  },
+  {
+    "ts": 1785389239803,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 62,
+    "accuracy": 1,
+    "score": 62
+  },
+  {
+    "ts": 1785396500022,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 60,
+    "accuracy": 1,
+    "score": 60
+  },
+  {
+    "ts": 1785396576403,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 60,
+    "accuracy": 1,
+    "score": 60
+  },
+  {
+    "ts": 1785396685750,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 58,
+    "accuracy": 1,
+    "score": 58
+  },
+  {
+    "ts": 1785396848453,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 56,
+    "accuracy": 1,
+    "score": 56
+  },
+  {
+    "ts": 1785398217932,
+    "clef": "both",
+    "duration": 60,
+    "correct": 57,
+    "total": 57,
+    "accuracy": 1,
+    "score": 57
+  },
+  {
+    "ts": 1785431254491,
+    "clef": "both",
+    "duration": 60,
+    "correct": 54,
+    "total": 55,
+    "accuracy": 0.9818181818181818,
+    "score": 53.018181818181816
+  },
+  {
+    "ts": 1785431321310,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 61,
+    "accuracy": 0.9672131147540983,
+    "score": 57.0655737704918
+  },
+  {
+    "ts": 1785432273103,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 60,
+    "accuracy": 0.9333333333333333,
+    "score": 52.266666666666666
+  },
+  {
+    "ts": 1785432340600,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1785432448929,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 59,
+    "accuracy": 0.9830508474576272,
+    "score": 57.016949152542374
+  },
+  {
+    "ts": 1785488696052,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 60,
+    "accuracy": 1,
+    "score": 60
+  },
+  {
+    "ts": 1785489970590,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 60,
+    "accuracy": 1,
+    "score": 60
+  },
+  {
+    "ts": 1785490047842,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1785495992765,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1785519090614,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 61,
+    "accuracy": 0.9508196721311475,
+    "score": 55.147540983606554
+  },
+  {
+    "ts": 1785519158599,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1785587091359,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1785659850016,
+    "clef": "both",
+    "duration": 60,
+    "correct": 57,
+    "total": 57,
+    "accuracy": 1,
+    "score": 57
+  },
+  {
+    "ts": 1785659929226,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1785773730643,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 61,
+    "accuracy": 0.9672131147540983,
+    "score": 57.0655737704918
+  },
+  {
+    "ts": 1785773835903,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1785942010043,
+    "clef": "both",
+    "duration": 60,
+    "correct": 52,
+    "total": 53,
+    "accuracy": 0.9811320754716981,
+    "score": 51.0188679245283
+  },
+  {
+    "ts": 1785942137764,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 62,
+    "accuracy": 0.967741935483871,
+    "score": 58.064516129032256
+  },
+  {
+    "ts": 1785942208719,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 63,
+    "accuracy": 0.9682539682539683,
+    "score": 59.06349206349206
+  },
+  {
+    "ts": 1785986926949,
+    "clef": "both",
+    "duration": 60,
+    "correct": 53,
+    "total": 54,
+    "accuracy": 0.9814814814814815,
+    "score": 52.01851851851852
+  },
+  {
+    "ts": 1785987105835,
+    "clef": "both",
+    "duration": 60,
+    "correct": 57,
+    "total": 58,
+    "accuracy": 0.9827586206896551,
+    "score": 56.01724137931034
+  },
+  {
+    "ts": 1786010998846,
+    "clef": "both",
+    "duration": 60,
+    "correct": 54,
+    "total": 54,
+    "accuracy": 1,
+    "score": 54
+  },
+  {
+    "ts": 1786011158908,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 59,
+    "accuracy": 1,
+    "score": 59
+  },
+  {
+    "ts": 1786124423734,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 56,
+    "accuracy": 1,
+    "score": 56
+  },
+  {
+    "ts": 1786124492371,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 58,
+    "accuracy": 0.9655172413793104,
+    "score": 54.06896551724138
+  },
+  {
+    "ts": 1786125582981,
+    "clef": "both",
+    "duration": 60,
+    "correct": 52,
+    "total": 52,
+    "accuracy": 1,
+    "score": 52
+  },
+  {
+    "ts": 1786169407416,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 60,
+    "accuracy": 1,
+    "score": 60
+  },
+  {
+    "ts": 1786169691510,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 59,
+    "accuracy": 1,
+    "score": 59
+  },
+  {
+    "ts": 1786173886707,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1786174899803,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 63,
+    "accuracy": 0.9682539682539683,
+    "score": 59.06349206349206
+  },
+  {
+    "ts": 1786174969814,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 64,
+    "accuracy": 0.9375,
+    "score": 56.25
+  },
+  {
+    "ts": 1786255553782,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 58,
+    "accuracy": 1,
+    "score": 58
+  },
+  {
+    "ts": 1786258403082,
+    "clef": "both",
+    "duration": 60,
+    "correct": 57,
+    "total": 57,
+    "accuracy": 1,
+    "score": 57
+  },
+  {
+    "ts": 1786258537571,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 56,
+    "accuracy": 1,
+    "score": 56
+  },
+  {
+    "ts": 1786258619455,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 59,
+    "accuracy": 0.9830508474576272,
+    "score": 57.016949152542374
+  },
+  {
+    "ts": 1786258692176,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 62,
+    "accuracy": 0.967741935483871,
+    "score": 58.064516129032256
+  },
+  {
+    "ts": 1786258767732,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 63,
+    "accuracy": 0.9682539682539683,
+    "score": 59.06349206349206
+  },
+  {
+    "ts": 1786260060333,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 61,
+    "accuracy": 0.9836065573770492,
+    "score": 59.01639344262295
+  },
+  {
+    "ts": 1786260190660,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1786279716240,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1786287409549,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1786289788801,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 59,
+    "accuracy": 1,
+    "score": 59
+  },
+  {
+    "ts": 1786290240604,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 61,
+    "accuracy": 0.9672131147540983,
+    "score": 57.0655737704918
+  },
+  {
+    "ts": 1786290326539,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1786375378840,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 65,
+    "accuracy": 0.9384615384615385,
+    "score": 57.246153846153845
+  },
+  {
+    "ts": 1786375469380,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 68,
+    "accuracy": 0.9411764705882353,
+    "score": 60.23529411764706
+  },
+  {
+    "ts": 1786375591876,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1786381895910,
+    "clef": "both",
+    "duration": 60,
+    "correct": 56,
+    "total": 57,
+    "accuracy": 0.9824561403508771,
+    "score": 55.01754385964912
+  },
+  {
+    "ts": 1786429395745,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 62,
+    "accuracy": 1,
+    "score": 62
+  },
+  {
+    "ts": 1786430626157,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1786463146559,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1786463250794,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 61,
+    "accuracy": 0.9836065573770492,
+    "score": 59.01639344262295
+  },
+  {
+    "ts": 1786515379171,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 58,
+    "accuracy": 1,
+    "score": 58
+  },
+  {
+    "ts": 1786515498536,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 65,
+    "accuracy": 0.9538461538461539,
+    "score": 59.13846153846154
+  },
+  {
+    "ts": 1786515597253,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1786536842446,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1786536928161,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 62,
+    "accuracy": 0.9838709677419355,
+    "score": 60.016129032258064
+  },
+  {
+    "ts": 1786536998630,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 63,
+    "accuracy": 0.9682539682539683,
+    "score": 59.06349206349206
+  },
+  {
+    "ts": 1786552326641,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 60,
+    "accuracy": 0.9833333333333333,
+    "score": 58.016666666666666
+  },
+  {
+    "ts": 1786636939476,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 58,
+    "accuracy": 1,
+    "score": 58
+  },
+  {
+    "ts": 1786723680956,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 60,
+    "accuracy": 1,
+    "score": 60
+  },
+  {
+    "ts": 1786723756582,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1786725187885,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1786783399583,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 59,
+    "accuracy": 0.9830508474576272,
+    "score": 57.016949152542374
+  },
+  {
+    "ts": 1786808970421,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 66,
+    "accuracy": 0.9848484848484849,
+    "score": 64.01515151515152
+  },
+  {
+    "ts": 1786809047242,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1786864705314,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1786865416929,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 62,
+    "accuracy": 1,
+    "score": 62
+  },
+  {
+    "ts": 1786865501923,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1786949987579,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 58,
+    "accuracy": 1,
+    "score": 58
+  },
+  {
+    "ts": 1786950077993,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 61,
+    "accuracy": 0.9836065573770492,
+    "score": 59.01639344262295
+  },
+  {
+    "ts": 1787036146084,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1787036278488,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 62,
+    "accuracy": 0.9838709677419355,
+    "score": 60.016129032258064
+  },
+  {
+    "ts": 1787073049179,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1787144424224,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1787206414480,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 62,
+    "accuracy": 0.9838709677419355,
+    "score": 60.016129032258064
+  },
+  {
+    "ts": 1787206499485,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 66,
+    "accuracy": 0.9696969696969697,
+    "score": 62.06060606060606
+  },
+  {
+    "ts": 1787206579036,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 62,
+    "accuracy": 0.9516129032258065,
+    "score": 56.145161290322584
+  },
+  {
+    "ts": 1787206672528,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 64,
+    "accuracy": 0.96875,
+    "score": 60.0625
+  },
+  {
+    "ts": 1787240993525,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 59,
+    "accuracy": 0.9830508474576272,
+    "score": 57.016949152542374
+  },
+  {
+    "ts": 1787241061248,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1787297581035,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 65,
+    "accuracy": 0.9692307692307692,
+    "score": 61.06153846153846
+  },
+  {
+    "ts": 1787379870387,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 61,
+    "accuracy": 0.9836065573770492,
+    "score": 59.01639344262295
+  },
+  {
+    "ts": 1787379977136,
+    "clef": "both",
+    "duration": 60,
+    "correct": 55,
+    "total": 55,
+    "accuracy": 1,
+    "score": 55
+  },
+  {
+    "ts": 1787380046713,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1787418239302,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1787468561414,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 62,
+    "accuracy": 0.9516129032258065,
+    "score": 56.145161290322584
+  },
+  {
+    "ts": 1787552967128,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1787553051715,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 62,
+    "accuracy": 0.9838709677419355,
+    "score": 60.016129032258064
+  },
+  {
+    "ts": 1787553121092,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 62,
+    "accuracy": 1,
+    "score": 62
+  },
+  {
+    "ts": 1787589367182,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 62,
+    "accuracy": 1,
+    "score": 62
+  },
+  {
+    "ts": 1787589456530,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1787639571886,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 59,
+    "accuracy": 1,
+    "score": 59
+  },
+  {
+    "ts": 1787639667573,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 64,
+    "accuracy": 0.96875,
+    "score": 60.0625
+  },
+  {
+    "ts": 1787639782302,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1787639873203,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 68,
+    "accuracy": 0.9558823529411765,
+    "score": 62.13235294117647
+  },
+  {
+    "ts": 1787639965159,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 64,
+    "accuracy": 0.96875,
+    "score": 60.0625
+  },
+  {
+    "ts": 1787651979344,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1787654017712,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 67,
+    "accuracy": 0.9850746268656716,
+    "score": 65.01492537313433
+  },
+  {
+    "ts": 1787726132162,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1787726206140,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1787758830861,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1787766239058,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 65,
+    "accuracy": 0.9692307692307692,
+    "score": 61.06153846153846
+  },
+  {
+    "ts": 1787809204698,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 62,
+    "accuracy": 1,
+    "score": 62
+  },
+  {
+    "ts": 1787809303923,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1787809377317,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 66,
+    "accuracy": 0.9848484848484849,
+    "score": 64.01515151515152
+  },
+  {
+    "ts": 1787809452365,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1787814402319,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 66,
+    "accuracy": 0.9696969696969697,
+    "score": 62.06060606060606
+  },
+  {
+    "ts": 1787814602725,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 58,
+    "accuracy": 1,
+    "score": 58
+  },
+  {
+    "ts": 1787815160942,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 59,
+    "accuracy": 1,
+    "score": 59
+  },
+  {
+    "ts": 1787843625418,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1787843706017,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1787896002891,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 65,
+    "accuracy": 0.9538461538461539,
+    "score": 59.13846153846154
+  },
+  {
+    "ts": 1787896103406,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1787896185614,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1787896319207,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 64,
+    "accuracy": 0.96875,
+    "score": 60.0625
+  },
+  {
+    "ts": 1787897284529,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 66,
+    "accuracy": 0.9848484848484849,
+    "score": 64.01515151515152
+  },
+  {
+    "ts": 1787897365571,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1787898121887,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 62,
+    "accuracy": 0.9838709677419355,
+    "score": 60.016129032258064
+  },
+  {
+    "ts": 1787900338733,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 65,
+    "accuracy": 0.9692307692307692,
+    "score": 61.06153846153846
+  },
+  {
+    "ts": 1787900407929,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1787900479610,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1787900572228,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 71,
+    "accuracy": 0.9436619718309859,
+    "score": 63.225352112676056
+  },
+  {
+    "ts": 1787911009632,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1787931830307,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 70,
+    "accuracy": 0.9714285714285714,
+    "score": 66.05714285714285
+  },
+  {
+    "ts": 1787931965795,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1787983101763,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1788021629636,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1788023694581,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 65,
+    "accuracy": 0.9692307692307692,
+    "score": 61.06153846153846
+  },
+  {
+    "ts": 1788023772316,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 66,
+    "accuracy": 0.9848484848484849,
+    "score": 64.01515151515152
+  },
+  {
+    "ts": 1788023865762,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1788074633906,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 66,
+    "accuracy": 0.9393939393939394,
+    "score": 58.24242424242425
+  },
+  {
+    "ts": 1788074706300,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 67,
+    "accuracy": 0.9253731343283582,
+    "score": 57.37313432835821
+  },
+  {
+    "ts": 1788074792351,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1788084958673,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1788085038109,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1788085576557,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 68,
+    "accuracy": 0.9558823529411765,
+    "score": 62.13235294117647
+  },
+  {
+    "ts": 1788086386424,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1788188561866,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1788188678012,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 67,
+    "accuracy": 0.9701492537313433,
+    "score": 63.059701492537314
+  },
+  {
+    "ts": 1788188766325,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 67,
+    "accuracy": 0.9402985074626866,
+    "score": 59.23880597014926
+  },
+  {
+    "ts": 1788188851004,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 66,
+    "accuracy": 0.9848484848484849,
+    "score": 64.01515151515152
+  },
+  {
+    "ts": 1788194964061,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1788278901251,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1788278972646,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1788279049442,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 66,
+    "accuracy": 0.9848484848484849,
+    "score": 64.01515151515152
+  },
+  {
+    "ts": 1788280535017,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 66,
+    "accuracy": 0.9848484848484849,
+    "score": 64.01515151515152
+  },
+  {
+    "ts": 1788328535780,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1788328633884,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1788328792989,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 61,
+    "accuracy": 1,
+    "score": 61
+  },
+  {
+    "ts": 1788329437646,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1788329527499,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 65,
+    "accuracy": 0.9692307692307692,
+    "score": 61.06153846153846
+  },
+  {
+    "ts": 1788329602707,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 62,
+    "accuracy": 0.9838709677419355,
+    "score": 60.016129032258064
+  },
+  {
+    "ts": 1788353818062,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1788415886053,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1788416019122,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1788416215506,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1788427795222,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 67,
+    "accuracy": 0.9850746268656716,
+    "score": 65.01492537313433
+  },
+  {
+    "ts": 1788427973759,
+    "clef": "both",
+    "duration": 60,
+    "correct": 60,
+    "total": 61,
+    "accuracy": 0.9836065573770492,
+    "score": 59.01639344262295
+  },
+  {
+    "ts": 1788433322460,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1788450191904,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1788450266582,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1788507536518,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 62,
+    "accuracy": 1,
+    "score": 62
+  },
+  {
+    "ts": 1788507613738,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 68,
+    "accuracy": 0.9558823529411765,
+    "score": 62.13235294117647
+  },
+  {
+    "ts": 1788507700725,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 68,
+    "accuracy": 0.9705882352941176,
+    "score": 64.05882352941177
+  },
+  {
+    "ts": 1788517036757,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 62,
+    "accuracy": 1,
+    "score": 62
+  },
+  {
+    "ts": 1788517120509,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 63,
+    "accuracy": 1,
+    "score": 63
+  },
+  {
+    "ts": 1788517193601,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1788536004278,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1788536133274,
+    "clef": "both",
+    "duration": 60,
+    "correct": 58,
+    "total": 61,
+    "accuracy": 0.9508196721311475,
+    "score": 55.147540983606554
+  },
+  {
+    "ts": 1788536206555,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1788536340388,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1788538899427,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1788538975798,
+    "clef": "both",
+    "duration": 60,
+    "correct": 63,
+    "total": 64,
+    "accuracy": 0.984375,
+    "score": 62.015625
+  },
+  {
+    "ts": 1788539072064,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1788588416254,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1788588529426,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.9841269841269841,
+    "score": 61.01587301587301
+  },
+  {
+    "ts": 1788676979212,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1788677063230,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 67,
+    "accuracy": 0.9701492537313433,
+    "score": 63.059701492537314
+  },
+  {
+    "ts": 1788677153446,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 66,
+    "accuracy": 0.9696969696969697,
+    "score": 62.06060606060606
+  },
+  {
+    "ts": 1788677228243,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 66,
+    "accuracy": 0.9696969696969697,
+    "score": 62.06060606060606
+  },
+  {
+    "ts": 1788690240204,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1788690346954,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 69,
+    "accuracy": 0.9855072463768116,
+    "score": 67.01449275362319
+  },
+  {
+    "ts": 1788690460090,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1788690549139,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 70,
+    "accuracy": 0.9428571428571428,
+    "score": 62.22857142857143
+  },
+  {
+    "ts": 1788690635280,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 69,
+    "accuracy": 1,
+    "score": 69
+  },
+  {
+    "ts": 1788708821702,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 66,
+    "accuracy": 0.9848484848484849,
+    "score": 64.01515151515152
+  },
+  {
+    "ts": 1788708932060,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 69,
+    "accuracy": 0.9855072463768116,
+    "score": 67.01449275362319
+  },
+  {
+    "ts": 1788760428832,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 69,
+    "accuracy": 0.9710144927536232,
+    "score": 65.05797101449275
+  },
+  {
+    "ts": 1788761105514,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1788761846347,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 68,
+    "accuracy": 0.9705882352941176,
+    "score": 64.05882352941177
+  },
+  {
+    "ts": 1788761941371,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1788762061946,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1788766203221,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 68,
+    "accuracy": 1,
+    "score": 68
+  },
+  {
+    "ts": 1788801993831,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1788802182217,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1788802273410,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1788847845059,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 66,
+    "accuracy": 0.9696969696969697,
+    "score": 62.06060606060606
+  },
+  {
+    "ts": 1788847923477,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 62,
+    "accuracy": 1,
+    "score": 62
+  },
+  {
+    "ts": 1788848017247,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1788851750834,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1788851829407,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1788852529410,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1788862808642,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 68,
+    "accuracy": 1,
+    "score": 68
+  },
+  {
+    "ts": 1788934776933,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 67,
+    "accuracy": 0.9701492537313433,
+    "score": 63.059701492537314
+  },
+  {
+    "ts": 1788934849848,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 66,
+    "accuracy": 0.9696969696969697,
+    "score": 62.06060606060606
+  },
+  {
+    "ts": 1788939374703,
+    "clef": "both",
+    "duration": 60,
+    "correct": 61,
+    "total": 62,
+    "accuracy": 0.9838709677419355,
+    "score": 60.016129032258064
+  },
+  {
+    "ts": 1788951133630,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 68,
+    "accuracy": 0.9705882352941176,
+    "score": 64.05882352941177
+  },
+  {
+    "ts": 1789020418917,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 66,
+    "accuracy": 0.9848484848484849,
+    "score": 64.01515151515152
+  },
+  {
+    "ts": 1789020501704,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1789022752744,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 71,
+    "accuracy": 0.9436619718309859,
+    "score": 63.225352112676056
+  },
+  {
+    "ts": 1789030664855,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1789038482326,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1789053156345,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1789054708676,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1789104313860,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1789105160934,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1789118400052,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1789120263543,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 67,
+    "accuracy": 0.9850746268656716,
+    "score": 65.01492537313433
+  },
+  {
+    "ts": 1789120480686,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1789120656305,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1789146128869,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1789192568645,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 69,
+    "accuracy": 0.9710144927536232,
+    "score": 65.05797101449275
+  },
+  {
+    "ts": 1789192661907,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 73,
+    "accuracy": 0.9726027397260274,
+    "score": 69.05479452054794
+  },
+  {
+    "ts": 1789193538473,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 70,
+    "accuracy": 0.9714285714285714,
+    "score": 66.05714285714285
+  },
+  {
+    "ts": 1789197733230,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1789205515766,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1789205620982,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 72,
+    "accuracy": 1,
+    "score": 72
+  },
+  {
+    "ts": 1789206417061,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 67,
+    "accuracy": 0.9701492537313433,
+    "score": 63.059701492537314
+  },
+  {
+    "ts": 1789208489508,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 73,
+    "accuracy": 0.9863013698630136,
+    "score": 71.01369863013699
+  },
+  {
+    "ts": 1789279689153,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1789295926857,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1789296018365,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1789364434119,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1789364585341,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 73,
+    "accuracy": 0.9452054794520548,
+    "score": 65.21917808219177
+  },
+  {
+    "ts": 1789372104504,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1789377371667,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1789378571229,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1789454151828,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 66,
+    "accuracy": 1,
+    "score": 66
+  },
+  {
+    "ts": 1789454266346,
+    "clef": "both",
+    "duration": 60,
+    "correct": 59,
+    "total": 59,
+    "accuracy": 1,
+    "score": 59
+  },
+  {
+    "ts": 1789454338712,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 69,
+    "accuracy": 0.9855072463768116,
+    "score": 67.01449275362319
+  },
+  {
+    "ts": 1789464338059,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 67,
+    "accuracy": 0.9850746268656716,
+    "score": 65.01492537313433
+  },
+  {
+    "ts": 1789489802795,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 65,
+    "accuracy": 1,
+    "score": 65
+  },
+  {
+    "ts": 1789538745060,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 71,
+    "accuracy": 0.971830985915493,
+    "score": 67.05633802816902
+  },
+  {
+    "ts": 1789552843916,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1789552946160,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 70,
+    "accuracy": 0.9714285714285714,
+    "score": 66.05714285714285
+  },
+  {
+    "ts": 1789553070042,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1789553603548,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1789623674599,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 68,
+    "accuracy": 0.9705882352941176,
+    "score": 64.05882352941177
+  },
+  {
+    "ts": 1789623832560,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 71,
+    "accuracy": 0.9436619718309859,
+    "score": 63.225352112676056
+  },
+  {
+    "ts": 1789623909863,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 68,
+    "accuracy": 0.9705882352941176,
+    "score": 64.05882352941177
+  },
+  {
+    "ts": 1789626051587,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1789642797062,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1789662972263,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 68,
+    "accuracy": 1,
+    "score": 68
+  },
+  {
+    "ts": 1789716209315,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1789716277836,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1789728463999,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1789743726969,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 69,
+    "accuracy": 0.9855072463768116,
+    "score": 67.01449275362319
+  },
+  {
+    "ts": 1789743805369,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1789797344198,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 66,
+    "accuracy": 0.9696969696969697,
+    "score": 62.06060606060606
+  },
+  {
+    "ts": 1789797422643,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 69,
+    "accuracy": 1,
+    "score": 69
+  },
+  {
+    "ts": 1789799703826,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1789799825081,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 73,
+    "accuracy": 0.958904109589041,
+    "score": 67.12328767123287
+  },
+  {
+    "ts": 1789802777941,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 68,
+    "accuracy": 0.9705882352941176,
+    "score": 64.05882352941177
+  },
+  {
+    "ts": 1789811056007,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 71,
+    "accuracy": 0.971830985915493,
+    "score": 67.05633802816902
+  },
+  {
+    "ts": 1789811526343,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1789835359611,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 69,
+    "accuracy": 0.9855072463768116,
+    "score": 67.01449275362319
+  },
+  {
+    "ts": 1789898732862,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 70,
+    "accuracy": 0.9857142857142858,
+    "score": 68.01428571428572
+  },
+  {
+    "ts": 1789919381583,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1789919648380,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1789974180268,
+    "clef": "both",
+    "duration": 60,
+    "correct": 62,
+    "total": 64,
+    "accuracy": 0.96875,
+    "score": 60.0625
+  },
+  {
+    "ts": 1789974264378,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1789974348376,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 64,
+    "accuracy": 1,
+    "score": 64
+  },
+  {
+    "ts": 1789974415063,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1789983158302,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 67,
+    "accuracy": 0.9850746268656716,
+    "score": 65.01492537313433
+  },
+  {
+    "ts": 1789983224814,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 67,
+    "accuracy": 0.9701492537313433,
+    "score": 63.059701492537314
+  },
+  {
+    "ts": 1789983288554,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1789983427144,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 69,
+    "accuracy": 0.9855072463768116,
+    "score": 67.01449275362319
+  },
+  {
+    "ts": 1789985478892,
+    "clef": "both",
+    "duration": 60,
+    "correct": 65,
+    "total": 67,
+    "accuracy": 0.9701492537313433,
+    "score": 63.059701492537314
+  },
+  {
+    "ts": 1789985547046,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 68,
+    "accuracy": 1,
+    "score": 68
+  },
+  {
+    "ts": 1789989884877,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1790004896900,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1790055472577,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1790055551175,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 75,
+    "accuracy": 0.9333333333333333,
+    "score": 65.33333333333333
+  },
+  {
+    "ts": 1790058885148,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 75,
+    "accuracy": 0.9733333333333334,
+    "score": 71.05333333333334
+  },
+  {
+    "ts": 1790072330122,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 69,
+    "accuracy": 0.9710144927536232,
+    "score": 65.05797101449275
+  },
+  {
+    "ts": 1790072398927,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 73,
+    "accuracy": 0.9726027397260274,
+    "score": 69.05479452054794
+  },
+  {
+    "ts": 1790072486965,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1790143858185,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 71,
+    "accuracy": 0.9577464788732394,
+    "score": 65.12676056338027
+  },
+  {
+    "ts": 1790143927836,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 73,
+    "accuracy": 1,
+    "score": 73
+  },
+  {
+    "ts": 1790145479703,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1790148511832,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 75,
+    "accuracy": 0.96,
+    "score": 69.12
+  },
+  {
+    "ts": 1790168267659,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 72,
+    "accuracy": 1,
+    "score": 72
+  },
+  {
+    "ts": 1790181714483,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1790182968031,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1790227795571,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 73,
+    "accuracy": 1,
+    "score": 73
+  },
+  {
+    "ts": 1790243100353,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1790243218213,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1790262366427,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1790327873931,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1790332328548,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1790332419856,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 73,
+    "accuracy": 0.9726027397260274,
+    "score": 69.05479452054794
+  },
+  {
+    "ts": 1790349309760,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 74,
+    "accuracy": 1,
+    "score": 74
+  },
+  {
+    "ts": 1790417460761,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1790420690312,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 69,
+    "accuracy": 1,
+    "score": 69
+  },
+  {
+    "ts": 1790433940854,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1790506430342,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1790525171851,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 73,
+    "accuracy": 0.9863013698630136,
+    "score": 71.01369863013699
+  },
+  {
+    "ts": 1790573482899,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1790586363443,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1790587499941,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1790659962602,
+    "clef": "both",
+    "duration": 60,
+    "correct": 64,
+    "total": 65,
+    "accuracy": 0.9846153846153847,
+    "score": 63.01538461538462
+  },
+  {
+    "ts": 1790666181489,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1790666592146,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1790680648780,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1790761922951,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1790762023990,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 74,
+    "accuracy": 0.972972972972973,
+    "score": 70.05405405405406
+  },
+  {
+    "ts": 1790762202393,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 75,
+    "accuracy": 0.96,
+    "score": 69.12
+  },
+  {
+    "ts": 1790764285295,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 75,
+    "accuracy": 0.9333333333333333,
+    "score": 65.33333333333333
+  },
+  {
+    "ts": 1790785162301,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 70,
+    "accuracy": 0.9857142857142858,
+    "score": 68.01428571428572
+  },
+  {
+    "ts": 1790833154641,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1790836197727,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1790846924915,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1790853476627,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1790854525704,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 70,
+    "accuracy": 0.9857142857142858,
+    "score": 68.01428571428572
+  },
+  {
+    "ts": 1790923088160,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 69,
+    "accuracy": 0.9710144927536232,
+    "score": 65.05797101449275
+  },
+  {
+    "ts": 1790923158624,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 72,
+    "accuracy": 1,
+    "score": 72
+  },
+  {
+    "ts": 1790923281625,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 72,
+    "accuracy": 1,
+    "score": 72
+  },
+  {
+    "ts": 1790923445699,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1791092455106,
+    "clef": "both",
+    "duration": 60,
+    "correct": 66,
+    "total": 71,
+    "accuracy": 0.9295774647887324,
+    "score": 61.352112676056336
+  },
+  {
+    "ts": 1791095001005,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 69,
+    "accuracy": 1,
+    "score": 69
+  },
+  {
+    "ts": 1791451957330,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 71,
+    "accuracy": 0.9577464788732394,
+    "score": 65.12676056338027
+  },
+  {
+    "ts": 1791452032926,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1791453195021,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 70,
+    "accuracy": 0.9857142857142858,
+    "score": 68.01428571428572
+  },
+  {
+    "ts": 1791533977777,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1791537446383,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1791537532717,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 72,
+    "accuracy": 1,
+    "score": 72
+  },
+  {
+    "ts": 1791540302844,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1791546176920,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 73,
+    "accuracy": 1,
+    "score": 73
+  },
+  {
+    "ts": 1791547782747,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1791560356242,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 67,
+    "accuracy": 1,
+    "score": 67
+  },
+  {
+    "ts": 1791655560128,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1791797093749,
+    "clef": "both",
+    "duration": 60,
+    "correct": 67,
+    "total": 68,
+    "accuracy": 0.9852941176470589,
+    "score": 66.01470588235294
+  },
+  {
+    "ts": 1791797161649,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 76,
+    "accuracy": 0.9868421052631579,
+    "score": 74.01315789473684
+  },
+  {
+    "ts": 1791805749865,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 74,
+    "accuracy": 0.972972972972973,
+    "score": 70.05405405405406
+  },
+  {
+    "ts": 1791805853288,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1791808460907,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 72,
+    "accuracy": 1,
+    "score": 72
+  },
+  {
+    "ts": 1791810512105,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1791810657951,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 75,
+    "accuracy": 0.96,
+    "score": 69.12
+  },
+  {
+    "ts": 1791829753257,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 70,
+    "accuracy": 0.9857142857142858,
+    "score": 68.01428571428572
+  },
+  {
+    "ts": 1791830447867,
+    "clef": "both",
+    "duration": 60,
+    "correct": 68,
+    "total": 70,
+    "accuracy": 0.9714285714285714,
+    "score": 66.05714285714285
+  },
+  {
+    "ts": 1791830551127,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 75,
+    "accuracy": 0.9733333333333334,
+    "score": 71.05333333333334
+  },
+  {
+    "ts": 1791878604767,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 79,
+    "accuracy": 0.9367088607594937,
+    "score": 69.31645569620252
+  },
+  {
+    "ts": 1791878692566,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 75,
+    "accuracy": 0.9466666666666667,
+    "score": 67.21333333333334
+  },
+  {
+    "ts": 1791878796849,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1791878884581,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 75,
+    "accuracy": 0.9733333333333334,
+    "score": 71.05333333333334
+  },
+  {
+    "ts": 1791878994571,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 71,
+    "accuracy": 1,
+    "score": 71
+  },
+  {
+    "ts": 1791884321637,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1791894775572,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 74,
+    "accuracy": 1,
+    "score": 74
+  },
+  {
+    "ts": 1791894968481,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 75,
+    "accuracy": 0.9866666666666667,
+    "score": 73.01333333333334
+  },
+  {
+    "ts": 1791924978560,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1791925104474,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 74,
+    "accuracy": 1,
+    "score": 74
+  },
+  {
+    "ts": 1791963624068,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1791967001053,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 73,
+    "accuracy": 0.9726027397260274,
+    "score": 69.05479452054794
+  },
+  {
+    "ts": 1791967223536,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 76,
+    "accuracy": 0.9736842105263158,
+    "score": 72.05263157894737
+  },
+  {
+    "ts": 1791986191038,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 69,
+    "accuracy": 1,
+    "score": 69
+  },
+  {
+    "ts": 1791986284208,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1792270547886,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 70,
+    "accuracy": 0.9857142857142858,
+    "score": 68.01428571428572
+  },
+  {
+    "ts": 1792270641853,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1792490714980,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1792490802280,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 71,
+    "accuracy": 0.9859154929577465,
+    "score": 69.01408450704226
+  },
+  {
+    "ts": 1792490882354,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1792755398505,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 69,
+    "accuracy": 1,
+    "score": 69
+  },
+  {
+    "ts": 1792755687231,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1792784858159,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 69,
+    "accuracy": 1,
+    "score": 69
+  },
+  {
+    "ts": 1792785051089,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 73,
+    "accuracy": 0.9863013698630136,
+    "score": 71.01369863013699
+  },
+  {
+    "ts": 1792828181067,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 69,
+    "accuracy": 1,
+    "score": 69
+  },
+  {
+    "ts": 1792828291412,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 72,
+    "accuracy": 1,
+    "score": 72
+  },
+  {
+    "ts": 1792828459118,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 74,
+    "accuracy": 1,
+    "score": 74
+  },
+  {
+    "ts": 1792829302890,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 78,
+    "accuracy": 0.9743589743589743,
+    "score": 74.05128205128204
+  },
+  {
+    "ts": 1792829579756,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 77,
+    "accuracy": 0.961038961038961,
+    "score": 71.11688311688312
+  },
+  {
+    "ts": 1792835854980,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 74,
+    "accuracy": 0.972972972972973,
+    "score": 70.05405405405406
+  },
+  {
+    "ts": 1792835968325,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 72,
+    "accuracy": 1,
+    "score": 72
+  },
+  {
+    "ts": 1792836430859,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 74,
+    "accuracy": 1,
+    "score": 74
+  },
+  {
+    "ts": 1792836529286,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 76,
+    "accuracy": 0.9736842105263158,
+    "score": 72.05263157894737
+  },
+  {
+    "ts": 1792838749320,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 76,
+    "accuracy": 1,
+    "score": 76
+  },
+  {
+    "ts": 1792838892627,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1792839022892,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 76,
+    "accuracy": 0.9736842105263158,
+    "score": 72.05263157894737
+  },
+  {
+    "ts": 1792839108624,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1792839203201,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 76,
+    "accuracy": 0.9736842105263158,
+    "score": 72.05263157894737
+  },
+  {
+    "ts": 1792839512944,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 77,
+    "accuracy": 0.974025974025974,
+    "score": 73.05194805194805
+  },
+  {
+    "ts": 1792862262106,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 72,
+    "accuracy": 0.9722222222222222,
+    "score": 68.05555555555556
+  },
+  {
+    "ts": 1792862386520,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 75,
+    "accuracy": 1,
+    "score": 75
+  },
+  {
+    "ts": 1792862913504,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 77,
+    "accuracy": 0.961038961038961,
+    "score": 71.11688311688312
+  },
+  {
+    "ts": 1792865903013,
+    "clef": "both",
+    "duration": 60,
+    "correct": 69,
+    "total": 70,
+    "accuracy": 0.9857142857142858,
+    "score": 68.01428571428572
+  },
+  {
+    "ts": 1792865983921,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 78,
+    "accuracy": 0.9230769230769231,
+    "score": 66.46153846153847
+  },
+  {
+    "ts": 1792866081282,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 76,
+    "accuracy": 0.9868421052631579,
+    "score": 74.01315789473684
+  },
+  {
+    "ts": 1792866197939,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 79,
+    "accuracy": 0.9746835443037974,
+    "score": 75.0506329113924
+  },
+  {
+    "ts": 1792866318118,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1792917183125,
+    "clef": "both",
+    "duration": 60,
+    "correct": 70,
+    "total": 70,
+    "accuracy": 1,
+    "score": 70
+  },
+  {
+    "ts": 1792917337649,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 73,
+    "accuracy": 0.9726027397260274,
+    "score": 69.05479452054794
+  },
+  {
+    "ts": 1792917404965,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 74,
+    "accuracy": 1,
+    "score": 74
+  },
+  {
+    "ts": 1792917495849,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 76,
+    "accuracy": 1,
+    "score": 76
+  },
+  {
+    "ts": 1792917636171,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 74,
+    "accuracy": 1,
+    "score": 74
+  },
+  {
+    "ts": 1792917727828,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1792917814496,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 77,
+    "accuracy": 0.974025974025974,
+    "score": 73.05194805194805
+  },
+  {
+    "ts": 1792917933424,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 73,
+    "accuracy": 1,
+    "score": 73
+  },
+  {
+    "ts": 1792918082422,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 75,
+    "accuracy": 1,
+    "score": 75
+  },
+  {
+    "ts": 1792918328145,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1792918728361,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1792918805368,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 76,
+    "accuracy": 0.9868421052631579,
+    "score": 74.01315789473684
+  },
+  {
+    "ts": 1792918925072,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 75,
+    "accuracy": 0.9866666666666667,
+    "score": 73.01333333333334
+  },
+  {
+    "ts": 1792919114753,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1792925400356,
+    "clef": "both",
+    "duration": 60,
+    "correct": 71,
+    "total": 72,
+    "accuracy": 0.9861111111111112,
+    "score": 70.01388888888889
+  },
+  {
+    "ts": 1792925494218,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 76,
+    "accuracy": 0.9868421052631579,
+    "score": 74.01315789473684
+  },
+  {
+    "ts": 1792928457627,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1792928536964,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1792928690695,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 76,
+    "accuracy": 1,
+    "score": 76
+  },
+  {
+    "ts": 1792928874332,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 79,
+    "accuracy": 0.9746835443037974,
+    "score": 75.0506329113924
+  },
+  {
+    "ts": 1792929102854,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1792941337857,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 73,
+    "accuracy": 0.9863013698630136,
+    "score": 71.01369863013699
+  },
+  {
+    "ts": 1792941772173,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1792955866003,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 73,
+    "accuracy": 1,
+    "score": 73
+  },
+  {
+    "ts": 1792956096305,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 76,
+    "accuracy": 1,
+    "score": 76
+  },
+  {
+    "ts": 1792956181766,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 74,
+    "accuracy": 1,
+    "score": 74
+  },
+  {
+    "ts": 1792956259809,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 75,
+    "accuracy": 0.9866666666666667,
+    "score": 73.01333333333334
+  },
+  {
+    "ts": 1793001745313,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1793006068191,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1793006240513,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793007052675,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1793007228337,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 78,
+    "accuracy": 0.9743589743589743,
+    "score": 74.05128205128204
+  },
+  {
+    "ts": 1793007311436,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1793007393011,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 78,
+    "accuracy": 0.9743589743589743,
+    "score": 74.05128205128204
+  },
+  {
+    "ts": 1793007486076,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793015384116,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 75,
+    "accuracy": 1,
+    "score": 75
+  },
+  {
+    "ts": 1793015498839,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 80,
+    "accuracy": 0.975,
+    "score": 76.05
+  },
+  {
+    "ts": 1793018219069,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 74,
+    "accuracy": 1,
+    "score": 74
+  },
+  {
+    "ts": 1793018448109,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793018683061,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1793018800881,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793018985188,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793020357311,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 82,
+    "accuracy": 0.9878048780487805,
+    "score": 80.01219512195122
+  },
+  {
+    "ts": 1793087197333,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793087379371,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1793087463035,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 81,
+    "accuracy": 0.9753086419753086,
+    "score": 77.04938271604938
+  },
+  {
+    "ts": 1793088651703,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 79,
+    "accuracy": 0.9873417721518988,
+    "score": 77.0126582278481
+  },
+  {
+    "ts": 1793088774049,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793091039180,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 75,
+    "accuracy": 1,
+    "score": 75
+  },
+  {
+    "ts": 1793106820844,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 73,
+    "accuracy": 0.9863013698630136,
+    "score": 71.01369863013699
+  },
+  {
+    "ts": 1793107009582,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 76,
+    "accuracy": 1,
+    "score": 76
+  },
+  {
+    "ts": 1793174392138,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793174491598,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1793174575028,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 81,
+    "accuracy": 0.9876543209876543,
+    "score": 79.01234567901234
+  },
+  {
+    "ts": 1793174739928,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 74,
+    "accuracy": 0.9864864864864865,
+    "score": 72.01351351351352
+  },
+  {
+    "ts": 1793174814631,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 82,
+    "accuracy": 0.9634146341463414,
+    "score": 76.10975609756098
+  },
+  {
+    "ts": 1793174964534,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 79,
+    "accuracy": 0.9873417721518988,
+    "score": 77.0126582278481
+  },
+  {
+    "ts": 1793175094998,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1793175547531,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1793176678955,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 81,
+    "accuracy": 0.9629629629629629,
+    "score": 75.1111111111111
+  },
+  {
+    "ts": 1793176977121,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1793189284970,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1793189379325,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1793189520056,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793189613211,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 76,
+    "accuracy": 0.9868421052631579,
+    "score": 74.01315789473684
+  },
+  {
+    "ts": 1793190277074,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 77,
+    "accuracy": 0.974025974025974,
+    "score": 73.05194805194805
+  },
+  {
+    "ts": 1793190672994,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 72,
+    "accuracy": 1,
+    "score": 72
+  },
+  {
+    "ts": 1793259744543,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 73,
+    "accuracy": 1,
+    "score": 73
+  },
+  {
+    "ts": 1793259839531,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 78,
+    "accuracy": 0.9743589743589743,
+    "score": 74.05128205128204
+  },
+  {
+    "ts": 1793259937052,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793260048770,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 75,
+    "accuracy": 0.9733333333333334,
+    "score": 71.05333333333334
+  },
+  {
+    "ts": 1793260112760,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 82,
+    "accuracy": 0.975609756097561,
+    "score": 78.04878048780488
+  },
+  {
+    "ts": 1793260233251,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1793260313863,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793260422343,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 83,
+    "accuracy": 0.963855421686747,
+    "score": 77.10843373493975
+  },
+  {
+    "ts": 1793260630719,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793260714751,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793260935932,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 79,
+    "accuracy": 0.9746835443037974,
+    "score": 75.0506329113924
+  },
+  {
+    "ts": 1793261223969,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1793273592130,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793273693605,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 79,
+    "accuracy": 0.9620253164556962,
+    "score": 73.11392405063292
+  },
+  {
+    "ts": 1793273907528,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793274032559,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1793274263748,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793274387535,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 81,
+    "accuracy": 0.9876543209876543,
+    "score": 79.01234567901234
+  },
+  {
+    "ts": 1793274577060,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 79,
+    "accuracy": 0.9873417721518988,
+    "score": 77.0126582278481
+  },
+  {
+    "ts": 1793274721009,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 84,
+    "accuracy": 0.9642857142857143,
+    "score": 78.10714285714286
+  },
+  {
+    "ts": 1793275227085,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 80,
+    "accuracy": 0.9625,
+    "score": 74.1125
+  },
+  {
+    "ts": 1793275471629,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1793276897022,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 76,
+    "accuracy": 0.9868421052631579,
+    "score": 74.01315789473684
+  },
+  {
+    "ts": 1793303933119,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793347820014,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 76,
+    "accuracy": 1,
+    "score": 76
+  },
+  {
+    "ts": 1793347929390,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793348041892,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793348129853,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793348369282,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793351222502,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 79,
+    "accuracy": 0.9873417721518988,
+    "score": 77.0126582278481
+  },
+  {
+    "ts": 1793351295076,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793363432766,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 80,
+    "accuracy": 0.975,
+    "score": 76.05
+  },
+  {
+    "ts": 1793363508462,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 82,
+    "accuracy": 0.9878048780487805,
+    "score": 80.01219512195122
+  },
+  {
+    "ts": 1793363616871,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 83,
+    "accuracy": 0.963855421686747,
+    "score": 77.10843373493975
+  },
+  {
+    "ts": 1793383174073,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793383348388,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1793383488241,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 80,
+    "accuracy": 0.9875,
+    "score": 78.0125
+  },
+  {
+    "ts": 1793433068812,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1793433153481,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 79,
+    "accuracy": 0.9746835443037974,
+    "score": 75.0506329113924
+  },
+  {
+    "ts": 1793433302319,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793433408649,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 79,
+    "accuracy": 0.9873417721518988,
+    "score": 77.0126582278481
+  },
+  {
+    "ts": 1793433527407,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 80,
+    "accuracy": 0.975,
+    "score": 76.05
+  },
+  {
+    "ts": 1793433633771,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1793433745763,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 78,
+    "accuracy": 0.9743589743589743,
+    "score": 74.05128205128204
+  },
+  {
+    "ts": 1793433823318,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 79,
+    "accuracy": 0.9873417721518988,
+    "score": 77.0126582278481
+  },
+  {
+    "ts": 1793447967410,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793448047439,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 79,
+    "accuracy": 0.9746835443037974,
+    "score": 75.0506329113924
+  },
+  {
+    "ts": 1793448139654,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793448289709,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 73,
+    "accuracy": 1,
+    "score": 73
+  },
+  {
+    "ts": 1793448360424,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 83,
+    "accuracy": 0.963855421686747,
+    "score": 77.10843373493975
+  },
+  {
+    "ts": 1793448544964,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1793448648524,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 79,
+    "accuracy": 0.9746835443037974,
+    "score": 75.0506329113924
+  },
+  {
+    "ts": 1793448742441,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1793473275164,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 75,
+    "accuracy": 1,
+    "score": 75
+  },
+  {
+    "ts": 1793473380552,
+    "clef": "both",
+    "duration": 60,
+    "correct": 73,
+    "total": 73,
+    "accuracy": 1,
+    "score": 73
+  },
+  {
+    "ts": 1793473511313,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 75,
+    "accuracy": 1,
+    "score": 75
+  },
+  {
+    "ts": 1793473658101,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 80,
+    "accuracy": 0.9875,
+    "score": 78.0125
+  },
+  {
+    "ts": 1793479490792,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 81,
+    "accuracy": 0.9876543209876543,
+    "score": 79.01234567901234
+  },
+  {
+    "ts": 1793479598700,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1793520812253,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 76,
+    "accuracy": 0.9868421052631579,
+    "score": 74.01315789473684
+  },
+  {
+    "ts": 1793520947489,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1793521029590,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 79,
+    "accuracy": 0.9873417721518988,
+    "score": 77.0126582278481
+  },
+  {
+    "ts": 1793521272545,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 81,
+    "accuracy": 1,
+    "score": 81
+  },
+  {
+    "ts": 1793522639869,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1793524662101,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1793524837831,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 82,
+    "accuracy": 0.9878048780487805,
+    "score": 80.01219512195122
+  },
+  {
+    "ts": 1793524917235,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 81,
+    "accuracy": 1,
+    "score": 81
+  },
+  {
+    "ts": 1793525051309,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1793525149713,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 84,
+    "accuracy": 0.9642857142857143,
+    "score": 78.10714285714286
+  },
+  {
+    "ts": 1793543126383,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 80,
+    "accuracy": 0.9875,
+    "score": 78.0125
+  },
+  {
+    "ts": 1793543367538,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 82,
+    "accuracy": 0.9878048780487805,
+    "score": 80.01219512195122
+  },
+  {
+    "ts": 1793607769392,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1793608085467,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 77,
+    "accuracy": 0.987012987012987,
+    "score": 75.01298701298701
+  },
+  {
+    "ts": 1793608288764,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793619265776,
+    "clef": "both",
+    "duration": 60,
+    "correct": 75,
+    "total": 76,
+    "accuracy": 0.9868421052631579,
+    "score": 74.01315789473684
+  },
+  {
+    "ts": 1793619385094,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 76,
+    "accuracy": 1,
+    "score": 76
+  },
+  {
+    "ts": 1793625272520,
+    "clef": "both",
+    "duration": 60,
+    "correct": 74,
+    "total": 76,
+    "accuracy": 0.9736842105263158,
+    "score": 72.05263157894737
+  },
+  {
+    "ts": 1793626135286,
+    "clef": "both",
+    "duration": 60,
+    "correct": 76,
+    "total": 79,
+    "accuracy": 0.9620253164556962,
+    "score": 73.11392405063292
+  },
+  {
+    "ts": 1793626199846,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1793626284103,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 81,
+    "accuracy": 0.9876543209876543,
+    "score": 79.01234567901234
+  },
+  {
+    "ts": 1793643587047,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793643657341,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1793643944174,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 80,
+    "accuracy": 0.975,
+    "score": 76.05
+  },
+  {
+    "ts": 1793697937113,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1793698143408,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 79,
+    "accuracy": 0.9873417721518988,
+    "score": 77.0126582278481
+  },
+  {
+    "ts": 1793698292577,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1793708222509,
+    "clef": "both",
+    "duration": 60,
+    "correct": 72,
+    "total": 74,
+    "accuracy": 0.972972972972973,
+    "score": 70.05405405405406
+  },
+  {
+    "ts": 1793708365490,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 80,
+    "accuracy": 0.9875,
+    "score": 78.0125
+  },
+  {
+    "ts": 1793708489633,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 81,
+    "accuracy": 0.9876543209876543,
+    "score": 79.01234567901234
+  },
+  {
+    "ts": 1793708584142,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 81,
+    "accuracy": 0.9876543209876543,
+    "score": 79.01234567901234
+  },
+  {
+    "ts": 1793709754886,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 78,
+    "accuracy": 0.9871794871794872,
+    "score": 76.01282051282051
+  },
+  {
+    "ts": 1793709907562,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 83,
+    "accuracy": 0.963855421686747,
+    "score": 77.10843373493975
+  },
+  {
+    "ts": 1793779530575,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 83,
+    "accuracy": 1,
+    "score": 83
+  },
+  {
+    "ts": 1793779655287,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1793780059653,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 81,
+    "accuracy": 0.9876543209876543,
+    "score": 79.01234567901234
+  },
+  {
+    "ts": 1793794302416,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 80,
+    "accuracy": 0.9875,
+    "score": 78.0125
+  },
+  {
+    "ts": 1793794574075,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 81,
+    "accuracy": 0.9876543209876543,
+    "score": 79.01234567901234
+  },
+  {
+    "ts": 1793794680756,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1793799339077,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1793799493264,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1793817725246,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 85,
+    "accuracy": 1,
+    "score": 85
+  },
+  {
+    "ts": 1793866538925,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 82,
+    "accuracy": 0.9878048780487805,
+    "score": 80.01219512195122
+  },
+  {
+    "ts": 1793867007582,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1793867143104,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 81,
+    "accuracy": 0.9876543209876543,
+    "score": 79.01234567901234
+  },
+  {
+    "ts": 1793867434106,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 82,
+    "accuracy": 0.975609756097561,
+    "score": 78.04878048780488
+  },
+  {
+    "ts": 1793867628377,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 82,
+    "accuracy": 0.9878048780487805,
+    "score": 80.01219512195122
+  },
+  {
+    "ts": 1793867885735,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1793870880049,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1793963260897,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1793963547813,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 85,
+    "accuracy": 1,
+    "score": 85
+  },
+  {
+    "ts": 1793970725638,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 83,
+    "accuracy": 0.9879518072289156,
+    "score": 81.01204819277108
+  },
+  {
+    "ts": 1793970860762,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1793970946386,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1794038786454,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1794039157649,
+    "clef": "both",
+    "duration": 30,
+    "correct": 38,
+    "total": 38,
+    "accuracy": 1,
+    "score": 38
+  },
+  {
+    "ts": 1794039204216,
+    "clef": "both",
+    "duration": 30,
+    "correct": 39,
+    "total": 40,
+    "accuracy": 0.975,
+    "score": 38.025
+  },
+  {
+    "ts": 1794081574748,
+    "clef": "both",
+    "duration": 60,
+    "correct": 77,
+    "total": 77,
+    "accuracy": 1,
+    "score": 77
+  },
+  {
+    "ts": 1794081648640,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1794126650729,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 82,
+    "accuracy": 0.9878048780487805,
+    "score": 80.01219512195122
+  },
+  {
+    "ts": 1794215105844,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1794215182638,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 84,
+    "accuracy": 0.9761904761904762,
+    "score": 80.04761904761905
+  },
+  {
+    "ts": 1794215427842,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 81,
+    "accuracy": 1,
+    "score": 81
+  },
+  {
+    "ts": 1794226201290,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 84,
+    "accuracy": 0.9761904761904762,
+    "score": 80.04761904761905
+  },
+  {
+    "ts": 1794226299522,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1794226438417,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 85,
+    "accuracy": 0.9647058823529412,
+    "score": 79.10588235294118
+  },
+  {
+    "ts": 1794297297359,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1794297416595,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 78,
+    "accuracy": 1,
+    "score": 78
+  },
+  {
+    "ts": 1794306910707,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1794383166746,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 80,
+    "accuracy": 0.9875,
+    "score": 78.0125
+  },
+  {
+    "ts": 1794383289323,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 81,
+    "accuracy": 1,
+    "score": 81
+  },
+  {
+    "ts": 1794383382738,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 83,
+    "accuracy": 1,
+    "score": 83
+  },
+  {
+    "ts": 1794383846623,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 85,
+    "accuracy": 0.9764705882352941,
+    "score": 81.04705882352941
+  },
+  {
+    "ts": 1794383957476,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1794388573312,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1794388688611,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1794388977837,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 85,
+    "accuracy": 0.9647058823529412,
+    "score": 79.10588235294118
+  },
+  {
+    "ts": 1794400348975,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 81,
+    "accuracy": 1,
+    "score": 81
+  },
+  {
+    "ts": 1794400535457,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1794403202384,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1794403296049,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 84,
+    "accuracy": 0.9761904761904762,
+    "score": 80.04761904761905
+  },
+  {
+    "ts": 1794403623292,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 84,
+    "accuracy": 0.9761904761904762,
+    "score": 80.04761904761905
+  },
+  {
+    "ts": 1794470051728,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 83,
+    "accuracy": 0.9879518072289156,
+    "score": 81.01204819277108
+  },
+  {
+    "ts": 1794470128772,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 83,
+    "accuracy": 0.9879518072289156,
+    "score": 81.01204819277108
+  },
+  {
+    "ts": 1794470293524,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 83,
+    "accuracy": 0.9879518072289156,
+    "score": 81.01204819277108
+  },
+  {
+    "ts": 1794505305822,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1794571882788,
+    "clef": "both",
+    "duration": 60,
+    "correct": 78,
+    "total": 81,
+    "accuracy": 0.9629629629629629,
+    "score": 75.1111111111111
+  },
+  {
+    "ts": 1794572134820,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 87,
+    "accuracy": 0.9770114942528736,
+    "score": 83.04597701149426
+  },
+  {
+    "ts": 1794572405823,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 83,
+    "accuracy": 0.9759036144578314,
+    "score": 79.04819277108435
+  },
+  {
+    "ts": 1794575769287,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 87,
+    "accuracy": 0.9540229885057471,
+    "score": 79.183908045977
+  },
+  {
+    "ts": 1794661339709,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1794661422462,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 83,
+    "accuracy": 0.9759036144578314,
+    "score": 79.04819277108435
+  },
+  {
+    "ts": 1794661503127,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1794661603681,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1794661736741,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 83,
+    "accuracy": 0.9879518072289156,
+    "score": 81.01204819277108
+  },
+  {
+    "ts": 1794661825173,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 86,
+    "accuracy": 0.9767441860465116,
+    "score": 82.04651162790697
+  },
+  {
+    "ts": 1794661923497,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 87,
+    "accuracy": 0.9770114942528736,
+    "score": 83.04597701149426
+  },
+  {
+    "ts": 1794684960241,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 80,
+    "accuracy": 0.9875,
+    "score": 78.0125
+  },
+  {
+    "ts": 1794685166037,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 85,
+    "accuracy": 0.9882352941176471,
+    "score": 83.01176470588236
+  },
+  {
+    "ts": 1794685278246,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 82,
+    "accuracy": 0.975609756097561,
+    "score": 78.04878048780488
+  },
+  {
+    "ts": 1794685373656,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 82,
+    "accuracy": 0.9878048780487805,
+    "score": 80.01219512195122
+  },
+  {
+    "ts": 1794745799705,
+    "clef": "both",
+    "duration": 60,
+    "correct": 80,
+    "total": 80,
+    "accuracy": 1,
+    "score": 80
+  },
+  {
+    "ts": 1794745998065,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 85,
+    "accuracy": 0.9764705882352941,
+    "score": 81.04705882352941
+  },
+  {
+    "ts": 1794746106349,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 86,
+    "accuracy": 0.9883720930232558,
+    "score": 84.01162790697674
+  },
+  {
+    "ts": 1794746182546,
+    "clef": "both",
+    "duration": 60,
+    "correct": 86,
+    "total": 86,
+    "accuracy": 1,
+    "score": 86
+  },
+  {
+    "ts": 1794748891426,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 87,
+    "accuracy": 0.9770114942528736,
+    "score": 83.04597701149426
+  },
+  {
+    "ts": 1794751319589,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1794752008676,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 85,
+    "accuracy": 1,
+    "score": 85
+  },
+  {
+    "ts": 1794815465274,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 84,
+    "accuracy": 0.9761904761904762,
+    "score": 80.04761904761905
+  },
+  {
+    "ts": 1794815730659,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1794816006864,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 85,
+    "accuracy": 0.9882352941176471,
+    "score": 83.01176470588236
+  },
+  {
+    "ts": 1794902230213,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 83,
+    "accuracy": 1,
+    "score": 83
+  },
+  {
+    "ts": 1794902524283,
+    "clef": "both",
+    "duration": 60,
+    "correct": 86,
+    "total": 86,
+    "accuracy": 1,
+    "score": 86
+  },
+  {
+    "ts": 1794902615090,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1794916687296,
+    "clef": "both",
+    "duration": 60,
+    "correct": 86,
+    "total": 88,
+    "accuracy": 0.9772727272727273,
+    "score": 84.04545454545455
+  },
+  {
+    "ts": 1794916812853,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 85,
+    "accuracy": 1,
+    "score": 85
+  },
+  {
+    "ts": 1794937430051,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 85,
+    "accuracy": 0.9882352941176471,
+    "score": 83.01176470588236
+  },
+  {
+    "ts": 1795005659949,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1795005820354,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1795024943085,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 86,
+    "accuracy": 0.9767441860465116,
+    "score": 82.04651162790697
+  },
+  {
+    "ts": 1795108932452,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 83,
+    "accuracy": 0.9879518072289156,
+    "score": 81.01204819277108
+  },
+  {
+    "ts": 1795109155172,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 83,
+    "accuracy": 0.9759036144578314,
+    "score": 79.04819277108435
+  },
+  {
+    "ts": 1795109262901,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 83,
+    "accuracy": 1,
+    "score": 83
+  },
+  {
+    "ts": 1795117669293,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1795117744631,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 83,
+    "accuracy": 0.9879518072289156,
+    "score": 81.01204819277108
+  },
+  {
+    "ts": 1795117809470,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1795117895738,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 84,
+    "accuracy": 0.9761904761904762,
+    "score": 80.04761904761905
+  },
+  {
+    "ts": 1795117975902,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1795177247321,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 86,
+    "accuracy": 0.9767441860465116,
+    "score": 82.04651162790697
+  },
+  {
+    "ts": 1795196229973,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1795198777774,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 83,
+    "accuracy": 1,
+    "score": 83
+  },
+  {
+    "ts": 1795247761524,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 80,
+    "accuracy": 0.9875,
+    "score": 78.0125
+  },
+  {
+    "ts": 1795247878169,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 86,
+    "accuracy": 0.9534883720930233,
+    "score": 78.18604651162791
+  },
+  {
+    "ts": 1795247970879,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 85,
+    "accuracy": 0.9764705882352941,
+    "score": 81.04705882352941
+  },
+  {
+    "ts": 1795248062469,
+    "clef": "both",
+    "duration": 60,
+    "correct": 87,
+    "total": 88,
+    "accuracy": 0.9886363636363636,
+    "score": 86.01136363636364
+  },
+  {
+    "ts": 1795248172043,
+    "clef": "both",
+    "duration": 60,
+    "correct": 88,
+    "total": 89,
+    "accuracy": 0.9887640449438202,
+    "score": 87.01123595505618
+  },
+  {
+    "ts": 1795263016430,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1795281236381,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 85,
+    "accuracy": 0.9882352941176471,
+    "score": 83.01176470588236
+  },
+  {
+    "ts": 1795334092358,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 85,
+    "accuracy": 0.9882352941176471,
+    "score": 83.01176470588236
+  },
+  {
+    "ts": 1795334374063,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 85,
+    "accuracy": 0.9882352941176471,
+    "score": 83.01176470588236
+  },
+  {
+    "ts": 1795351431012,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 83,
+    "accuracy": 1,
+    "score": 83
+  },
+  {
+    "ts": 1795355999624,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 86,
+    "accuracy": 0.9883720930232558,
+    "score": 84.01162790697674
+  },
+  {
+    "ts": 1795356310116,
+    "clef": "both",
+    "duration": 60,
+    "correct": 86,
+    "total": 88,
+    "accuracy": 0.9772727272727273,
+    "score": 84.04545454545455
+  },
+  {
+    "ts": 1795426629948,
+    "clef": "both",
+    "duration": 60,
+    "correct": 86,
+    "total": 87,
+    "accuracy": 0.9885057471264368,
+    "score": 85.01149425287356
+  },
+  {
+    "ts": 1795426799612,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 85,
+    "accuracy": 1,
+    "score": 85
+  },
+  {
+    "ts": 1795437153959,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 87,
+    "accuracy": 0.9770114942528736,
+    "score": 83.04597701149426
+  },
+  {
+    "ts": 1795437275499,
+    "clef": "both",
+    "duration": 60,
+    "correct": 81,
+    "total": 82,
+    "accuracy": 0.9878048780487805,
+    "score": 80.01219512195122
+  },
+  {
+    "ts": 1795543661369,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 83,
+    "accuracy": 0.9879518072289156,
+    "score": 81.01204819277108
+  },
+  {
+    "ts": 1795543734685,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 83,
+    "accuracy": 1,
+    "score": 83
+  },
+  {
+    "ts": 1795544014966,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 83,
+    "accuracy": 1,
+    "score": 83
+  },
+  {
+    "ts": 1795552736492,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 84,
+    "accuracy": 0.9880952380952381,
+    "score": 82.01190476190476
+  },
+  {
+    "ts": 1795594250200,
+    "clef": "both",
+    "duration": 60,
+    "correct": 82,
+    "total": 82,
+    "accuracy": 1,
+    "score": 82
+  },
+  {
+    "ts": 1795594599789,
+    "clef": "both",
+    "duration": 60,
+    "correct": 83,
+    "total": 83,
+    "accuracy": 1,
+    "score": 83
+  },
+  {
+    "ts": 1795626329052,
+    "clef": "both",
+    "duration": 60,
+    "correct": 87,
+    "total": 88,
+    "accuracy": 0.9886363636363636,
+    "score": 86.01136363636364
+  },
+  {
+    "ts": 1795626454946,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 86,
+    "accuracy": 0.9767441860465116,
+    "score": 82.04651162790697
+  },
+  {
+    "ts": 1795626542826,
+    "clef": "both",
+    "duration": 60,
+    "correct": 88,
+    "total": 88,
+    "accuracy": 1,
+    "score": 88
+  },
+  {
+    "ts": 1795688524373,
+    "clef": "both",
+    "duration": 60,
+    "correct": 79,
+    "total": 79,
+    "accuracy": 1,
+    "score": 79
+  },
+  {
+    "ts": 1795688816954,
+    "clef": "both",
+    "duration": 60,
+    "correct": 86,
+    "total": 86,
+    "accuracy": 1,
+    "score": 86
+  },
+  {
+    "ts": 1795690969164,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 85,
+    "accuracy": 1,
+    "score": 85
+  },
+  {
+    "ts": 1795691906069,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1,
+    "score": 84
+  },
+  {
+    "ts": 1795698935405,
+    "clef": "both",
+    "duration": 60,
+    "correct": 87,
+    "total": 87,
+    "accuracy": 1,
+    "score": 87
+  },
+  {
+    "ts": 1795715096214,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 85,
+    "accuracy": 0.9882352941176471,
+    "score": 83.01176470588236
+  },
+  {
+    "ts": 1795715292832,
+    "clef": "both",
+    "duration": 60,
+    "correct": 89,
+    "total": 89,
+    "accuracy": 1,
+    "score": 89
+  },
+  {
+    "ts": 1795716182059,
+    "clef": "both",
+    "duration": 60,
+    "correct": 87,
+    "total": 87,
+    "accuracy": 1,
+    "score": 87
+  },
+  {
+    "ts": 1795718219268,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 87,
+    "accuracy": 0.9770114942528736,
+    "score": 83.04597701149426
+  },
+  {
+    "ts": 1795782267199,
+    "clef": "both",
+    "duration": 60,
+    "correct": 85,
+    "total": 86,
+    "accuracy": 0.9883720930232558,
+    "score": 84.01162790697674
+  },
+  {
+    "ts": 1795782521572,
+    "clef": "both",
+    "duration": 60,
+    "correct": 84,
+    "total": 85,
+    "accuracy": 0.9882352941176471,
+    "score": 83.01176470588236
+  },
+  {
+    "ts": 1795782628594,
+    "clef": "both",
+    "duration": 30,
+    "correct": 43,
+    "total": 43,
+    "accuracy": 1,
+    "score": 43
+  }
+]

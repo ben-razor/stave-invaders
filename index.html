@@ -290,6 +290,7 @@
           <button class="pill" data-val="treble">Treble</button>
           <button class="pill" data-val="bass">Bass</button>
           <button class="pill active" data-val="both">Both</button>
+          <button class="pill" data-val="alt">Alt</button>
         </div>
       </div>
 
@@ -454,6 +455,7 @@
           <button class="pill" data-val="treble">Treble</button>
           <button class="pill" data-val="bass">Bass</button>
           <button class="pill active" data-val="both">Both</button>
+          <button class="pill" data-val="alt">Alt</button>
         </div>
       </div>
 
@@ -609,6 +611,7 @@
   function startGame(){
     correct = 0; total = 0; timeLeft = duration; running = true;
     mistakes = [];
+    altIndex = 0;
     updateScoreLabels();
     updateTimerLabel();
     startScreen.classList.add('hidden');
@@ -644,8 +647,17 @@
     scoreNum.textContent = currentScore().toFixed(1);
   }
 
+  var ALT_BLOCK_SIZE = 10;
+  var altIndex = 0;
+
   function pickClef(){
     if(clefMode === 'both') return Math.random() < 0.5 ? 'treble' : 'bass';
+    if(clefMode === 'alt'){
+      // 10 bass, then 10 treble, repeating
+      var clef = Math.floor(altIndex / ALT_BLOCK_SIZE) % 2 === 0 ? 'bass' : 'treble';
+      altIndex++;
+      return clef;
+    }
     return clefMode;
   }
 

@@ -992,17 +992,15 @@
     var finalScore = currentScore();
     document.getElementById('finalScore').textContent = finalScore.toFixed(1);
 
-    if(gameMode === 'standard'){
-      saveSessionRecord({
-        ts: Date.now(),
-        clef: clefMode,
-        duration: duration,
-        correct: correct,
-        total: total,
-        accuracy: total > 0 ? correct / total : 0,
-        score: finalScore
-      });
-    }
+    saveSessionRecord({
+      ts: Date.now(),
+      clef: clefMode,
+      duration: duration,
+      correct: correct,
+      total: total,
+      accuracy: total > 0 ? correct / total : 0,
+      score: finalScore
+    });
 
     reviewMistakesBtn.textContent = mistakes.length === 0 ? 'No Mistakes' : 'Review Mistakes (' + mistakes.length + ')';
     reviewMistakesBtn.disabled = mistakes.length === 0;

@@ -574,6 +574,36 @@
   var statsScreen = document.getElementById('statsScreen');
   var statsBody = document.getElementById('statsBody');
   var STORAGE_KEY = 'staveInvaders_sessions_v1';
+  var SETTINGS_KEY = 'staveInvaders_settings_v1';
+
+  function saveSettings(){
+    try {
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify({
+        clef: clefMode,
+        duration: duration,
+        mode: gameMode
+      }));
+    } catch(e){
+      // storage unavailable — settings just won't persist
+    }
+  }
+
+  function loadSettings(){
+    try {
+      var raw = localStorage.getItem(SETTINGS_KEY);
+      if(!raw) return;
+      var s = JSON.parse(raw);
+      if(['treble', 'bass', 'both', 'alt'].indexOf(s.clef) !== -1) clefMode = s.clef;
+      if([30, 60, 120].indexOf(s.duration) !== -1) duration = s.duration;
+      if(['standard', 'flawless'].indexOf(s.mode) !== -1) gameMode = s.mode;
+    } catch(e){
+      // corrupt or unavailable — fall back to defaults
+    }
+    timeLeft = duration;
+    syncPillGroup('clefGroup', clefMode);
+    syncPillGroup('durationGroup', String(duration));
+    syncPillGroup('modeGroup', gameMode);
+  }
   var statsClefMode = 'both';
   var statsDuration = 60;
 
@@ -616,6 +646,7 @@
     document.querySelectorAll('#clefGroup .pill').forEach(function(p){ p.classList.remove('active'); });
     btn.classList.add('active');
     clefMode = btn.dataset.val;
+    saveSettings();
   });
 
   document.getElementById('modeGroup').addEventListener('click', function(e){
@@ -624,6 +655,7 @@
     document.querySelectorAll('#modeGroup .pill').forEach(function(p){ p.classList.remove('active'); });
     btn.classList.add('active');
     gameMode = btn.dataset.val;
+    saveSettings();
   });
 
   document.getElementById('durationGroup').addEventListener('click', function(e){
@@ -632,6 +664,7 @@
     document.querySelectorAll('#durationGroup .pill').forEach(function(p){ p.classList.remove('active'); });
     btn.classList.add('active');
     duration = parseInt(btn.dataset.val, 10);
+    saveSettings();
   });
 
   document.getElementById('startBtn').addEventListener('click', startGame);
@@ -1189,6 +1222,7 @@
     statsDuration = parseInt(btn.dataset.val, 10);
     renderStats();
   });
+  loadSettings();
 })();
 </script>
 

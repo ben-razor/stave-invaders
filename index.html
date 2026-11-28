@@ -677,6 +677,7 @@
     correct = 0; total = 0; timeLeft = duration; running = true;
     mistakes = [];
     altIndex = 0;
+    altStartsBass = Math.random() < 0.5;
     updateScoreLabels();
     updateTimerLabel();
     startScreen.classList.add('hidden');
@@ -714,12 +715,14 @@
 
   var ALT_BLOCK_SIZE = 10;
   var altIndex = 0;
+  var altStartsBass = true;
 
   function pickClef(){
     if(clefMode === 'both') return Math.random() < 0.5 ? 'treble' : 'bass';
     if(clefMode === 'alt'){
       // 10 bass, then 10 treble, repeating
-      var clef = Math.floor(altIndex / ALT_BLOCK_SIZE) % 2 === 0 ? 'bass' : 'treble';
+      var firstBlock = Math.floor(altIndex / ALT_BLOCK_SIZE) % 2 === 0;
+        var clef = (firstBlock === altStartsBass) ? 'bass' : 'treble';
       altIndex++;
       return clef;
     }
@@ -908,6 +911,10 @@
     nextNote();
   }
 
+  var FLAWLESS_LOCK_SECONDS = 5;
+  var flawlessLocked = false;
+  var flawlessCountId = null;
+
   function endFlawless(pressed, expected){
     running = false;
     clearInterval(timerId);
@@ -918,11 +925,30 @@
       correct === 1 ? '1 note in a row' : correct + ' notes in a row';
     flawlessScreen.classList.remove('hidden');
     clearTimeout(flawlessTimeoutId);
-    flawlessTimeoutId = setTimeout(leaveFlawless, 3500);
+    clearInterval(flawlessCountId);
+    // lock the screen for a few seconds so a frantic key mash can't dismiss it
+    var flawlessBackBtn = document.getElementById('flawlessBackBtn');
+    var lockLeft = FLAWLESS_LOCK_SECONDS;
+    flawlessLocked = true;
+    flawlessBackBtn.disabled = true;
+    flawlessBackBtn.textContent = 'Try again (' + lockLeft + ')';
+    flawlessCountId = setInterval(function(){
+      lockLeft--;
+      if(lockLeft <= 0){
+        clearInterval(flawlessCountId);
+        flawlessLocked = false;
+        flawlessBackBtn.disabled = false;
+        flawlessBackBtn.textContent = 'Try again';
+      } else {
+        flawlessBackBtn.textContent = 'Try again (' + lockLeft + ')';
+      }
+    }, 1000);
   }
 
   function leaveFlawless(){
+    if(flawlessLocked) return;
     clearTimeout(flawlessTimeoutId);
+    clearInterval(flawlessCountId);
     flawlessScreen.classList.add('hidden');
     startScreen.classList.remove('hidden');
   }
@@ -948,6 +974,8 @@
     statsScreen.classList.add('hidden');
     mistakesScreen.classList.add('hidden');
     clearTimeout(flawlessTimeoutId);
+    clearInterval(flawlessCountId);
+    flawlessLocked = false;
     flawlessScreen.classList.add('hidden');
     startScreen.classList.remove('hidden');
   }
@@ -955,7 +983,7 @@
   document.addEventListener('keydown', function(e){
     if(e.key.toUpperCase() === 'R' && !e.ctrlKey && !e.metaKey && !e.altKey){
       e.preventDefault();
-      resetToStart();
+      if(!flawlessLocked) resetToStart();
       return;
     }
     if(!running){
@@ -992,10 +1020,12 @@
     var finalScore = currentScore();
     document.getElementById('finalScore').textContent = finalScore.toFixed(1);
 
+    // a flawless run that reaches here survived to the end of the timer, so it counts
     saveSessionRecord({
       ts: Date.now(),
       clef: clefMode,
       duration: duration,
+      mode: gameMode,
       correct: correct,
       total: total,
       accuracy: total > 0 ? correct / total : 0,
@@ -1123,7 +1153,7 @@
 
   function renderStats(){
     var allSessions = loadSessions()
-      .filter(function(s){ return s.clef === statsClefMode && String(s.duration) === String(statsDuration); })
+      .filter(function(s){ return s.clef === statsClefMode && String(s.duration) === String(statsDuration) && (s.mode || 'standard') === gameMode; })
       .sort(function(a, b){ return a.ts - b.ts; });
 
     if(allSessions.length === 0){
